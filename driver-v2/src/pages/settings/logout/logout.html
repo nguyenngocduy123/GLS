@@ -1,0 +1,43 @@
+<ion-content>
+    <ion-card full>
+        <ion-card-header text-wrap>
+            <strong>{{'PAGE.LOGOUT.Header' | translate}}</strong>
+        </ion-card-header>
+
+        <ion-card-content>
+            <p ion-text color="danger" *ngIf="disableBtnLogout">
+                {{'InternetRequired' | translate}}.
+            </p>
+            <button ion-button text-wrap text-left clear no-padding no-margin icon-left (tap)="btnExit()" *ngIf="!disableBtnLogout">
+                <ion-icon name="exit"></ion-icon> {{'PAGE.LOGOUT.RestartApp' | translate}}
+            </button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 text-center>
+                <ion-icon large name="person"></ion-icon>
+                <p>
+                    {{'PAGE.SETTINGS.LoggedInAs' | translate}}
+                    <strong ion-text color="primary">{{auth.username}}</strong>.
+                </p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12 no-padding>
+                <button ion-button full large color="primary" no-margin [disabled]="disableBtnLogout" (tap)="btnLogout()">
+                    <div>
+                        <ion-icon name="log-out"></ion-icon>
+                        {{'PAGE.LOGOUT.BtnConfirm' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

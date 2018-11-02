@@ -1,0 +1,40 @@
+<mat-select [placeholder]="placeholder" disableOptionCentering [formControl]="selectCtrl" [multiple]='multiple'
+    (selectionChange)='selectionChange.emit($event)'>
+    <ngx-mat-select-search [formControl]="selectFilterCtrl" placeholderLabel='Search' noEntriesFoundLabel='Not found'></ngx-mat-select-search>
+
+    <mat-option *ngIf='showUndefinedOption || unselectOptionTemplate'>
+        <ng-template [ngTemplateOutlet]="unselectOptionTemplate || defaultUnselectOptionTemplate"></ng-template>
+    </mat-option>
+
+    <mat-option *ngFor="let item of filteredSelections | async" [value]="valueField ?  item[valueField] : item">
+        <ng-template [ngTemplateOutlet]="optionTemplate || defaultOptionTemplate" [ngTemplateOutletContext]="{item:item}"></ng-template>
+    </mat-option>
+</mat-select>
+
+<ng-template #defaultUnselectOptionTemplate>{{unselectOptionLabel}}</ng-template>
+
+<ng-template #defaultOptionTemplate let-item='item'>
+    <span [ngSwitch]="optionTemplateName">
+        <p *ngSwitchCase="'vehicleType'">
+            {{item.Name}}
+        </p>
+        <p *ngSwitchCase="'vehicle'">
+            {{item.Id}}
+        </p>
+        <p *ngSwitchCase="'userGroup'">
+            {{item.usergroup}} ({{item.description}})
+        </p>
+
+        <p *ngSwitchCase="'username'">
+            {{item.username}} {{item.fullname ? "(" + item.fullname + ")" : ""}}
+        </p>
+
+        <p *ngSwitchCase="'item'">
+            {{item.Id}} ({{item.Description}})
+        </p>
+
+        <p *ngSwitchDefault>
+            {{item}}
+        </p>
+    </span>
+</ng-template>

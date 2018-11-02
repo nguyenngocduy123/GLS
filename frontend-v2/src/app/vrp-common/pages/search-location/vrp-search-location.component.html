@@ -1,0 +1,54 @@
+<mat-card layout="column" class='vrp-search-box'>
+    <td-search-box *tdLoading="'vrp-search-location.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'"
+        #searchBox placeholder="Search postal (6 digits)" alwaysVisible="true" [debounce]="500" (searchDebounce)="geocode($event)"
+        (clear)="clearSearch()" flex></td-search-box>
+
+    <div layout="column" *ngIf='address'>
+        <mat-divider></mat-divider>
+        <div flex layout="row" layout-padding>
+            <mat-form-field flex="45" required>
+                <input #elementLat matInput [(ngModel)]="address.lat" step=".0001" placeholder="Latitude" type='number' min="-90" max="90"
+                    required>
+            </mat-form-field>
+
+            <mat-form-field flex="45" required>
+                <input #elementLon matInput [(ngModel)]="address.lng" step=".0001" placeholder="Longitude" type='number' min="-180" max="180"
+                    required>
+            </mat-form-field>
+        </div>
+
+        <div flex layout="row" layout-padding>
+            <button mat-button flex color='primary' (click)='locate()' [disabled]='!isLatLngValid()'>
+                <mat-icon>my_location</mat-icon> Locate
+            </button>
+
+            <button mat-button flex color='accent' (click)='clearInput()'>
+                <mat-icon>clear_all</mat-icon> Clear
+            </button>
+
+            <button mat-button flex (click)='save()' [disabled]='!isLatLngValid()'>
+                <mat-icon>save</mat-icon> Save
+            </button>
+
+            <button mat-button flex (click)='removeActivePostal()' *ngIf="hasActivePostal">
+              <mat-icon>remove</mat-icon> Remove
+            </button>
+        </div>
+    </div>
+</mat-card>
+
+<vrp-leaflet #leafletMap></vrp-leaflet>
+
+<!-- <mat-sidenav-container layout-fill>
+  <mat-sidenav #sidenav mode="side" opened="true">
+  </mat-sidenav>
+</mat-sidenav-container> -->
+
+<!-- <mat-divider></mat-divider>
+    <mat-list>
+      <ng-template let-item let-index="index" let-last="last" ngFor [ngForOf]="addresses">
+        <mat-list-item layout="row" layout-align="start center" >
+          <p matLine>{{d.postal}}</p>
+        </mat-list-item>
+      </ng-template>
+    </mat-list> -->

@@ -1,0 +1,12 @@
+<ion-header no-border>
+    <ion-navbar>
+        <vrp-header showDialog="true">{{'JOB.POD' | translate}}</vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-tabs (ionChange)="tabSelected($event)">
+        <ion-tab *ngFor="let tab of tabs" [root]="tab.page" tabBadgeStyle="light" [tabBadge]="!tab.visited ? '*' : ''" [tabTitle]="tab.title"
+            [tabIcon]="tab.icon" [enabled]="tab.enabled" [show]="tab.show"></ion-tab>
+    </ion-tabs>
+</ion-content>

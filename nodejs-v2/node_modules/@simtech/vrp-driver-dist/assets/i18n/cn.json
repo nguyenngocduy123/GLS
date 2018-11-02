@@ -1,0 +1,181 @@
+{
+    "JOB": {
+        "Address": "xAddress",
+        "TimeWindow": "xTime",
+        "ContactName": "xContact Name",
+        "Remarks": "xRemarks",
+        "Status": "xStatus",
+        "NoteFromDriver": "xYour Note",
+        "NotePhotos": "xNote Photos",
+        "DeliveryItems": "xItems",
+        "DeliveryItemsExpected": "xExpected",
+        "DeliveryItemsActual": "xActual",
+        "POD": "xProof of Delivery",
+        "VerificationCode": "xVerification Code"
+    },
+    "ATTEMPTED_JOB": {
+        "Title": "xJob",
+        "Id": "xJob Id",
+        "Time": "xDelivery Time",
+        "DoneBy": "xDone By",
+        "Remarks": "xDriver's Remarks",
+        "NotePhotos": "xNote Photos",
+        "ItemsDone": "xPicked-up / Delivered",
+        "POD": "xProof of Delivery",
+        "DeliveryItems": "xItems",
+        "Quantity": "xQty"
+    },
+    "ITEM": {
+        "Id": "xId",
+        "Weight": "xWeight",
+        "Description": "xDescription"
+    },
+    "BUTTON": {
+        "Clear": "xClear",
+        "Remove": "xRemove",
+        "Settings": "xSettings",
+        "All Jobs": "xAll Jobs",
+        "Continue": "xContinue",
+        "Proceed": "xProceed",
+        "Confirm": "xConfirm",
+        "Submit": "xSubmit",
+        "Close": "xClose",
+        "Tap here to view": "xTap here to view"
+    },
+    "PAGE": {
+        "HOME": {
+            "AllDone": "xAll Jobs Completed"
+        },
+        "PERMISSION": {
+            "Header": "xApp Permission Guide",
+            "Location": "xLocation",
+            "Camera": "xCamera",
+            "PageReason": "xThis application requires permissions for some features",
+            "ClickAllow": "xPlease click Allow when prompted",
+            "LocationReason": "xRequired for retrieving your location when app is on",
+            "CameraReason": "xRequired for scanning barcodes and taking photos as remarks",
+            "Suggestion": "xThis device is on {{os}} version {{version}}. We recommend to upgrade your device to at least {{recommend}}"
+        },
+        "NEXT_DAY": {
+            "Header": "xNext Day Jobs",
+            "NoJobs": "xThere are no jobs for the next day"
+        },
+        "PLANNER_NOTES": {
+            "Header": "xPlanner Notes"
+        },
+        "ADD_NOTE": {
+            "Header": "xAdd Note",
+            "OptionHeader": "xTemplate Message",
+            "FreeTextHeader": "xRemark to planner",
+            "NumNotesHeader": "xNumber of photos added"
+        },
+        "ITEMS_HANDLED": {
+            "Header": "xItems Handled",
+            "Keyboard": "xKeyboard",
+            "Barcode": "xBarcode",
+            "BtnChangeInput": "xChange to input by",
+            "KeyboardPlaceholder": "xEnter actual item count",
+            "ScanBarcodePlaceholder": "xTap button on the right to scan"
+        },
+        "POD_PHOTO": {
+            "CentraliseImage": "xAfter photo is taken, please centralise the image",
+            "PhotoOptional": "xPhoto is optional"
+        },
+        "VERIFY_CODE": {
+            "Verified": "xVerified",
+            "Prompt": "xEnter the verification code that was sent to the customer's email",
+            "AskToEnter": "xEnter Verification Code",
+            "HowToNavigate": "xNavigate using the tabs above, or",
+            "BtnPressProceed": "xPress the proceed button below"
+        },
+        "SUMMARY": {
+            "Header": "xSummary",
+            "ItemsDone": "xPicked-up / Delivered"
+        },
+        "CURRENT_JOB": {
+            "Header": "xCurrent Job",
+            "BtnCall": "xCall",
+            "BtnNavigate": "xNavigate",
+            "BtnFail": "xFail",
+            "BtnSuccess": "xSuccess"
+        },
+        "COMPLETE_JOB_SUMMARY": {
+            "Header": "xJob Details"
+        },
+        "CUSTOMER_SERVICE": {
+            "Header": "xCustomer Service",
+            "ExpectLateHeader": "xExpect to be late",
+            "RemarksHeader": "xRemark to planner",
+            "SelectedJobsHeader": "xSelected jobs"
+        },
+        "ITEM_DETAILS": {
+            "Header": "xItem Details"
+        },
+        "CHECK_APP_VERSION": {
+            "Header": "xUpdate Required",
+            "AppExpired": "xThis version of the application has expired",
+            "GoDownload": "xPlease go to the {{store}} to update",
+            "BtnUpdateApp": "xUpdate App"
+        },
+        "LICENSE_AGREEMENT": {
+            "Header": "xEND-USER LICENCE AGREEMENT",
+            "BtnAccept": "xAccept"
+        },
+        "SCAN_SERVER_URL": {
+            "Header": "xScan Server Url",
+            "CurrentUrl": "xCurrent URL",
+            "SaveNewHeader": "xManually enter URL",
+            "EnterUrlHere": "xEnter Server URL here",
+            "BtnSaveNew": "xSave New URL",
+            "SaveDefaultHeader": "xor use the default URL",
+            "BtnSaveDefault": "xTap here to use default URL",
+            "ScanNewHeader": "xor scan a QR code",
+            "BtnScanNew": "xScan QR Code"
+        },
+        "LOGIN": {
+            "Username": "xUsername",
+            "Password": "xPassword",
+            "BtnLogIn": "xLog In",
+            "PoweredBy": "xPowered By"
+        },
+        "CHANGE_DRIVER_DETAILS": {
+            "Header": "xUpdate Details",
+            "PlateNumHeader": "xChange Vehicle Plate Number",
+            "PlateNumPlaceholder": "xEnter new plate number",
+            "BtnConfirm": "xChange Plate Number"
+        },
+        "LOGOUT": {
+            "Header": "xStuck and cannot log out?",
+            "RestartApp": "xRestart app",
+            "BtnConfirm": "xLogout"
+        },
+        "OFFLINE_SYNC": {
+            "RequestFail": "xUnable to send jobs to server",
+            "RequestDone": "xAll jobs have been synced",
+            "BtnConfirm": "xSync Jobs"
+        },
+        "RESET_PASSWORD": {
+            "Header": "xChange Password",
+            "CurrentPasswordHeader": "xCurrent Password",
+            "CurrentPasswordPlaceholder": "xEnter current password",
+            "NewPasswordHeader": "xNew Password",
+            "NewPasswordPlaceholder": "xEnter new password",
+            "ConfirmPasswordHeader": "xConfirm New Password",
+            "ConfirmPasswordPlaceholder": "xEnter again",
+            "BtnConfirm": "xReset Password"
+        },
+        "SETTINGS": {
+            "Header": "xSettings",
+            "LoggedInAs": "xYou are logged in as"
+        }
+    },
+    "Date": "xDate",
+    "Required": "xRequired",
+    "Optional": "xOptional",
+    "Note": "xNote",
+    "Ok": "xOk",
+    "Error": "xError",
+    "Done": "xDone",
+    "None": "xNone",
+    "InternetRequired": "xInternet connection is required"
+}

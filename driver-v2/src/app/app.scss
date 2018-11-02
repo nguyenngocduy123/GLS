@@ -1,0 +1,69 @@
+body {
+    // long texts are forced to wrap with hypens
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+@media all and (orientation: portrait) {
+    button[large] ion-icon,
+    a[button][large] ion-icon {
+        display: block;
+        font-size: 2em;
+    }
+
+    .button-large-md {
+        height: $button-md-large-height; // assume md and ios use same values
+    }
+}
+
+@media all and (orientation: landscape) {
+    button[large] ion-icon,
+    a[button][large] ion-icon {
+        display: block;
+        font-size: 1em;
+    }
+
+    // must overwrite default behaviour here because sass cannot handle media queries
+    .button-large-md {
+        height: $button-md-large-height - 1.5;
+    }
+}
+
+button[large-padding],
+a[button][large-padding] {
+    padding-top: 2.2rem !important;
+    padding-bottom: 2.2rem !important;
+    padding-left: 1.8rem !important;
+    padding-right: 1.8rem !important;
+}
+
+ion-card[full] {
+    margin: 5px 0 16px 0;
+    width: 100% !important;
+}
+
+ion-icon[large] {
+    font-size: 3.5rem;
+}
+
+ion-icon[small] {
+    font-size: 1.5rem;
+}
+
+// for hiding footer when keyboard is open
+body.keyboard-is-open .hide-on-keyboard-open {
+    display: none;
+}
+
+// for showing footer after keyboard closes
+body.keyboard-is-open .scroll-content {
+    margin-bottom: 0 !important;
+}
+
+// separate toast from header to be more obvious
+.md ion-toast {
+    margin-top: 15px;
+}

@@ -1,0 +1,27 @@
+@import '~angular-calendar/css/angular-calendar.css';
+
+// Href line height wasn't right for md-icon-button
+a[mat-icon-button] {
+    line-height: 36px;
+}
+
+// Capitalize
+.text-capital {
+  text-transform: capitalize;
+}
+
+// Lighter font weight in sub-toolbars
+td-layout-manage-list .mat-toolbar {
+    font-weight: 400;
+}
+
+// allow dialog can have full-screen size
+.mat-dialog-container {
+	max-width: 100vw !important;
+	max-height: 100vh !important;
+}
+
+// make fill content to full width in mat-dialog
+.mat-dialog-content {
+    width: 100% !important;
+}

@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header toLoginPage="true">{{'PAGE.SCAN_SERVER_URL.Header' | translate}}</vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item color="dark">
+            {{'PAGE.SCAN_SERVER_URL.CurrentUrl' | translate}}: {{urlText}}
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-label color="primary" stacked>{{'PAGE.SCAN_SERVER_URL.SaveNewHeader' | translate}}</ion-label>
+            <ion-input type="text" placeholder="{{'PAGE.SCAN_SERVER_URL.EnterUrlHere' | translate}}" (focus)="urlOnFocus()" [(ngModel)]="url" autocomplete="off" autocorrect="off" autocapitalize="off" clearInput></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+            <button ion-button full round large-padding icon-right (tap)="btnSave()">
+                {{'PAGE.SCAN_SERVER_URL.BtnSaveNew' | translate}}
+                <ion-icon name="checkmark"></ion-icon>
+            </button>
+        </ion-item>
+
+        <ion-list-header>
+            {{'PAGE.SCAN_SERVER_URL.SaveDefaultHeader' | translate}}
+        </ion-list-header>
+
+        <ion-item>
+            <button ion-button full round large-padding icon-right color="secondary" (tap)="btnSave(true)">
+                {{'PAGE.SCAN_SERVER_URL.BtnSaveDefault' | translate}}
+                <ion-icon name="link" item-start></ion-icon>
+            </button>
+        </ion-item>
+
+        <ion-list-header>
+            {{'PAGE.SCAN_SERVER_URL.ScanNewHeader' | translate}}
+        </ion-list-header>
+
+        <ion-item no-lines>
+            <button ion-button full large no-margin (tap)="btnScan()" color="danger">
+                <div>
+                    <ion-icon name="qr-scanner"></ion-icon>
+                    {{'PAGE.SCAN_SERVER_URL.BtnScanNew' | translate}}
+                </div>
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>

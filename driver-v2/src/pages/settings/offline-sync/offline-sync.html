@@ -1,0 +1,57 @@
+<ion-content>
+    <ion-card full *ngIf="serverError">
+        <ion-card-header text-wrap color="danger">
+            <ion-icon item-start name="warning"></ion-icon> {{'Error' | translate}}
+        </ion-card-header>
+
+        <ion-card-content>
+            {{'PAGE.OFFLINE_SYNC.RequestFail' | translate}}.<br>
+            Server Error: {{serverError}}
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card full *ngIf="!offlineJobs.length">
+        <ion-card-header text-wrap color="secondary">
+            <ion-icon item-start name="thumbs-up"></ion-icon>
+            {{'Done' | translate}}.
+        </ion-card-header>
+
+        <ion-card-content>
+            {{'PAGE.OFFLINE_SYNC.RequestDone' | translate}}.
+        </ion-card-content>
+    </ion-card>
+
+    <ion-grid class="table" *ngIf="offlineJobs.length">
+        <ion-row>
+            <ion-col col-6>
+                <strong>{{'ATTEMPTED_JOB.Id' | translate}}</strong>
+            </ion-col>
+            <ion-col col-6>
+                <strong>{{'ATTEMPTED_JOB.Time' | translate}}</strong>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let job of offlineJobs" tappable (tap)="btnViewJob(job)">
+            <ion-col col-6>
+                {{job.jobId}}
+            </ion-col>
+            <ion-col col-6>
+                {{job.deliveryTime | date:'short'}}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12 no-padding>
+                <button ion-button full large color="primary" no-margin (tap)="btnSyncJobs()" [disabled]="!offlineJobs.length">
+                    <div>
+                        <ion-icon name="sync"></ion-icon>
+                        {{'PAGE.OFFLINE_SYNC.BtnConfirm' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

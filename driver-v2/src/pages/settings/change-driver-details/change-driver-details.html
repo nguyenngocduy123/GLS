@@ -1,0 +1,62 @@
+<ion-header *ngIf="isModal">
+    <ion-navbar>
+        <ion-title>{{'PAGE.CHANGE_DRIVER_DETAILS.Header' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="btnClose()">Close</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form class="form" [formGroup]='driverDetailsForm'>
+        <ion-list no-lines>
+            <ion-list-header>
+                {{'PAGE.SETTINGS.LoggedInAs' | translate}}:
+            </ion-list-header>
+
+            <ion-item-group>
+                <ion-item>
+                    <ion-icon item-start name="person"></ion-icon> {{driver.name}} ({{auth.username}})
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon item-start name="car"></ion-icon> {{driver.vehiclePlateNumber}}
+                </ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+                <ion-item>
+                    <ion-label stacked color="primary">
+                        {{'PAGE.CHANGE_DRIVER_DETAILS.PlateNumHeader' | translate}}
+                    </ion-label>
+                    <ion-input type="text" placeholder="{{'PAGE.CHANGE_DRIVER_DETAILS.PlateNumPlaceholder' | translate}}" [formControlName]="fields.newPlateNumber.name"
+                        (keyup.enter)="btnConfirm()" autocomplete="off" autocorrect="off" autocapitalize="off" clearInput></ion-input>
+                </ion-item>
+            </ion-item-group>
+
+            <ion-item text-wrap no-lines *ngIf="driverDetailsForm.get(fields.newPlateNumber.name).touched && !driverDetailsForm.get(fields.newPlateNumber.name).valid ">
+                <p ion-text color="red" *ngIf="driverDetailsForm.get(fields.newPlateNumber.name).hasError('required')">
+                    {{fields.newPlateNumber.message.required}}
+                </p>
+                <p ion-text color="red" *ngIf="driverDetailsForm.get(fields.newPlateNumber.name).hasError('pattern')">
+                    {{fields.newPlateNumber.message.pattern}}
+                </p>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>
+
+<ion-footer class="hide-on-keyboard-open">
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12 no-padding>
+                <button ion-button (click)="btnConfirm()" full large color="primary" no-margin type="submit" [disabled]="!driverDetailsForm.touched">
+                    <div>
+                        <ion-icon name="create"></ion-icon>
+                        {{'PAGE.CHANGE_DRIVER_DETAILS.BtnConfirm' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

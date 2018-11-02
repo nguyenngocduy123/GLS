@@ -1,0 +1,46 @@
+<div class="full-screen">
+    <mat-toolbar color="primary">
+        <button mat-icon-button color='warn' matDialogClose>
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <button mat-button mwlCalendarToday [(viewDate)]="viewDate">
+            Today
+        </button>
+
+        <button mat-icon-button mwlCalendarPreviousView view="month" [viewDate]="viewDate" (viewDateChange)='changeMonth($event)'
+            matTooltip='Previous Month'>
+            <mat-icon>navigate_before</mat-icon>
+        </button>
+
+        <button mat-icon-button mwlCalendarNextView view="month" [viewDate]="viewDate" (viewDateChange)='changeMonth($event)' matTooltip='Next Month'>
+            <mat-icon>navigate_next</mat-icon>
+        </button>
+
+        <span>
+            {{ viewDate | date:'MMMM yyyy' }}
+        </span>
+
+        <div flex></div>
+
+        <button mat-raised-button color="accent" [disabled]="!selectedDate" [matDialogClose]='selectedDate'>
+            Select {{selectedDate | date: 'dd MMM'}}</button>
+    </mat-toolbar>
+
+    <mwl-calendar-month-view *tdLoading="'planner-date-selection.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'"
+        [viewDate]="viewDate" [events]="events" (dayClicked)="dayClicked($event.day)" [cellTemplate]="customCellTemplate">
+    </mwl-calendar-month-view>
+</div>
+
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
+    <div layout='row' layout-spacing href="javascript:;">
+        <span flex>
+            <span flex [style.backgroundColor]="event.color.primary" [style.color]="event.color.textColor|| 'black'" class="mycal-event"
+                *ngFor="let event of day.events" [ngClass]="event?.cssClass">
+                {{event.title}}
+            </span>
+        </span>
+
+        <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+    </div>
+</ng-template>

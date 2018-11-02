@@ -1,0 +1,106 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header showDialog="true">{{'PAGE.SUMMARY.Header' | translate}}</vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <vrp-job-details [job]="job"></vrp-job-details>
+
+    <ion-list>
+        <ion-item-group>
+            <ion-list-header color="dark">
+                <ion-icon name="basket" item-start></ion-icon>
+                {{'PAGE.SUMMARY.ItemsDone' | translate}}?
+            </ion-list-header>
+            <ion-item text-wrap>
+                {{delivered ? 'Yes' : 'No'}}
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-list-header color="dark">
+                <ion-icon name="paper" item-start></ion-icon>
+                {{'JOB.NoteFromDriver' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap>
+                {{currentJob.noteOption}}
+                <br> {{currentJob.noteText}}
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-list-header color="dark">
+                <ion-icon name="photos" item-start></ion-icon>
+                {{'JOB.NotePhotos' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap>
+                <vrp-photos [photos]="currentJob.notePhotos" *ngIf="currentJob.notePhotos.length"></vrp-photos>
+            </ion-item>
+        </ion-item-group>
+
+        <ng-container *ngIf="delivered">
+            <ion-item-group>
+                <ion-list-header color="dark">
+                    <ion-icon name="create" item-start></ion-icon>
+                    {{'JOB.POD' | translate}}
+                </ion-list-header>
+                <ion-item text-wrap>
+                    <vrp-photos [photos]="[currentJob.podSignature, currentJob.podPhoto]"></vrp-photos>
+                </ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+                <ion-list-header color="dark">
+                    <ion-icon name="apps" item-start></ion-icon>
+                    {{'JOB.DeliveryItems' | translate}}
+                </ion-list-header>
+            </ion-item-group>
+
+            <ion-item-group *ngFor="let item of currentJob.items; let i = index">
+                <ion-item-divider text-wrap color="light">
+                    <ion-badge item-start>#{{i+1}}</ion-badge>
+                    <strong>
+                        {{item.name}}
+                    </strong>
+                </ion-item-divider>
+                <ion-item>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-5>
+                                {{'JOB.DeliveryItemsExpected' | translate}}:
+                            </ion-col>
+                            <ion-col col-7>
+                                {{item.expected}}
+                            </ion-col>
+                        </ion-row>
+
+                        <ion-row>
+                            <ion-col col-5>
+                                {{'JOB.DeliveryItemsActual' | translate}}:
+                            </ion-col>
+                            <ion-col col-7>
+                                {{item.actual}}
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-item>
+            </ion-item-group>
+        </ng-container>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12 no-padding>
+                <button ion-button full large color="primary" no-margin (tap)="btnDone()">
+                    <div>
+                        <ion-icon name="checkmark"></ion-icon>
+                        {{'BUTTON.Confirm' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

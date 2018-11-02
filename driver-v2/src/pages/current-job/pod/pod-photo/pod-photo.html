@@ -1,0 +1,41 @@
+<ion-content padding>
+    <ion-card full color="dark" *ngIf="!currentJob.podPhoto">
+        <ion-card-header>
+            <ion-icon item-start name="image"></ion-icon>
+            <strong>{{'PAGE.POD_PHOTO.PhotoOptional' | translate}}.</strong>
+        </ion-card-header>
+
+        <ion-card-content>
+            {{'PAGE.POD_PHOTO.CentraliseImage' | translate}}.
+        </ion-card-content>
+    </ion-card>
+
+    <ion-item *ngIf="currentJob.podPhoto">
+        <vrp-photos [photo]="currentJob.podPhoto"></vrp-photos>
+    </ion-item>
+
+    <ion-fab right bottom>
+        <button ion-fab color="orange" (tap)="btnTakePhoto()">
+            <ion-icon name="camera"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-6 no-padding>
+                <vrp-btn-clear (pressed)="btnClear()"></vrp-btn-clear>
+            </ion-col>
+
+            <ion-col col-6 no-padding>
+                <button ion-button full large color="secondary" no-margin (tap)="btnConfirm()">
+                    <div>
+                        <ion-icon name="return-right"></ion-icon>
+                        {{'BUTTON.Proceed' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header showDialog="true">{{'PAGE.ADD_NOTE.Header' | translate}}</vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header color="dark">
+            #{{job.DeliveryMasterId}}
+            <vrp-jobtype-label [jobtype]="job.JobType" item-end></vrp-jobtype-label>
+        </ion-list-header>
+
+        <ion-item-group>
+            <ion-item>
+                <ion-label stacked>{{'PAGE.ADD_NOTE.OptionHeader' | translate}}</ion-label>
+                <ion-select [(ngModel)]="currentJob.noteOption">
+                    <ion-option></ion-option>
+                    <ion-option *ngFor="let option of optionList">{{option}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{'PAGE.ADD_NOTE.FreeTextHeader' | translate}}</ion-label>
+                <ion-textarea rows="3" (keydown.enter)="false" [(ngModel)]="currentJob.noteText"></ion-textarea>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group *ngIf="maxNumNotePhotos">
+            <ion-item-divider text-wrap text-center>
+                <ion-icon name="photos"></ion-icon>
+                {{'PAGE.ADD_NOTE.NumNotesHeader' | translate}}:
+                <strong>{{currentJob.notePhotos.length}}</strong> / {{maxNumNotePhotos}}
+            </ion-item-divider>
+
+            <ion-item *ngIf="currentJob.notePhotos.length">
+                <vrp-photos [photos]="currentJob.notePhotos" allowRemove="true"></vrp-photos>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+
+    <ion-fab right bottom *ngIf="maxNumNotePhotos">
+        <button ion-fab color="orange" (tap)="btnAddPhoto()">
+            <ion-icon name="camera"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
+
+<ion-footer class="hide-on-keyboard-open">
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-6 no-padding>
+                <vrp-btn-clear (pressed)="btnClear()"></vrp-btn-clear>
+            </ion-col>
+
+            <ion-col col-6 no-padding>
+                <button ion-button full large color="secondary" no-margin (tap)="btnConfirm()">
+                    <div>
+                        <ion-icon name="return-right"></ion-icon>
+                        {{'BUTTON.Proceed' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

@@ -1,0 +1,13 @@
+<ion-badge color="dark">{{job.EngineRouteSeqNum}}</ion-badge>&nbsp;
+<vrp-jobtype-label [jobtype]="job.JobType"></vrp-jobtype-label> {{job.DeliveryMasterId}}
+<br> {{job.Address}}
+<br> Singapore {{job.Postal}}
+<br>
+<span *ngIf="!job.ActualDeliveryTime">
+    <ion-icon name="ios-clock-outline"></ion-icon>
+    <strong>{{job.StartTimeWindow | date:'shortTime'}} &mdash; {{job.EndTimeWindow | date:'shortTime'}}</strong>
+</span>
+<span *ngIf="job.ActualDeliveryTime">
+    <ion-icon name="checkmark"></ion-icon>
+    <strong>{{job.ActualDeliveryTime | date:'shortTime'}}</strong>
+</span>

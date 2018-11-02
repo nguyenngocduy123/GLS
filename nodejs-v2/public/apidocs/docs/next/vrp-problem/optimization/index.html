@@ -1,0 +1,462 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Optimization · (LM)2</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Reference"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Optimization · (LM)2"/><meta property="og:type" content="website"/><meta property="og:url" content="http://localhost/docs/index.html"/><meta property="og:description" content="## Reference"/><meta name="twitter:card" content="summary"/><meta name="robots" content="noindex"/><link rel="shortcut icon" href="/docs/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css"/><link rel="stylesheet" href="/css/custom.css"/><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/logo.png" alt="(LM)2"/><h2 class="headerTitleWithLogo">(LM)2</h2></a><a href="/docs/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/sitemap" target="_self">Sitemap</a></li><li class=""><a href="/docs/docs/next/integration/create-order" target="_self">Integration</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Problem</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General Information</h3><ul><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/problem-glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/problem-types">Problem Types</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/solution-types">Solution Types</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Problem</h3><ul><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/problem">Problem</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/geocode">Geocode</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/distance-matrix">Distance Matrix</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/next/vrp-problem/optimization">Optimization</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Optimization</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<p>Prefix the URLs with the server URL.</p>
+<p>For example:</p>
+<p><code>/web/data/v2.1/example/:id</code> =&gt; <a href="http://localhost/web/data/v2.1/example/:id">http://localhost/web/data/v2.1/example/:id</a></p>
+<table>
+<thead>
+<tr><th>I want to...</th><th>CSRF Enabled</th><th>API</th></tr>
+</thead>
+<tbody>
+<tr><td>Optimize a problem</td><td>Yes</td><td><a href="#post-web-problem-v2-optimize-problemid">POST <code>/web/problem/v2/optimize/:problemId</code></a></td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-web-problem-v2-optimize-problemid"></a><a href="#post-web-problem-v2-optimize-problemid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/web/problem/v2/optimize/:problemId</code></h2>
+<p>Do engine optimization on a problem</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info"></a><a href="#resource-info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response formats</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Admin, Default, Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="query-string"></a><a href="#query-string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query String</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>problemId</td><td>optional</td><td>String</td><td></td><td>_id of the problem</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body"></a><a href="#request-body" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>engine</td><td>required</td><td>String</td><td>chinh</td><td>Name of optimization solver to use. Accepted Values: <code>chinh</code>, <code>siwei</code></td></tr>
+<tr><td>solutionId</td><td>required</td><td>String</td><td>s_<code>MMDDYYYY[_]HHmm</code></td><td>Unique id of the solution to be returned</td></tr>
+<tr><td>nThreads</td><td>required</td><td>String</td><td>1</td><td>Maximum number of threads to be used during optimization. Recommend: Based on number of cores on the machine</td></tr>
+<tr><td>maxIterations</td><td>optional</td><td>Integer</td><td></td><td>Maximum iterations allowed. The larger the number, the slower the generation, but increase in accuracy is not guaranteed</td></tr>
+<tr><td>maxRunningTime</td><td>optional</td><td>Float</td><td></td><td><strong>Unit: Minutes.</strong> Maximum time the engine should run for. The engine will continue with the existing/final iteration before ending</td></tr>
+<tr><td>costModel</td><td>optional</td><td>String</td><td></td><td>Specify objective function cost model. Supported by <code>chinh</code> engine only</td></tr>
+<tr><td>enableMinJobPenalty</td><td>optional</td><td>Boolean</td><td>false</td><td>Indicates whether to pass <code>minJobPenalty</code> value to the engine</td></tr>
+<tr><td>minJobPenalty</td><td>optional</td><td>Float</td><td>0.3</td><td>Use objective function with component for minimizing variation of number of jobs between vehicles. Supported by <code>chinh</code> engine only</td></tr>
+<tr><td>sortByVehicleId</td><td>optional</td><td>Boolean</td><td></td><td>Assign jobs with a preference for vehicles with lower indexes. Supported by <code>chinh</code> engine only</td></tr>
+<tr><td>constraints</td><td>optional</td><td>String</td><td></td><td>List of constraints for engine. Concatenate strings using <code>_</code></td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>capacity</code> - Ensure orders assigned to vehicles fit into vehicle</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>timeWindow</code> - Ensure assigned vehicle arrive at order site within the order's time window of availability</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>priorityJob</code> - Higher preference for higher priority jobs to be assigned to vehicle compared to lower priority jobs</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>restrictJobsToSpecificVehicles</code> - If not specified, all vehicles are allowed to do any jobs. Allowed vehicles will be processed in the following sequence; allowed vehicle type, blocked vehicle type, allowed vehicles, blocked vehicles</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>consolidation</code> - Group all jobs with the same postal code and process as if it's one order</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>maxNumJob</code> - Limit number of jobs per vehicle</td></tr>
+<tr><td>isSaved</td><td>required</td><td>Boolean</td><td>true</td><td>Indicates whether to save solution into MongoDb based on <code>problem._id</code></td></tr>
+<tr><td>problem</td><td>required</td><td><a href="problem#request-body">Problem</a></td><td></td><td>Problem details</td></tr>
+<tr><td>dynamicSettings</td><td>optional</td><td>Object</td><td></td><td>Settings for dynamic optimisation</td></tr>
+<tr><td>dynamicSettings.mode</td><td>required</td><td>Integer</td><td></td><td>Only required by <code>siwei</code> engine. Accepted Values: <code>0</code>, <code>1</code>, <code>2</code></td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>0</code> - Evaluate solution without doing any optimisation</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>1</code> - Insert 1 service or shipment without changing original job sequence in the initial solution</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>2</code> - Insert 1 service or shipment, but the original job sequence may be modified</td></tr>
+<tr><td>dynamicSettings.initialSolId*</td><td>optional</td><td>String</td><td></td><td><code>_id</code> of the solution in <code>problem.solutions</code> to do dynamic optimisation on</td></tr>
+<tr><td>dynamicSettings.initialSolIndex*</td><td>optional</td><td>Integer</td><td></td><td>Array index of the solution in <code>problem.solutions</code> to do dynamic optimisation on</td></tr>
+<tr><td>dynamicSettings.initialSol*</td><td>optional</td><td><a href="problem-types#simplified">Solution</a></td><td></td><td>Entire, but simplified solution. Note: <code>problem.solutions</code> is not required if solution is specified here</td></tr>
+<tr><td>selectedVehicleIds</td><td>optional</td><td>String[]</td><td></td><td>Only optimise with this list of vehicles and ignore the rest</td></tr>
+<tr><td>selectedOrderIds</td><td>optional</td><td>String[]</td><td></td><td>Only optimise with this list of orders and ignore the rest</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-example"></a><a href="#request-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h3>
+<p><strong>Normal Optimization</strong></p>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/optimize/5bb1c088f52ea34c8949bff5</span>
+    {
+        <span class="hljs-string">"engine"</span>: <span class="hljs-string">"chinh"</span>,
+        <span class="hljs-string">"solutionId"</span>: <span class="hljs-string">"solution 1"</span>,
+        <span class="hljs-string">"nThreads"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-string">"maxIterations"</span>: <span class="hljs-number">500</span>,
+        <span class="hljs-string">"maxRunningTime"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-string">"costModel"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"enableMinJobPenalty"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"minJobPenalty"</span>: <span class="hljs-number">0.3</span>,
+        <span class="hljs-string">"sortByVehicleId"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"constraints"</span>: <span class="hljs-string">"capacity_timeWindow_vehicleBreak_restrictJobsToSpecificVehicles_priorityJob"</span>,
+        <span class="hljs-string">"isSaved"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"problem"</span>: {
+            <span class="hljs-string">"fleet_size"</span>: <span class="hljs-string">"FINITE"</span>,
+            <span class="hljs-string">"coord_mode"</span>: <span class="hljs-string">"REAL"</span>,
+            <span class="hljs-string">"vehicle_types"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"Van"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"vehicles"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+                <span class="hljs-string">"type_id"</span>: <span class="hljs-string">"Van"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"items"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"weight"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"services"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 1"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"shipments"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 2"</span>,
+                <span class="hljs-comment">// ...</span>
+            }]
+        }
+    }
+</code></pre>
+<p><strong>Dynamic Optimization by <code>initialSolId</code></strong></p>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/optimize/5bb1c088f52ea34c8949bff5</span>
+    {
+        <span class="hljs-string">"engine"</span>: <span class="hljs-string">"chinh"</span>,
+        <span class="hljs-string">"nThreads"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-string">"maxIterations"</span>: <span class="hljs-number">500</span>,
+        <span class="hljs-string">"maxRunningTime"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-string">"costModel"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"enableMinJobPenalty"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"minJobPenalty"</span>: <span class="hljs-number">0.3</span>,
+        <span class="hljs-string">"sortByVehicleId"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"constraints"</span>: <span class="hljs-string">"capacity_timeWindow_vehicleBreak_restrictJobsToSpecificVehicles_priorityJob"</span>,
+        <span class="hljs-string">"isSaved"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"problem"</span>: {
+            <span class="hljs-string">"fleet_size"</span>: <span class="hljs-string">"FINITE"</span>,
+            <span class="hljs-string">"coord_mode"</span>: <span class="hljs-string">"REAL"</span>,
+            <span class="hljs-string">"vehicle_types"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"Van"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"vehicles"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+                <span class="hljs-string">"type_id"</span>: <span class="hljs-string">"Van"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"items"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"weight"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"services"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 3"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"solutions"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"solution 1"</span>,
+                <span class="hljs-comment">// ...</span>
+            }]
+        },
+        <span class="hljs-string">"dynamicSettings"</span>: {
+            <span class="hljs-string">"initialSolId"</span>: <span class="hljs-string">"solution 1"</span>
+        }
+    }
+</code></pre>
+<p><strong>Dynamic Optimization by <code>initialSolIndex</code></strong></p>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/optimize/5bb1c088f52ea34c8949bff5</span>
+    {
+        <span class="hljs-string">"engine"</span>: <span class="hljs-string">"chinh"</span>,
+        <span class="hljs-string">"nThreads"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-string">"maxIterations"</span>: <span class="hljs-number">500</span>,
+        <span class="hljs-string">"maxRunningTime"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-string">"costModel"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"enableMinJobPenalty"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"minJobPenalty"</span>: <span class="hljs-number">0.3</span>,
+        <span class="hljs-string">"sortByVehicleId"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"constraints"</span>: <span class="hljs-string">"capacity_timeWindow_vehicleBreak_restrictJobsToSpecificVehicles_priorityJob"</span>,
+        <span class="hljs-string">"isSaved"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"problem"</span>: {
+            <span class="hljs-string">"services"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 3"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-string">"solutions"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"solution 1"</span>,
+                <span class="hljs-comment">// ...</span>
+            }, {
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"solution 2"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-comment">// ...</span>
+        },
+        <span class="hljs-string">"dynamicSettings"</span>: {
+            <span class="hljs-string">"initialSolIndex"</span>: <span class="hljs-number">0</span> <span class="hljs-comment">// i.e. solution 1</span>
+        }
+    }
+</code></pre>
+<p><strong>Dynamic Optimization by <code>initialSol</code></strong></p>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/optimize/5bb1c088f52ea34c8949bff5</span>
+    {
+        <span class="hljs-string">"engine"</span>: <span class="hljs-string">"chinh"</span>,
+        <span class="hljs-string">"nThreads"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-string">"maxIterations"</span>: <span class="hljs-number">500</span>,
+        <span class="hljs-string">"maxRunningTime"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-string">"costModel"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"enableMinJobPenalty"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"minJobPenalty"</span>: <span class="hljs-number">0.3</span>,
+        <span class="hljs-string">"sortByVehicleId"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"constraints"</span>: <span class="hljs-string">"capacity_timeWindow_vehicleBreak_restrictJobsToSpecificVehicles_priorityJob"</span>,
+        <span class="hljs-string">"isSaved"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"problem"</span>: {
+            <span class="hljs-string">"services"</span>: [{
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 3"</span>,
+                <span class="hljs-comment">// ...</span>
+            }],
+            <span class="hljs-comment">// ...</span>
+        },
+        <span class="hljs-string">"dynamicSettings"</span>: {
+            <span class="hljs-string">"initialSol"</span>: {
+                <span class="hljs-string">"routes"</span>: [{
+                    <span class="hljs-string">"vehicle_id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+                    <span class="hljs-string">"act"</span>: [{
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"service"</span>,
+                        <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 1"</span>,
+                        <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"delivery"</span>
+                    }, {
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"shipment"</span>,
+                        <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                        <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"pickup"</span>
+                    }, {
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"shipment"</span>,
+                        <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                        <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"delivery"</span>
+                    }]
+                }]
+            }
+        }
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response"></a><a href="#success-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<p>Note: Values based on distance and time are estimated based on the map data provided.</p>
+<p><code>costs</code>, <code>time</code> and <code>distance</code> values are for entire plan.</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>required</td><td>String</td><td></td><td>Solution identifier</td></tr>
+<tr><td>costs</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Dollars.</strong> Total cost</td></tr>
+<tr><td>fixed_costs</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Dollars.</strong> Total fixed cost</td></tr>
+<tr><td>variable_costs</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Dollars.</strong> Total variable (dependent) cost</td></tr>
+<tr><td>distance</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Meters.</strong> Total distance covered</td></tr>
+<tr><td>time</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Seconds.</strong> Total time required</td></tr>
+<tr><td>waiting_time</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Seconds.</strong> Total waiting time</td></tr>
+<tr><td>service_time</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Seconds.</strong> Total service time</td></tr>
+<tr><td>transport_time</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Seconds.</strong> Total travel time</td></tr>
+<tr><td>no_deliveries</td><td>required</td><td>Integer</td><td></td><td>Total number of delivery jobs</td></tr>
+<tr><td>no_pickups</td><td>required</td><td>Integer</td><td></td><td>Total number of pickup jobs</td></tr>
+<tr><td>no_unassigned_jobs</td><td>required</td><td>Integer</td><td></td><td>Total number of <code>unassigned_jobs</code></td></tr>
+<tr><td>unassigned_jobs</td><td>required</td><td>String[]</td><td></td><td>List of jobs <code>id</code> that are unable to be served</td></tr>
+<tr><td>unassigned_reasons</td><td>required</td><td>Object[]</td><td></td><td>List of jobs with the reasons on why job is unable to be served</td></tr>
+<tr><td>unassigned_reasons[].job_id</td><td>optional</td><td>String</td><td></td><td><a href="problem-types#service">Service</a> or <a href="#problem-types#shipment">Shipment</a> <code>id</code></td></tr>
+<tr><td>unassigned_reasons[].reason</td><td>optional</td><td>String</td><td></td><td>Reason for unassigned order</td></tr>
+<tr><td>ignored</td><td>optional</td><td>Object</td><td></td><td>List of properties that were ignored</td></tr>
+<tr><td>ignored.vehicles</td><td>optional</td><td>Object</td><td></td><td>Details of ignored vehicles</td></tr>
+<tr><td>ignored.vehicles.list</td><td>optional</td><td>String[]</td><td></td><td>List of vehicles <code>id</code> that were ignored</td></tr>
+<tr><td>ignored.vehicles.reasons</td><td>optional</td><td>Object[]</td><td></td><td>List of vehicles with reasons on why job is ignored (i.e. not passed to engine)</td></tr>
+<tr><td>ignored.vehicles.reasons[].vehicle_id</td><td>optional</td><td>String</td><td></td><td><a href="problem-types#vehicle">Vehicle</a> <code>id</code></td></tr>
+<tr><td>ignored.vehicles.reasons[].reason</td><td>optional</td><td>String</td><td></td><td>Reason for ignored vehicle</td></tr>
+<tr><td>ignored.jobs</td><td>optional</td><td>Object</td><td></td><td>Details of ignored orders</td></tr>
+<tr><td>ignored.jobs.list</td><td>optional</td><td>String[]</td><td></td><td>List of <a href="problem-types#service">Service</a> or <a href="#problem-types#shipment">Shipment</a> <code>id</code> that were ignored</td></tr>
+<tr><td>ignored.jobs.reasons</td><td>optional</td><td>Object[]</td><td></td><td>List of <a href="problem-types#service">Service</a> or <a href="#problem-types#shipment">Shipment</a> <code>id</code> with reasons on why job is ignored (i.e. not passed to engine)</td></tr>
+<tr><td>ignored.jobs.reasons[].vehicle_id</td><td>optional</td><td>String</td><td></td><td><a href="problem-types#service">Service</a> or <a href="#problem-types#shipment">Shipment</a> <code>id</code></td></tr>
+<tr><td>ignored.jobs.reasons[].reason</td><td>optional</td><td>String</td><td></td><td>Reason for ignored order</td></tr>
+<tr><td>calc_duration</td><td>required</td><td>Float</td><td></td><td><strong>Unit: Seconds.</strong> Time taken to generate a solution</td></tr>
+<tr><td>calc_date</td><td>required</td><td>String</td><td></td><td>Date that solution is generated on in ISO8601 format</td></tr>
+<tr><td>no_routes</td><td>required</td><td>Integer</td><td></td><td>Total number of routes</td></tr>
+<tr><td>routes</td><td>required</td><td><a href="solution-types#route">Route[]</a></td><td></td><td>List of routes</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example"></a><a href="#success-response-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/optimize/5bb1c088f52ea34c8949bff5</span>
+    {
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"s_181002_130428"</span>,
+        <span class="hljs-string">"costs"</span>: <span class="hljs-number">133.95090799581686</span>,
+        <span class="hljs-string">"fixed_costs"</span>: <span class="hljs-number">100</span>,
+        <span class="hljs-string">"variable_costs"</span>: <span class="hljs-number">33.95090799581686</span>,
+        <span class="hljs-string">"distance"</span>: <span class="hljs-number">2909.079956</span>,
+        <span class="hljs-string">"time"</span>: <span class="hljs-number">22500</span>,
+        <span class="hljs-string">"waiting_time"</span>: <span class="hljs-number">18754.41255879402</span>,
+        <span class="hljs-string">"service_time"</span>: <span class="hljs-number">2700</span>,
+        <span class="hljs-string">"transport_time"</span>: <span class="hljs-number">1045.5874412059784</span>,
+        <span class="hljs-string">"no_deliveries"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">"no_pickups"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"no_unassigned_jobs"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"unassigned_jobs"</span>: [],
+        <span class="hljs-string">"unassigned_reasons"</span>: [],
+        <span class="hljs-string">"calc_duration"</span>: <span class="hljs-number">1.009</span>,
+        <span class="hljs-string">"calc_date"</span>: <span class="hljs-string">"2018-01-01T01:00:00.000Z"</span>,
+        <span class="hljs-string">"no_routes"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"routes"</span>: [{
+            <span class="hljs-string">"vehicle_id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+            <span class="hljs-string">"fixed_costs"</span>: <span class="hljs-number">100</span>,
+            <span class="hljs-string">"variable_costs"</span>: <span class="hljs-number">33.95090799581686</span>,
+            <span class="hljs-string">"distance"</span>: <span class="hljs-number">2909.079956</span>,
+            <span class="hljs-string">"transport_time"</span>: <span class="hljs-number">1045.5874412059784</span>,
+            <span class="hljs-string">"no_activities"</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-string">"start_time"</span>: <span class="hljs-string">"2018-01-01T13:00+08:00"</span>,
+            <span class="hljs-string">"end_time"</span>: <span class="hljs-string">"2018-01-01T19:15+08:00"</span>,
+            <span class="hljs-string">"max_load"</span>: [<span class="hljs-number">200</span>],
+            <span class="hljs-string">"act"</span>: [{
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"pickup"</span>,
+                <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"shipment"</span>,
+                <span class="hljs-string">"arr_time"</span>: <span class="hljs-string">"2018-01-01T13:08+08:00"</span>,
+                <span class="hljs-string">"end_time"</span>: <span class="hljs-string">"2018-01-01T13:23+08:00"</span>,
+                <span class="hljs-string">"waiting_time"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"operation_time"</span>: <span class="hljs-number">900</span>,
+                <span class="hljs-string">"theoretical_earliest_start_time"</span>: <span class="hljs-string">"2018-01-01T10:00+08:00"</span>,
+                <span class="hljs-string">"theoretical_latest_start_time"</span>: <span class="hljs-string">"2018-01-01T18:00+08:00"</span>,
+                <span class="hljs-string">"distance"</span>: <span class="hljs-number">1511.348267</span>,
+                <span class="hljs-string">"last_distance"</span>: <span class="hljs-number">1511.348267</span>,
+                <span class="hljs-string">"last_transport_time"</span>: <span class="hljs-number">529.0526778697968</span>,
+                <span class="hljs-string">"transport_time"</span>: <span class="hljs-number">529.0526778697968</span>,
+                <span class="hljs-string">"load_before"</span>: [<span class="hljs-number">100</span>],
+                <span class="hljs-string">"load_after"</span>: [<span class="hljs-number">200</span>],
+                <span class="hljs-string">"capacity_violation_after"</span>: [<span class="hljs-number">0</span>],
+                <span class="hljs-string">"job_time_window"</span>: [{
+                    <span class="hljs-string">"start"</span>: <span class="hljs-string">"2018-01-01T02:00:00.000Z"</span>,
+                    <span class="hljs-string">"end"</span>: <span class="hljs-string">"2018-01-01T10:00:00.000Z"</span>
+                }],
+                <span class="hljs-string">"address"</span>: {
+                    <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018985"</span>,
+                    <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.28076943504</span>,
+                    <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.852658562</span>,
+                    <span class="hljs-string">"id"</span>: <span class="hljs-string">"id-1.28076943504-103.852658562"</span>
+                },
+                <span class="hljs-string">"job_name"</span>: <span class="hljs-string">"customer 2"</span>,
+                <span class="hljs-string">"job_size"</span>: [<span class="hljs-number">100</span>]
+            },
+            {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"delivery"</span>,
+                <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 1"</span>,
+                <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"service"</span>,
+                <span class="hljs-string">"arr_time"</span>: <span class="hljs-string">"2018-01-01T13:23+08:00"</span>,
+                <span class="hljs-string">"end_time"</span>: <span class="hljs-string">"2018-01-01T13:38+08:00"</span>,
+                <span class="hljs-string">"waiting_time"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"operation_time"</span>: <span class="hljs-number">900</span>,
+                <span class="hljs-string">"theoretical_earliest_start_time"</span>: <span class="hljs-string">"2018-01-01T10:00+08:00"</span>,
+                <span class="hljs-string">"theoretical_latest_start_time"</span>: <span class="hljs-string">"2018-01-01T18:00+08:00"</span>,
+                <span class="hljs-string">"distance"</span>: <span class="hljs-number">1511.348267</span>,
+                <span class="hljs-string">"last_distance"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"last_transport_time"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"transport_time"</span>: <span class="hljs-number">529.0526778697968</span>,
+                <span class="hljs-string">"load_before"</span>: [<span class="hljs-number">200</span>],
+                <span class="hljs-string">"load_after"</span>: [<span class="hljs-number">100</span>],
+                <span class="hljs-string">"capacity_violation_after"</span>: [<span class="hljs-number">0</span>],
+                <span class="hljs-string">"job_time_windows"</span>: [{
+                    <span class="hljs-string">"start"</span>: <span class="hljs-string">"2018-01-01T02:00:00.000Z"</span>,
+                    <span class="hljs-string">"end"</span>: <span class="hljs-string">"2018-01-01T10:00:00.000Z"</span>
+                }],
+                <span class="hljs-string">"address"</span>: {
+                    <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018985"</span>,
+                    <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.28076943504</span>,
+                    <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.852658562</span>,
+                    <span class="hljs-string">"id"</span>: <span class="hljs-string">"id-1.28076943504-103.852658562"</span>
+                },
+                <span class="hljs-string">"job_name"</span>: <span class="hljs-string">"customer 1"</span>,
+                <span class="hljs-string">"job_size"</span>: [<span class="hljs-number">100</span>]
+            },
+            {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"delivery"</span>,
+                <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"shipment"</span>,
+                <span class="hljs-string">"arr_time"</span>: <span class="hljs-string">"2018-01-01T13:47+08:00"</span>,
+                <span class="hljs-string">"end_time"</span>: <span class="hljs-string">"2018-01-01T19:15+08:00"</span>,
+                <span class="hljs-string">"waiting_time"</span>: <span class="hljs-number">18754.41255879402</span>,
+                <span class="hljs-string">"operation_time"</span>: <span class="hljs-number">900</span>,
+                <span class="hljs-string">"theoretical_earliest_start_time"</span>: <span class="hljs-string">"2018-01-01T19:00+08:00"</span>,
+                <span class="hljs-string">"theoretical_latest_start_time"</span>: <span class="hljs-string">"2018-01-01T21:00+08:00"</span>,
+                <span class="hljs-string">"distance"</span>: <span class="hljs-number">2909.079956</span>,
+                <span class="hljs-string">"last_distance"</span>: <span class="hljs-number">1397.731689</span>,
+                <span class="hljs-string">"last_transport_time"</span>: <span class="hljs-number">516.5347633361816</span>,
+                <span class="hljs-string">"transport_time"</span>: <span class="hljs-number">1045.5874412059784</span>,
+                <span class="hljs-string">"load_before"</span>: [<span class="hljs-number">100</span>],
+                <span class="hljs-string">"load_after"</span>: [<span class="hljs-number">0</span>],
+                <span class="hljs-string">"capacity_violation_after"</span>: [<span class="hljs-number">0</span>],
+                <span class="hljs-string">"job_time_windows"</span>: [{
+                    <span class="hljs-string">"start"</span>: <span class="hljs-string">"2018-01-01T11:00:00.000Z"</span>,
+                    <span class="hljs-string">"end"</span>: <span class="hljs-string">"2018-01-01T13:00:00.000Z"</span>
+                }],
+                <span class="hljs-string">"job_name"</span>: <span class="hljs-string">"customer 2"</span>,
+                <span class="hljs-string">"job_size"</span>: [<span class="hljs-number">100</span>]
+            }],
+            <span class="hljs-string">"id"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"start_address"</span>: {
+                <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018906"</span>,
+                <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.27582919242</span>,
+                <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.849576389</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"id-1.27582919242-103.849576389"</span>
+            }
+        }]
+    }
+</code></pre>
+<p><strong>Example of Unassigned Orders</strong></p>
+<pre><code class="hljs css language-js">    {
+        <span class="hljs-string">"unassigned_reasons"</span>: [{
+            <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 1"</span>,
+            <span class="hljs-string">"reason"</span>: <span class="hljs-string">"does not fit into any vehicle due to capacity"</span>
+        }],
+        <span class="hljs-comment">// ...</span>
+    }
+</code></pre>
+<p><strong>Example of Ignored Orders/Vehicles</strong></p>
+<pre><code class="hljs css language-js">    {
+        <span class="hljs-string">"ignored"</span>: {
+            <span class="hljs-string">"jobs"</span>: {
+                <span class="hljs-string">"list"</span>: [<span class="hljs-string">"order 1"</span>],
+                <span class="hljs-string">"reasons"</span>: [{
+                    <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 1"</span>,
+                    <span class="hljs-string">"reason"</span>: <span class="hljs-string">"service address is invalid"</span>
+                }]
+            },
+            <span class="hljs-string">"vehicles"</span>: {
+                <span class="hljs-string">"list"</span>: [<span class="hljs-string">"vehicle 1"</span>],
+                <span class="hljs-string">"reasons"</span>: [{
+                    <span class="hljs-string">"vehicle_id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+                    <span class="hljs-string">"reason"</span>: <span class="hljs-string">"vehicle id not in selectedVehicleIds list"</span>
+                }]
+            }
+        },
+        <span class="hljs-comment">// ...</span>
+    }
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/next/vrp-problem/distance-matrix">← Distance Matrix</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#reference">Reference</a></li><li><a href="#post-web-problem-v2-optimize-problemid">POST <code>/web/problem/v2/optimize/:problemId</code></a><ul class="toc-headings"><li><a href="#resource-info">Resource Info</a></li><li><a href="#query-string">Query String</a></li><li><a href="#request-body">Request Body</a></li><li><a href="#request-example">Request Example</a></li><li><a href="#success-response">Success Response</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/logo.png" alt="(LM)2" width="66" height="58"/></a><div><h5>Quick References</h5><a href="/docs/docs/vrp-user/authentication">User</a><a href="/docs/docs/vrp-data/general-information">Data</a><a href="/docs/docs/vrp-message/message">Message Box</a><a href="/docs/docs/vrp-map-service/postal">Map</a><a href="/docs/docs/vrp-problem/problem">Problem</a></div><div><h5>Help</h5><a href="/docs/docs/integration/create-order">How to integrate</a></div><div><h5>Contact</h5><div class="footer-text"><p>For documentation-related queries, email to tandzj@simtech.a-star.edu.sg</p><p>For all other issues, email to simtech.pom.msa@gmail.com</p></div></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Singapore Institute of Manufacturing Technology (SIMTech)</section></footer></div></body></html>

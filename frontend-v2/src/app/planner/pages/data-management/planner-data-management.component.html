@@ -1,0 +1,55 @@
+<td-layout-nav toolbarTitle="Data Management">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="end center" flex>
+        <vrp-planner-date-range-selection class='pad-left' *ngIf='tableName==="DeliveryDetail"' [range]='jobQuery' (rangeChange)='onDateRangeChange($event)'></vrp-planner-date-range-selection>
+
+        <span flex></span>
+
+        <nav layout="row">
+            <ng-template let-item ngFor [ngForOf]="tableList">
+                <a class="push-right text-nodecoration text-upper text-sm" [routerLinkActive]="['active']" [routerLink]="[]" [queryParams]="{tableName:item.name}">{{item.label
+                    || item.name}}</a>
+            </ng-template>
+            <a class="push-right text-nodecoration text-upper text-sm" [routerLinkActive]="['active']" [routerLink]="[]" [queryParams]="{tableName:'Postal'}">Postal</a>
+        </nav>
+
+        <vrp-planner-notification-box></vrp-planner-notification-box>
+
+        <button mat-icon-button matTooltip="Reload" (click)='refresh()'>
+            <mat-icon>refresh</mat-icon>
+        </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
+
+    <div flex [ngSwitch]="tableName" *tdLoading="'planner-data-management.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+        <vrp-table *ngSwitchDefault #vrpTable [id]='"tablePlannerData_"+tableName' [columns]="columns[tableName]" [data]="tableData[tableName]"
+            [tableHeight]="tableHeight" [selectActions]='tableSelectActions' [tableActions]='tableActions' [itemActions]='tableItemActions'></vrp-table>
+
+        <div *ngSwitchCase="'Postal'" layout-fill [style.height.px]='innerHeight'>
+            <vrp-search-location></vrp-search-location>
+        </div>
+    </div>
+
+    <!-- <a mat-fab color="accent" matTooltip="Add New Record" matTooltipPosition="before" class="mat-fab-bottom-right z-3 fixed fab-pad" (click)="addItem()"><mat-icon>add</mat-icon></a> -->
+</td-layout-nav>
+
+<mat-menu x-position="before" y-position="below" #menu="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item (click)="itemMenu.click()" *ngFor="let itemMenu of toolbarDropdownMenu">
+        <mat-icon>{{itemMenu.icon}}</mat-icon> {{itemMenu.label}}
+    </a>
+</mat-menu>
+
+<!--
+<mat-menu #menuTableSelection="matMenu" [overlapTrigger]="false">
+    <ng-template let-itemMenu ngFor [ngForOf]="toolbarDropdownMenu" let-item>
+        <a mat-menu-item  [routerLink]="[]" [queryParams]="{tableName:itemMenu}">
+                <mat-icon>{{itemMenu === tableName?'check':''}}</mat-icon> {{itemMenu}}
+        </a>
+    </ng-template>
+</mat-menu> -->

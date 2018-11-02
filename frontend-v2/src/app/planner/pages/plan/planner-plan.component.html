@@ -1,0 +1,38 @@
+<td-layout-nav toolbarTitle="Plan">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="end center" flex>
+        <vrp-planner-date-navigator [viewDate]="viewDate" (viewDateChange)='changeQueryParams({viewDate:$event.toISODate()})' (dateClick)="openDateSelection()"></vrp-planner-date-navigator>
+        <span flex></span>
+
+        <button mat-raised-button color='warn' [disabled]="!selectedSol || selectedSol.approved ? true : false" (click)="approveSolution(selectedSol)">
+            Approve
+        </button>
+
+        <button mat-icon-button matTooltip='Optimize' (click)="createOptimalSolution()">
+            <mat-icon>desktop_mac</mat-icon>
+        </button>
+
+        <button mat-icon-button matTooltip="Reload" (click)="refresh()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
+
+    <div [style.height.px]='innerHeight' *tdLoading="'planner-plan.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+        <vrp-solution-detail #vrpSolution [problem]='problem' (onSolutionOpened)="selectedSol=$event" (onOptimizationEnd)='onOptimizationEnd($event)'
+            (onCreateSolutionWithInitial)='createOptimalSolution($event) ' (onCreateSolutionWithTurnOver)='createOptimalSolution($event,true) '
+            (onJobDetailsOpened)='openOrderDetailById($event)'></vrp-solution-detail>
+    </div>
+</td-layout-nav>
+
+<mat-menu x-position="before" y-position="below" #menu="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item (click)="itemMenu.click()" *ngFor="let itemMenu of toolbarDropdownMenu">
+        <mat-icon>{{itemMenu.icon}}</mat-icon> {{itemMenu.label}}
+    </a>
+</mat-menu>

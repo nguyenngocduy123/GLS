@@ -1,0 +1,15 @@
+<div class="full-screen">
+    <mat-toolbar color="primary">
+        <button mat-icon-button color='warn' matDialogClose>
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <h4>{{title}} ({{tableData.length}})</h4>
+
+        <span flex></span>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+
+    <vrp-table [columns]="tableColumn" [data]="tableData" [tableHeight]="tableHeight" [itemActions]="tableItemActions" selectable=false></vrp-table>
+</div>

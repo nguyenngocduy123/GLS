@@ -1,0 +1,58 @@
+<ion-content>
+    <ion-list no-lines>
+        <ion-item-group text-center>
+            <h1>
+                <ion-icon large name="megaphone"></ion-icon>
+                <br> {{'PAGE.PERMISSION.Header' | translate}}
+            </h1>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-item text-wrap>
+                {{'PAGE.PERMISSION.PageReason' | translate}}.
+                <span ion-text color="danger">{{'PAGE.PERMISSION.ClickAllow' | translate}}.</span>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <button ion-item text-wrap (tap)="btnEnableLocation()">
+                <ion-icon name="pin" item-start></ion-icon>
+                <strong>{{'PAGE.PERMISSION.Location' | translate}}</strong>
+                <ion-badge color="primary">{{'Required' | translate}}</ion-badge>
+                <br> {{'PAGE.PERMISSION.LocationReason' | translate}}.
+                <ion-icon item-end name="checkmark-circle" *ngIf="permission.location"></ion-icon>
+                <ion-icon item-end name="close-circle" *ngIf="!permission.location"></ion-icon>
+            </button>
+        </ion-item-group>
+
+        <ion-item-group>
+            <button ion-item text-wrap (tap)="btnEnableCamera()">
+                <ion-icon name="camera" item-start></ion-icon>
+                <strong>{{'PAGE.PERMISSION.Camera' | translate}}</strong>
+                <ion-badge color="secondary">{{'Optional' | translate}}</ion-badge>
+                <br> {{'PAGE.PERMISSION.CameraReason' | translate}}.
+                <ion-icon item-end name="checkmark-circle" *ngIf="permission.camera"></ion-icon>
+                <ion-icon item-end name="close-circle" *ngIf="!permission.camera"></ion-icon>
+            </button>
+        </ion-item-group>
+
+        <ion-item-group *ngIf="specs">
+            <ion-item text-wrap>
+                <strong>{{'Note' | translate}}:</strong> {{'PAGE.PERMISSION.Suggestion' | translate: ({ os: specs.text, version:
+                diagnostic.deviceVersion, recommend: specs.recommend })}}.
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12 no-padding>
+                <button ion-button full large color="primary" no-margin (tap)="btnContinue()">
+                    {{'BUTTON.Continue' | translate}}
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

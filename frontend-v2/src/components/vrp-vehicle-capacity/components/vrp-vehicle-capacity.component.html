@@ -1,0 +1,15 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        Capacity
+    </mat-expansion-panel-header>
+
+    <div *ngFor='let w of items; let i=index'>
+        <mat-form-field flex='40'>
+            <input matInput placeholder="Item" readonly [(ngModel)]='items[i]'>
+        </mat-form-field>
+
+        <mat-form-field flex='40'>
+            <input matInput placeholder="Quantity" type="number" [(ngModel)]="_capacity[i]" (input)="onChange()">
+        </mat-form-field>
+    </div>
+</mat-expansion-panel>

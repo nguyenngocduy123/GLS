@@ -1,0 +1,15 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.graphhopper.jsprit.core" level="info"/>
+  <logger name="simtech.vrp.jsprit.RoutePlanner" level="TRACE"/>
+  <logger name="simtech.vrp.jsprit.util" level="error"/>  
+  <logger name="simtech.vrp.jsprit.constraint.RestrictJobsToSpecificVehicles" level="info"/>
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

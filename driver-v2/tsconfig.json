@@ -1,0 +1,35 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "module": "es2015",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "target": "es5",
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "socket.io-client"
+        ],
+        "noUnusedParameters": false,
+        "noUnusedLocals": false,
+        "allowUnreachableCode": false,
+        "pretty": true,
+        "allowSyntheticDefaultImports": true,
+    },
+    "exclude": [
+        "node_modules",
+		"platforms",
+		"plugins",
+        "resources",
+        "dist*",
+		"www"
+    ]
+}

@@ -1,0 +1,13 @@
+
+.title {
+    font-size: 16px;
+    letter-spacing: 0.005em;
+    color: black;
+    font-weight: bold;
+}
+
+
+.summary-container {
+    height: calc(100vh - 80px); 
+    overflow:scroll;
+}

@@ -1,0 +1,28 @@
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col text-center>
+                <h1>
+                    <ion-icon large name="information-circle"></ion-icon>
+                    <br> {{'PAGE.CHECK_APP_VERSION.Header' | translate}}
+                </h1>
+                <img [src]="img.path" [attr.height]="img.height">
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col text-center>
+                {{'PAGE.CHECK_APP_VERSION.AppExpired' | translate}}.
+                <br> {{'PAGE.CHECK_APP_VERSION.GoDownload' | translate: ({store: appstore})}}.
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col text-center>
+                <button ion-button round icon-right (tap)="btnRedirect()">
+                    <ion-icon name="appstore"></ion-icon>&nbsp;&nbsp; {{'PAGE.CHECK_APP_VERSION.BtnUpdateApp' | translate}}
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

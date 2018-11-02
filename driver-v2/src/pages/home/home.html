@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header>
+            <div [innerHTML]="headerText"></div>
+        </vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid no-padding no-margin>
+        <ion-row>
+            <ion-col>
+                <vrp-progress-bar [jobs]="driver.jobs"></vrp-progress-bar>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col tappable (tap)="btnDoJob()">
+                <vrp-job-details [job]="driver.currentJob" *ngIf="driver.currentJob"></vrp-job-details>
+
+                <ion-list *ngIf="!driver.currentJob">
+                    <ion-list-header color="dark">
+                        {{'Done' | translate}}!
+                    </ion-list-header>
+
+                    <ion-item text-wrap>
+                        <ion-icon name="thumbs-up" item-start></ion-icon>
+                        {{'PAGE.HOME.AllDone' | translate}}!
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-6 no-padding>
+                <button ion-button full large color="green" no-margin (tap)="btnSettings()">
+                    <div>
+                        <ion-icon name="settings"></ion-icon>
+                        {{'BUTTON.Settings' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+
+            <ion-col col-6 no-padding>
+                <button ion-button full large color="blue" no-margin (tap)="btnAllJobs()">
+                    <div>
+                        <ion-icon name="list"></ion-icon>
+                        {{'BUTTON.All Jobs' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

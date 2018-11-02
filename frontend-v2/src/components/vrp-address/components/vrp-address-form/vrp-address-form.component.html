@@ -1,0 +1,28 @@
+<div layout='row'>
+    <mat-form-field flex>
+        <input matInput placeholder="Address" type="text" [(ngModel)]="_address.address">
+    </mat-form-field>
+</div>
+
+<div layout="row" layout-margin>
+    <mat-form-field flex>
+        <input flex matInput #elementPostal #userControl="ngModel" placeholder="Postal" type="text" maxlength="6"
+            minlength="6" [(ngModel)]="_address.postal" (ngModelChange)="postalChanged($event)">
+        <mat-hint align="end"> {{elementPostal.value.length}}/6</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field flex>
+        <input #elementLat matInput [(ngModel)]="_address.lat" placeholder="Lattitude" type='number' min="-90" max="90"
+            required>
+    </mat-form-field>
+
+    <mat-form-field flex>
+        <input #elementLon matInput [(ngModel)]="_address.lng" placeholder="Longitude" type='number' min="-180" max="180"
+            required>
+    </mat-form-field>
+</div>
+
+<div layout="row">
+    <button flex mat-button color='primary' matTooltip='Undo' (click)='cancel()'>CANCEL</button>
+    <button flex mat-button color='accent' matTooltip='Save' (click)='save()'>SAVE</button>
+</div>

@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header>{{'PAGE.COMPLETE_JOB_SUMMARY.Header' | translate}}</vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <vrp-job-details [job]="job" showItems="true"></vrp-job-details>
+
+    <ion-list *ngIf="jobAttemptedBefore">
+        <ion-item-group>
+            <ion-list-header color="dark">
+                <ion-icon name="clipboard" item-start></ion-icon>
+                {{'JOB.Status' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap>
+                <div ion-text [color]="statusColor" [innerText]="statusText"></div>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-list-header color="dark">
+                <ion-icon name="paper" item-start></ion-icon>
+                {{'JOB.NoteFromDriver' | translate}}
+
+            </ion-list-header>
+            <ion-item text-wrap>
+                <vrp-jobnote-label [notes]="job.NoteFromDriver"></vrp-jobnote-label>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-list-header color="dark">
+                <ion-icon name="photos" item-start></ion-icon>
+                {{'JOB.NotePhotos' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap text-center *ngIf="!notePhotos">
+                <button class="viewBtns" ion-button full round color="secondary" [disabled]="disableBtnNotePhotos" (tap)="btnShowNotePhotos()">
+                    <ion-icon name="cloud-download"></ion-icon>
+                    {{'BUTTON.Tap here to view' | translate}}
+                </button>
+            </ion-item>
+            <ion-item *ngIf="notePhotos">
+                <span *ngIf="!notePhotos.length">({{'None' | translate}})</span>
+                <vrp-photos [photos]="notePhotos"></vrp-photos>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-list-header color="dark">
+                <ion-icon name="create" item-start></ion-icon>
+                 {{'JOB.POD' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap text-center *ngIf="!podPhotos">
+                <button class="viewBtns" ion-button full round color="secondary" [disabled]="disableBtnPod" (tap)="btnShowPod()">
+                    <ion-icon name="cloud-download"></ion-icon>
+                    {{'BUTTON.Tap here to view' | translate}}
+                </button>
+            </ion-item>
+            <ion-item *ngIf="podPhotos">
+                <span *ngIf="!podPhotos.length">({{'None' | translate}})</span>
+                <vrp-photos [photos]="podPhotos"></vrp-photos>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,21 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.graphhopper.jsprit.core" level="ERROR"/>
+  <logger name="simtech.vrp.jsprit.RoutePlanner" level="TRACE"/>
+  <logger name="simtech.vrp.jsprit.util" level="error"/>  
+  <logger name="simtech.vrp.jsprit.constraint.RestrictJobsToSpecificVehicles" level="OFF"/>
+  
+  <logger name="simtech.vrp.chinhsolver.DynamicRoutePlanner" level="TRACE"/>
+  <logger name="simtech.vrp.chinhsolver.shanghai" level="INFO"/>
+  <logger name="simtech.vrp.chinhsolver.util" level="error"/>  
+  <logger name="simtech.vrp.chinhsolver.constraint" level="error"/> 
+  
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

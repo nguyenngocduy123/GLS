@@ -1,0 +1,50 @@
+<td-layout-nav toolbarTitle="Data Import" *tdLoading="'planner-import.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+    <button *ngIf='!backUrl' mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button *ngIf='!!backUrl' mat-icon-button td-menu-button (click)='close()'>
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="end center" flex>
+        <span flex></span>
+        <nav layout="row">
+            <ng-template let-item ngFor [ngForOf]="tableList">
+                <a class="push-right text-nodecoration text-upper text-sm" [routerLinkActive]="['active']" [routerLink]="[]" [queryParams]="{tableName:item.name}">{{item.label
+                    || item.name}} ({{data[item.name]?.length}})</a>
+            </ng-template>
+        </nav>
+
+        <button mat-icon-button matTooltip="Remove Invalid Records" [disabled]='nInvalidData===0' (click)='removeInvalidRecords()'>
+            <td-notification-count [notifications]="nInvalidData">
+                <mat-icon>delete_sweep</mat-icon>
+            </td-notification-count>
+        </button>
+
+        <!-- <button mat-icon-button matTooltip="Validate"  (click)='load()'>
+            <mat-icon>autorenew</mat-icon>
+        </button> -->
+
+        <button mat-icon-button matTooltip="Import Another file" (click)='importFromExcel()'>
+            <mat-icon>file_upload</mat-icon>
+        </button>
+
+        <button mat-icon-button matTooltip="Save" (click)='save()' [disabled]='nInvalidData>0 || !canSave ' color='accent'>
+            <mat-icon>save</mat-icon>
+        </button>
+    </div>
+
+    <div *tdLoading="'planner-data-import.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+        <vrp-table *ngIf='tableName' #vrpTable [id]='"tableDataImport_"+tableName' [columns]="columns[tableName]" [data]="data[tableName]"
+            [tableHeight]="tableHeight" (deleteRow)='onRowsDeleted($event)'></vrp-table>
+
+        <div *ngIf='!tableName' layout='column' layout-fill layout-align='center center' class='text-center'>
+            <span flex='20'></span>
+            <h1>
+                Click
+                <a href='javascript:;' (click)='importFromExcel()'>here</a> to import data
+            </h1>
+        </div>
+    </div>
+</td-layout-nav>

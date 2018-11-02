@@ -1,0 +1,69 @@
+<mat-card class='pull-none'>
+    <div layout="row" layout-align="start center">
+        <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" [placeholder]="'Search here (' +filteredTotal+' total)'"
+            (searchDebounce)="search($event)" alwaysVisible='true' flex> </td-search-box>
+
+        <span *ngIf="selectedRows?.length && selectable" class="push-left-sm">
+            <span class="md-body-1">{{selectedRows?.length}} item(s) selected
+                <button mat-icon-button color='warn' *ngFor="let a of selectActions" [matTooltip]=" a.tooltip||a.label"
+                    (click)="(a.click(selectedRows)) ? undefined: (cancelSelection())">
+                    <mat-icon>{{a.icon}}</mat-icon>
+                </button>
+
+                <button mat-icon-button matTooltip="Cancel selection" (click)="cancelSelection()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </span>
+        </span>
+
+        <ng-template [ngForOf]='tableActions' ngFor let-b>
+            <button mat-button color="accent" *ngIf='b.menuTemplateRef' [matMenuTriggerFor]="b.menuTemplateRef()">
+                <mat-icon *ngIf='b.icon'>{{b.icon}}</mat-icon>{{b.label||''}}
+            </button>
+
+            <button mat-icon-button [matTooltip]='b.tooltip || b.label' (click)='b.click()' *ngIf='!b.menuTemplateRef'>
+                <mat-icon *ngIf='b.icon'>{{b.icon}}</mat-icon>{{b.label||''}}
+            </button>
+        </ng-template>
+
+        <button mat-icon-button matTooltip='Select Columns' (click)='filterColumns()' *ngIf='showSelectColumns'>
+            <mat-icon>filter_list</mat-icon>
+        </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <td-data-table #dataTable [data]="filteredData" [columns]="columns" [selectable]="selectable" [clickable]="clickable"
+        [multiple]="multiple" [sortable]="sortable" [sortBy]="sortBy" [(ngModel)]="selectedRows" [sortOrder]="sortOrder"
+        (sortChange)="onSort($event)" (rowClick)='editRow.emit($event.row)' [style.height.px]="dataTable.hasData?tableHeight:50"
+        (selectAll)="onSelectAny()" (rowSelect)="onSelectAny()">
+
+        <ng-template tdDataTableTemplate="_itemActions" let-value="value" let-row="row" let-column="column">
+            <button mat-icon-button *ngFor="let a of itemActions" (click)="a.click(row)" [matTooltip]='a.tooltip || a.label'>
+                <mat-icon>{{a.icon}}</mat-icon>
+            </button>
+
+            <span *ngIf='itemMenu && itemMenu.length>0'>
+                <button mat-icon-button [matMenuTriggerFor]="menuDetail">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+
+                <mat-menu [overlapTrigger]="false" #menuDetail="matMenu">
+                    <a mat-menu-item (click)="a.click(row)" *ngFor="let a of itemMenu">
+                        <mat-icon *ngIf='a.icon'>{{a.icon}}</mat-icon>{{a.label}}
+                    </a>
+                </mat-menu>
+            </span>
+        </ng-template>
+
+        <ng-template tdDataTableTemplate="_error" let-value="value" let-row="row" let-column="column">
+            <div layout='column'>
+                <span *ngFor='let i of value'><strong>{{i[0]}}:</strong> {{i[1]}} </span>
+            </div>
+        </ng-template>
+    </td-data-table>
+
+    <div *ngIf="filteredData && filteredData.length===0" layout="row" layout-align="center center">
+        <h3>No data to display.</h3>
+    </div>
+</mat-card>

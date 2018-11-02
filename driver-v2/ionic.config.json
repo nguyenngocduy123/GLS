@@ -1,0 +1,8 @@
+{
+  "name": "@simtech/vrp-driver",
+  "integrations": {
+    "cordova": {},
+    "gulp": {}
+  },
+  "type": "ionic-angular"
+}

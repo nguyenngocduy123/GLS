@@ -1,0 +1,55 @@
+<p>
+    <table>
+        <tr>
+            <th colspan="2">
+                -- Order #{{orderId}} -- {{#if hasAffectedJob}}
+                <br>
+                <i style="color: red">
+                    Note: Pickup was unsuccessful, thus all subsequent Delivery is counted as unsuccessful as well.
+                </i> {{/if}}
+            </th>
+        </tr>
+
+        {{#each jobs}}
+        <tr>
+            <td valign="top"><strong>Job Type</strong></td>
+            <td>{{this.JobType}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Status</strong></td>
+            <td>{{this.Status}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Delivery Time</strong></td>
+            <td>{{this.ActualDeliveryTime}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Time Window</strong></td>
+            <td>{{this.StartTimeWindow}} to {{this.EndTimeWindow}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Address</strong></td>
+            <td>{{this.Address}}, {{this.Postal}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Driver</strong></td>
+            <td>{{this.LastAttemptedByDriver}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Vehicle Id</strong></td>
+            <td>{{this.VehicleId}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Vehicle Plate Number</strong></td>
+            <td>{{this.LastAttemptedByPlateNumber}}</td>
+        </tr>
+        <tr>
+            <td valign="top"><strong>Driver's Note</strong></td>
+            <td>{{{this.NoteFromDriver}}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        {{/each}}
+    </table>
+</p>

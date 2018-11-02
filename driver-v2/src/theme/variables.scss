@@ -1,0 +1,120 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: '../assets/fonts';
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+@import 'ionic.globals';
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+// All font sizes are +0.5rem from default unless specified
+$font-size-base: 1.7em; // +0.3
+
+$badge-font-size: 1.6rem; // +0.3
+
+$card-ios-line-height: 1.7;
+$card-md-line-height: 1.7;
+
+$card-ios-font-size: 1.7rem; // +0.3
+$card-ios-header-font-size: 1.9rem; // +0.3
+$card-ios-title-font-size: 2.3rem;
+$card-md-font-size: 1.7rem; // +0.3
+$card-md-header-font-size: 1.9rem; // +0.3
+$card-md-title-font-size: 2.9rem;
+
+$item-ios-body-text-line-height: 1.7;
+$item-md-body-text-line-height: 1.7;
+
+$item-ios-body-text-font-size: 2.0rem; // +0.3
+$item-ios-paragraph-font-size: 1.7rem; // +0.3
+$item-md-body-text-font-size: 1.7rem; // +0.3
+$item-md-font-size: 1.9rem; // +0.3
+
+$list-ios-header-font-size: 1.7rem;
+$list-md-header-font-size: 1.9rem;
+
+$toast-ios-title-font-size: 1.8rem; // +0.4
+$toast-md-title-font-size: 1.9rem; // +0.4
+
+$tabs-md-tab-font-size-active: 1.2rem;
+
+$button-ios-font-size: 1.9rem; // +0.3
+$button-ios-small-font-size: 1.8rem;
+$button-ios-large-font-size: 2.3rem; // +0.3
+$button-md-font-size: 1.9rem; // +0.3
+$button-md-small-font-size: 1.8rem;
+$button-md-large-font-size: 2.3rem; // +0.3
+
+$button-ios-large-height: 4.3em;
+$button-md-large-height: 4.3em;
+
+$list-md-header-margin-bottom: 0;
+
+$background-color: #f8f8f8;
+$list-background-color: #fff;
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+    primary: #1f7bb6,
+    secondary: #27b6af,
+    danger: #f53d3d,
+    light: #f4f4f4,
+    dark: #222,
+    orange: (base: #f57f17, contrast:#fff),
+    grey: (base: #d8d8d8, contrast:#fff),
+    navy: (base: #3b465e, contrast:#fff),
+    blue: (base: #1f7bb6, contrast:#fff),
+    green: (base: #27b6af, contrast:#fff),
+    red: (base: #f53d3d, contrast:#fff),
+    purple: (base: #673ab7, contrast:#fff)
+);
+
+.orange { background-color: color($colors, orange) !important; }
+.grey { background-color: color($colors, grey) !important; }
+.navy { background-color: color($colors, navy) !important; }
+.blue { background-color: color($colors, blue) !important; }
+.green { background-color: color($colors, green) !important; }
+.red { background-color: color($colors, red) !important; }
+.purple { background-color: color($colors, purple) !important; }
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import 'ionic.theme.default';
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import 'ionic.ionicons';
+
+// Fonts
+// --------------------------------------------------
+
+@import 'roboto';
+@import 'noto-sans';

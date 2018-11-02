@@ -1,0 +1,47 @@
+<td-layout-nav toolbarTitle="Transaction Log">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="center center" flex>
+        <vrp-planner-date-range-selection class='pad-left' [range]='jobQuery' (rangeChange)='onDateRangeChange($event)'></vrp-planner-date-range-selection>
+
+        <i class='text-md text-wrap pad-left'>{{summaryText}}</i>
+
+        <span flex></span>
+
+        <i *ngIf='downloadInProgress' class='text-md text-wrap pad-left' color="warn">Downloading Transaction Log...</i>
+
+        <span flex></span>
+
+        <button mat-icon-button [disabled]='(!data || data.length===0) || downloadInProgress' [matMenuTriggerFor]="downloadMenu">
+            <mat-icon>cloud_download</mat-icon>
+        </button>
+
+        <vrp-planner-notification-box></vrp-planner-notification-box>
+
+        <button mat-icon-button matTooltip="Reload" (click)='refresh()'>
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <div *ngIf='downloadInProgress'>
+        <mat-progress-bar mode="indeterminate" color="warn"></mat-progress-bar>
+    </div>
+
+    <vrp-table #vrpTable id='tableTransactionLog' [columns]="columns" [data]="data" [tableHeight]="tableHeight" [itemActions]='tableItemActions'
+        [tableActions]='tableActions' selectable=false></vrp-table>
+</td-layout-nav>
+
+<mat-menu #timeFilterMenu="matMenu" [overlapTrigger]="false">
+    <vrp-time-filter-menu (applyFilter)='applyDeliveryTimeFilter($event)'></vrp-time-filter-menu>
+</mat-menu>
+
+<mat-menu #downloadMenu="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item (click)='exportToZip(false)'>
+        Download Without Photos
+    </a>
+    <a mat-menu-item (click)='exportToZip(true)'>
+        Download With Photos
+    </a>
+</mat-menu>

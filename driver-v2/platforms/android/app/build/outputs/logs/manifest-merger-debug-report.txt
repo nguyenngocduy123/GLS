@@ -1,0 +1,526 @@
+-- Merging decision tree log ---
+provider#org.apache.cordova.camera.FileProvider
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:13:9-15:20
+	android:grantUriPermissions
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:13:92-126
+	android:authorities
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:13:19-66
+	android:exported
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:13:67-91
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:13:127-180
+provider#de.appplant.cordova.plugin.notification.util.AssetProvider
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:16:9-18:20
+	android:grantUriPermissions
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:16:92-126
+	android:authorities
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:16:19-66
+	android:exported
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:16:67-91
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:16:127-200
+action#sg.glsapp.gls.event.BACKGROUND_FETCH
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:27:17-82
+	android:name
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:27:25-79
+manifest
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:1-41:12
+MERGED from [com.commit451:PhotoView:1.2.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\PhotoView-1.2.4.aar\0f03cfb915ba02c7236b82277d792acc\AndroidManifest.xml:2:1-12:12
+MERGED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:2:1-52:12
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:2:1-14:12
+MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:2:1-30:12
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:2:1-55:12
+MERGED from [com.github.tony19:logback-android:1.1.1-9] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\logback-android-1.1.1-9.aar\8f16d4a75de42ec3dd08295798028c5e\AndroidManifest.xml:2:1-11:12
+MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\f25e9bde753674f7af702407c7876695\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\ae5727ee0b1b3aa7cdccb67bf2296679\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\a68bcb080b17ac019b442c8a85ed40bd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f2785376e117149af8f892ee9a0d8c7e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\550a6670adcecc1307ec6f60e80bd633\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\1db27be8f56bc56c884d6f0e4c8e6d9b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\a01c76f002393ebb39f95ed5aebf7bf4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\06a7ce0eaeddf08b44747d99f5a9e431\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\9a841a92675271cefde72945968f6e09\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\7a0f0cbed6d94dea88f269d01c3b7dd2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f34ab4e3099dd99e5bbf44039fd982c4\AndroidManifest.xml:17:1-22:12
+MERGED from [:CordovaLib] G:\GLS\TMS SC\New folder\driver-v2\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
+MERGED from [com.github.tony19:apktool-lib:1.4.4-5] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\apktool-lib-1.4.4-5.aar\8f45dd282860c05b968f3e1dad320ff0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\3ab407ed2ef30a9f2b19e33308557290\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\c4c92b876a2afc526b07e1a7e3ed9a95\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\b6e3bfec38685d46431b2db4e390a860\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\fd4f0d9acf1c1373b0a1758e514484b6\AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7832f482afe568a9173bc749150e9f7c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\062516fca1c6dcfb79d75200407ea8b3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\3f2ac85e0b29969667d2da1b3eccfa58\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\68680005b203daf94ad366899ec440c3\AndroidManifest.xml:17:1-22:12
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:1-41:12
+	package
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:102-125
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:74-101
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+	android:hardwareAccelerated
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
+	xmlns:android
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:126-184
+	android:versionCode
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:2:46-73
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml
+supports-screens
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:5-191
+	android:largeScreens
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:49-76
+	android:smallScreens
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:132-159
+	android:normalScreens
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:77-105
+	android:xlargeScreens
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:160-188
+	android:resizeable
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:106-131
+	android:anyDensity
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
+uses-permission#android.permission.INTERNET
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:15:5-67
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:15:5-67
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
+application
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:5:5-32:19
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:11:5-12:19
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:11:5-12:19
+MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:14:5-28:19
+MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:14:5-28:19
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:24:5-53:19
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:24:5-53:19
+MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:11:5-16:19
+MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:11:5-16:19
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\f25e9bde753674f7af702407c7876695\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\f25e9bde753674f7af702407c7876695\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\ae5727ee0b1b3aa7cdccb67bf2296679\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\ae5727ee0b1b3aa7cdccb67bf2296679\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\3ab407ed2ef30a9f2b19e33308557290\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\3ab407ed2ef30a9f2b19e33308557290\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\c4c92b876a2afc526b07e1a7e3ed9a95\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\c4c92b876a2afc526b07e1a7e3ed9a95\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\b6e3bfec38685d46431b2db4e390a860\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\b6e3bfec38685d46431b2db4e390a860\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\fd4f0d9acf1c1373b0a1758e514484b6\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\fd4f0d9acf1c1373b0a1758e514484b6\AndroidManifest.xml:5:5-20
+	android:supportsRtl
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
+	android:label
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:5:81-113
+	android:hardwareAccelerated
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
+	android:icon
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
+activity#sg.glsapp.gls.MainActivity
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
+	android:label
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:6:97-134
+	android:launchMode
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:6:135-165
+	android:windowSoftInputMode
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:6:257-299
+	android:configChanges
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:6:19-96
+	android:theme
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:6:194-256
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:6:166-193
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:7:13-10:29
+	android:label
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:7:28-65
+action#android.intent.action.MAIN
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:8:17-69
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:8:25-66
+category#android.intent.category.LAUNCHER
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
+activity#com.sarriaroman.PhotoViewer.PhotoActivity
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:12:9-143
+	android:theme
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:12:76-140
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:12:19-75
+receiver#de.appplant.cordova.plugin.localnotification.TriggerReceiver
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:19:9-122
+	android:exported
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:19:19-43
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:19:44-119
+receiver#de.appplant.cordova.plugin.localnotification.ClearReceiver
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:20:9-120
+	android:exported
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:20:19-43
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:20:44-117
+activity#de.appplant.cordova.plugin.localnotification.ClickReceiver
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:21:9-205
+	android:launchMode
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:21:44-79
+	android:exported
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:21:19-43
+	android:theme
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:21:154-202
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:21:80-153
+activity#com.google.zxing.client.android.CaptureActivity
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:22:9-311
+	android:clearTaskOnLaunch
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:22:19-51
+	android:windowSoftInputMode
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:22:261-308
+	android:exported
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:22:114-138
+	android:configChanges
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:22:52-113
+	android:theme
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:22:202-260
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:22:139-201
+activity#com.google.zxing.client.android.encode.EncodeActivity
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:23:9-112
+	android:label
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:23:19-40
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:23:41-109
+service#com.transistorsoft.cordova.backgroundfetch.HeadlessJobService
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:24:9-178
+	android:exported
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:24:18-41
+	android:permission
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:24:119-175
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:24:42-118
+receiver#com.transistorsoft.cordova.backgroundfetch.HeadlessBroadcastReceiver
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:25:9-29:20
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:25:19-102
+intent-filter#sg.glsapp.gls.event.BACKGROUND_FETCH
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:26:13-28:29
+meta-data#com.transistorsoft.locationmanager.license
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:30:9-161
+	android:value
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:30:78-158
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:30:20-77
+service#de.appplant.cordova.plugin.background.ForegroundService
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:31:9-91
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:31:18-88
+uses-sdk
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:33:5-74
+MERGED from [com.commit451:PhotoView:1.2.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\PhotoView-1.2.4.aar\0f03cfb915ba02c7236b82277d792acc\AndroidManifest.xml:8:5-10:41
+MERGED from [com.commit451:PhotoView:1.2.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\PhotoView-1.2.4.aar\0f03cfb915ba02c7236b82277d792acc\AndroidManifest.xml:8:5-10:41
+MERGED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:7:5-9:41
+MERGED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:7:5-9:41
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:7:5-9:41
+MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:7:5-9:41
+MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:7:5-9:41
+MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:7:5-9:41
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.tony19:logback-android:1.1.1-9] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\logback-android-1.1.1-9.aar\8f16d4a75de42ec3dd08295798028c5e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.tony19:logback-android:1.1.1-9] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\logback-android-1.1.1-9.aar\8f16d4a75de42ec3dd08295798028c5e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:7:5-9:41
+MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\f25e9bde753674f7af702407c7876695\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\f25e9bde753674f7af702407c7876695\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\ae5727ee0b1b3aa7cdccb67bf2296679\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\ae5727ee0b1b3aa7cdccb67bf2296679\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\a68bcb080b17ac019b442c8a85ed40bd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\a68bcb080b17ac019b442c8a85ed40bd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f2785376e117149af8f892ee9a0d8c7e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f2785376e117149af8f892ee9a0d8c7e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\550a6670adcecc1307ec6f60e80bd633\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\550a6670adcecc1307ec6f60e80bd633\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\1db27be8f56bc56c884d6f0e4c8e6d9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\1db27be8f56bc56c884d6f0e4c8e6d9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\a01c76f002393ebb39f95ed5aebf7bf4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\a01c76f002393ebb39f95ed5aebf7bf4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\06a7ce0eaeddf08b44747d99f5a9e431\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\06a7ce0eaeddf08b44747d99f5a9e431\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\9a841a92675271cefde72945968f6e09\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\9a841a92675271cefde72945968f6e09\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\7a0f0cbed6d94dea88f269d01c3b7dd2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\7a0f0cbed6d94dea88f269d01c3b7dd2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f34ab4e3099dd99e5bbf44039fd982c4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f34ab4e3099dd99e5bbf44039fd982c4\AndroidManifest.xml:20:5-44
+MERGED from [:CordovaLib] G:\GLS\TMS SC\New folder\driver-v2\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] G:\GLS\TMS SC\New folder\driver-v2\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [com.github.tony19:apktool-lib:1.4.4-5] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\apktool-lib-1.4.4-5.aar\8f45dd282860c05b968f3e1dad320ff0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.tony19:apktool-lib:1.4.4-5] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\apktool-lib-1.4.4-5.aar\8f45dd282860c05b968f3e1dad320ff0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\3ab407ed2ef30a9f2b19e33308557290\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\3ab407ed2ef30a9f2b19e33308557290\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\c4c92b876a2afc526b07e1a7e3ed9a95\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\c4c92b876a2afc526b07e1a7e3ed9a95\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\b6e3bfec38685d46431b2db4e390a860\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\b6e3bfec38685d46431b2db4e390a860\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\fd4f0d9acf1c1373b0a1758e514484b6\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\fd4f0d9acf1c1373b0a1758e514484b6\AndroidManifest.xml:4:5-43
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7832f482afe568a9173bc749150e9f7c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7832f482afe568a9173bc749150e9f7c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\062516fca1c6dcfb79d75200407ea8b3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\062516fca1c6dcfb79d75200407ea8b3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\3f2ac85e0b29969667d2da1b3eccfa58\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\3f2ac85e0b29969667d2da1b3eccfa58\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\68680005b203daf94ad366899ec440c3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\68680005b203daf94ad366899ec440c3\AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:33:42-71
+	android:minSdkVersion
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:33:15-41
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:34:5-79
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:11:5-79
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:34:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:35:5-81
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:35:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:36:5-80
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:36:22-77
+uses-permission#android.permission.WAKE_LOCK
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:37:5-68
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:37:22-65
+uses-permission#android.permission.CAMERA
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:38:5-65
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:38:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:39:5-69
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:39:22-66
+uses-feature#android.hardware.camera
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:40:5-84
+	android:required
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:40:58-81
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:40:19-57
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:14:13-123
+	android:resource
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:14:75-120
+	android:name
+		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:14:24-74
+uses-permission#com.sec.android.provider.badge.permission.READ
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:19:5-86
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:19:22-83
+uses-permission#com.sec.android.provider.badge.permission.WRITE
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:20:5-87
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:20:22-84
+uses-permission#com.htc.launcher.permission.READ_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:23:5-81
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:23:22-78
+uses-permission#com.htc.launcher.permission.UPDATE_SHORTCUT
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:24:5-83
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:24:22-80
+uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:27:22-85
+uses-permission#com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:28:5-92
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:28:22-89
+uses-permission#com.anddoes.launcher.permission.UPDATE_COUNT
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:31:5-84
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:31:22-81
+uses-permission#com.majeur.launcher.permission.UPDATE_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:34:5-83
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:34:22-80
+uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:37:5-91
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:37:22-88
+uses-permission#com.huawei.android.launcher.permission.READ_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:38:5-92
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:38:22-89
+uses-permission#com.huawei.android.launcher.permission.WRITE_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:39:5-93
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:39:22-90
+uses-permission#android.permission.READ_APP_BADGE
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:42:5-73
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:42:22-70
+uses-permission#com.oppo.launcher.permission.READ_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:45:5-82
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:45:22-79
+uses-permission#com.oppo.launcher.permission.WRITE_SETTINGS
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:46:5-83
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:46:22-80
+uses-permission#me.everything.badger.permission.BADGE_COUNT_READ
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:49:5-88
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:49:22-85
+uses-permission#me.everything.badger.permission.BADGE_COUNT_WRITE
+ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:50:5-89
+	android:name
+		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:50:22-86
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:11:5-81
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:17:5-81
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:17:5-81
+	android:name
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.GET_TASKS
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:12:5-68
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:18:5-68
+MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:18:5-68
+	android:name
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:12:22-65
+receiver#com.transistorsoft.tsbackgroundfetch.FetchAlarmReceiver
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:15:9-92
+	android:name
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:15:19-89
+service#com.transistorsoft.tsbackgroundfetch.FetchJobService
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:17:9-20:72
+	android:exported
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:19:13-36
+	android:permission
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:20:13-69
+	android:name
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:18:13-80
+receiver#com.transistorsoft.tsbackgroundfetch.BootReceiver
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:22:9-27:20
+	android:name
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:22:19-83
+intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:23:13-26:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:24:17-79
+	android:name
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:24:25-76
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:25:17-84
+	android:name
+		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:25:25-81
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:14:5-89
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:14:22-86
+uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:16:5-94
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:16:22-91
+uses-feature#android.hardware.location.gps
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:20:5-22:36
+	android:required
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:22:9-33
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:21:9-53
+service#com.transistorsoft.locationmanager.BackgroundGeolocationService
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:25:9-99
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:25:18-96
+service#com.transistorsoft.locationmanager.LocationService
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:26:9-86
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:26:18-83
+service#com.transistorsoft.locationmanager.ActivityRecognitionService
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:27:9-97
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:27:18-94
+service#com.transistorsoft.locationmanager.geofence.GeofenceService
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:28:9-95
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:28:18-92
+receiver#com.transistorsoft.locationmanager.scheduler.ScheduleAlarmReceiver
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:30:9-103
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:30:19-100
+service#com.transistorsoft.locationmanager.scheduler.ScheduleJobService
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:32:9-35:72
+	android:exported
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:34:13-36
+	android:permission
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:35:13-69
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:33:13-91
+receiver#com.transistorsoft.locationmanager.BootReceiver
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:37:9-42:20
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:37:19-81
+provider#com.transistorsoft.locationmanager.util.LogFileProvider
+ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:44:9-52:20
+	android:grantUriPermissions
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:48:13-47
+	android:authorities
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:46:13-82
+	android:exported
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:45:13-83
+activity#com.intentfilter.androidpermissions.PermissionsActivity
+ADDED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:12:9-15:59
+	android:excludeFromRecents
+		ADDED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:14:13-46
+	android:theme
+		ADDED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:15:13-56
+	android:name
+		ADDED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:13:13-83
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\bc3081bd3906eaa93d7aa239d72c0bb8\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\aeb7acd1e3ff9240b2de0ac2e6fdd7de\AndroidManifest.xml:24:13-58

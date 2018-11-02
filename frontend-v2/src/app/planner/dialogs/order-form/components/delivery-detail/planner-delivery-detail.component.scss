@@ -1,0 +1,7 @@
+.right-hand-panel {
+    margin:10px;
+    height: calc(100vh - 100px); 
+    overflow-y: scroll;
+}
+
+[hidden] { display: none !important;}

@@ -1,0 +1,24 @@
+<td-layout-nav-list #navList [toolbarTitle]="'Manage Users'|translate" mode="side" sidenavWidth="270px">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="center center" flex>
+        <span>{{title | translate}}</span>
+        <span flex></span>
+        <button [matTooltip]="'Refresh'| translate" mat-icon-button (click)="load(true)">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <mat-nav-list td-sidenav-content>
+        <a mat-list-item *ngFor="let item of sideNavList; let i=index" [routerLinkActive]="['active']" [routerLink]="[]" [queryParams]="{index:i}">
+            <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+            {{item.label}}
+        </a>
+    </mat-nav-list>
+
+    <vrp-table *tdLoading="'vrp-user-management.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'"
+        [columns]="columns" [data]="filteredUsers" [tableHeight]="tableHeight" [itemMenu]='itemMenu' [selectActions]='selectActions'
+        [tableActions]='tableActions' showSelectColumns='false'></vrp-table>
+</td-layout-nav-list>

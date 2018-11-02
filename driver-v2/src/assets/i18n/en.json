@@ -1,0 +1,181 @@
+{
+    "JOB": {
+        "Address": "Address",
+        "TimeWindow": "Time",
+        "ContactName": "Contact Name",
+        "Remarks": "Remarks",
+        "Status": "Status",
+        "NoteFromDriver": "Your Note",
+        "NotePhotos": "Note Photos",
+        "DeliveryItems": "Items",
+        "DeliveryItemsExpected": "Expected",
+        "DeliveryItemsActual": "Actual",
+        "POD": "Proof of Delivery",
+        "VerificationCode": "Verification Code"
+    },
+    "ATTEMPTED_JOB": {
+        "Title": "Job",
+        "Id": "Job Id",
+        "Time": "Delivery Time",
+        "DoneBy": "Done By",
+        "Remarks": "Driver's Remarks",
+        "NotePhotos": "Note Photos",
+        "ItemsDone": "Picked-up / Delivered",
+        "POD": "Proof of Delivery",
+        "DeliveryItems": "Items",
+        "Quantity": "Qty"
+    },
+    "ITEM": {
+        "Id": "Id",
+        "Weight": "Weight",
+        "Description": "Description"
+    },
+    "BUTTON": {
+        "Clear": "Clear",
+        "Remove": "Remove",
+        "Settings": "Settings",
+        "All Jobs": "All Jobs",
+        "Continue": "Continue",
+        "Proceed": "Proceed",
+        "Confirm": "Confirm",
+        "Submit": "Submit",
+        "Close": "Close",
+        "Tap here to view": "Tap here to view"
+    },
+    "PAGE": {
+        "HOME": {
+            "AllDone": "All Jobs Completed"
+        },
+        "PERMISSION": {
+            "Header": "App Permission Guide",
+            "Location": "Location",
+            "Camera": "Camera",
+            "PageReason": "This application requires permissions for some features",
+            "ClickAllow": "Please click Allow when prompted",
+            "LocationReason": "Required for retrieving your location when app is on",
+            "CameraReason": "Required for scanning barcodes and taking photos as remarks",
+            "Suggestion": "This device is on {{os}} version {{version}}. We recommend to upgrade your device to at least {{recommend}}"
+        },
+        "NEXT_DAY": {
+            "Header": "Next Day Jobs",
+            "NoJobs": "There are no jobs for the next day"
+        },
+        "PLANNER_NOTES": {
+            "Header": "Planner Notes"
+        },
+        "ADD_NOTE": {
+            "Header": "Add Note",
+            "OptionHeader": "Template Message",
+            "FreeTextHeader": "Remark to planner",
+            "NumNotesHeader": "Number of photos added"
+        },
+        "ITEMS_HANDLED": {
+            "Header": "Items Handled",
+            "Keyboard": "Keyboard",
+            "Barcode": "Barcode",
+            "BtnChangeInput": "Change to input by",
+            "KeyboardPlaceholder": "Enter actual item count",
+            "ScanBarcodePlaceholder": "Tap button on the right to scan"
+        },
+        "POD_PHOTO": {
+            "CentraliseImage": "After photo is taken, please centralise the image",
+            "PhotoOptional": "Photo is optional"
+        },
+        "VERIFY_CODE": {
+            "Verified": "Verified",
+            "Prompt": "Enter the verification code that was sent to the customer's email",
+            "AskToEnter": "Enter Verification Code",
+            "HowToNavigate": "Navigate using the tabs above, or",
+            "BtnPressProceed": "Press the proceed button below"
+        },
+        "SUMMARY": {
+            "Header": "Summary",
+            "ItemsDone": "Picked-up / Delivered"
+        },
+        "CURRENT_JOB": {
+            "Header": "Current Job",
+            "BtnCall": "Call",
+            "BtnNavigate": "Navigate",
+            "BtnFail": "Fail",
+            "BtnSuccess": "Success"
+        },
+        "COMPLETE_JOB_SUMMARY": {
+            "Header": "Job Details"
+        },
+        "CUSTOMER_SERVICE": {
+            "Header": "Customer Service",
+            "ExpectLateHeader": "Expect to be late",
+            "RemarksHeader": "Remark to planner",
+            "SelectedJobsHeader": "Selected jobs"
+        },
+        "ITEM_DETAILS": {
+            "Header": "Item Details"
+        },
+        "CHECK_APP_VERSION": {
+            "Header": "Update Required",
+            "AppExpired": "This version of the application has expired",
+            "GoDownload": "Please go to the {{store}} to update",
+            "BtnUpdateApp": "Update App"
+        },
+        "LICENSE_AGREEMENT": {
+            "Header": "END-USER LICENCE AGREEMENT",
+            "BtnAccept": "Accept"
+        },
+        "SCAN_SERVER_URL": {
+            "Header": "Scan Server Url",
+            "CurrentUrl": "Current URL",
+            "SaveNewHeader": "Manually enter URL",
+            "EnterUrlHere": "Enter Server URL here",
+            "BtnSaveNew": "Save New URL",
+            "SaveDefaultHeader": "or use the default URL",
+            "BtnSaveDefault": "Tap here to use default URL",
+            "ScanNewHeader": "or scan a QR code",
+            "BtnScanNew": "Scan QR Code"
+        },
+        "LOGIN": {
+            "Username": "Username",
+            "Password": "Password",
+            "BtnLogIn": "Log In",
+            "PoweredBy": "Powered By"
+        },
+        "CHANGE_DRIVER_DETAILS": {
+            "Header": "Update Details",
+            "PlateNumHeader": "Change Vehicle Plate Number",
+            "PlateNumPlaceholder": "Enter new plate number",
+            "BtnConfirm": "Change Plate Number"
+        },
+        "LOGOUT": {
+            "Header": "Stuck and cannot log out?",
+            "RestartApp": "Restart app",
+            "BtnConfirm": "Logout"
+        },
+        "OFFLINE_SYNC": {
+            "RequestFail": "Unable to send jobs to server",
+            "RequestDone": "All jobs have been synced",
+            "BtnConfirm": "Sync Jobs"
+        },
+        "RESET_PASSWORD": {
+            "Header": "Change Password",
+            "CurrentPasswordHeader": "Current Password",
+            "CurrentPasswordPlaceholder": "Enter current password",
+            "NewPasswordHeader": "New Password",
+            "NewPasswordPlaceholder": "Enter new password",
+            "ConfirmPasswordHeader": "Confirm New Password",
+            "ConfirmPasswordPlaceholder": "Enter again",
+            "BtnConfirm": "Reset Password"
+        },
+        "SETTINGS": {
+            "Header": "Settings",
+            "LoggedInAs": "You are logged in as"
+        }
+    },
+    "Date": "Date",
+    "Required": "Required",
+    "Optional": "Optional",
+    "Note": "Note",
+    "Ok": "Ok",
+    "Error": "Error",
+    "Done": "Done",
+    "None": "None",
+    "InternetRequired": "Internet connection is required"
+}

@@ -1,0 +1,90 @@
+{
+    "LOGIN": {
+        "PASSWORD_HINT": "Something hard to guess"
+    },
+    "DASHBOARD": {
+        "DELETE_CONFIRM_MSG": "Delete selected models?",
+        "OPEN_AFTER_CREATED_CONFIRM_MSG": "Model has been created successfully. Do you want to open it?"
+    },
+    "USER_MANAGEMENT": {
+        "DISABLE_USER_CONFIRM_MSG": "Disable selected users?",
+        "DISABLE_USER_COMPLETED_ALERT": "Selected users have been disabled",
+        "ENABLE_USER_CONFIRM_MSG": "Enable selected users?",
+        "ENABLE_USER_COMPLETED_ALERT": "Selected users have been enabled",
+        "RESET_PASSWORD_CONFIRM_MSG": "Reset password for selected users?",
+        "RESET_PASSWORD_COMPLETED_ALERT": "Passwords of users have been reset",
+        "LOGOUT_USER_CONFIRM_MSG": "Force to logout selected users?",
+        "LOGOUT_USER_COMPLETED_ALERT": "Selected users have been logged out",
+        "DELETE_USER_CONFIRM_MSG": "Delete selected users?",
+        "DELETE_USER_COMPLETED_ALERT": "Users have been deleted",
+        "USER_SAVED_MSG": "User's details have been saved",
+        "USER_CREATED_MSG": "New user has been created"
+    },
+    "PLANNER_PLAN": {
+        "APPROVE_SOLUTION_CONFIRM_MSG": "Approve this solution?",
+        "SOLUTION_APPROVED_MSG": "Solution has been approved",
+        "OPTIMIZATION_FINISHED_MSG": "Optimization has been finished",
+        "NEWPLAN_APPROVED_MSG": "New routes have been sent to Vehicles"
+    },
+    "PLANNER_DATA_MANAGEMENT": {
+        "POSTAL_INSERT_SUCCESS_MSG": "Postals inserted successfully"
+    },
+    "PLANNER_MONITOR": {
+        "UNSAVES_CHANGES_CONFIRM_MSG": "You have unsaved changes. Are you sure to discard the changes?",
+        "PLAN_CHANGE_SAVE": "Changes have been saved",
+        "DISCARD_CHANGES_CONFIRM_MSG": "Are you sure to discard all changes?"
+    },
+    "PLANNER_TRANSACTION_LOG": {
+        "EXPORT_TO_ZIP_CONFIRM_MSG": "Do you want to download photos as well? (Downloading transaction log with photos might take some time"
+    },
+    "PLANNER_DATA_IMPORT": {
+        "DATA_SAVED_SUCCESS_MSG": "Data have been saved successfully"
+    },
+    "PROBLEM_DETAIL": {
+        "MODEL_SAVED_MSG": "Model has been saved",
+        "FILE_IMPORT_COMPLETED_MSG": "File has been imported successfully",
+        "FILE_FORMAT_UNSUPPORT_ALERT": "File format is unsupported",
+        "GEOCODING_CANCELLED_ALERT": "Geocoding query has been cancelled",
+        "GEOCODING_COMPLETED_MSG": "Geocoding query has been completed",
+        "DISTANCE_QUERY_FAILED_ALERT": "Failed to query distance matrix",
+        "OPTIMIZATION_SOLUTION_VIEW_QUERY_MSG": "Optimization completed succcessfully. Do you want to view solution?"
+    },
+    "SOLUTION_DETAIL": {
+        "OPTIMIZATION_CANCELLED_ALERT": "Optimization has been cancelled",
+        "IMPORT_SUCCESS_MSG": "Import succesfully",
+        "DELETE_PROCESS_CONFIRM_ALERT": "Are you sure to delete?"
+    },
+    "PLANNER_DISPATCH": {
+        "FINISHED_JOBS_MSG": "Selection contains following FINISHED jobs. Only unfinished jobs are allowed to be moved.",
+        "MAX_LIMIT_ERROR": "Reach the limit. Unable to move jobs.",
+        "SHIPMENT_ORDER_ERROR": "Unable to place pickup job after delivery job in shipment order"
+    },
+    "MAIN": {
+        "LOG_OFF_CONFIRMATION_ALERT": "Do you want to log off?",
+        "FORCE_LOG_OFF_BY_ADMIN_ALERT": "You are forced to logged off your current session by Administrators"
+    },
+    "USER_SETTING": {
+        "LANGUAGE_CHANGE_CONFIRM_ALERT": "Are you sure to change language?",
+        "PASSWORD_EMPTY_ALERT": "Password cannot be empty",
+        "PASSWORD_MISMATCH_ALERT": "Confirm Password does not match with new one",
+        "PASSWORD_UPDATED_SUCCESS_MSG": "Password has been updated successfully",
+        "USER_INFORMATION_UPDATED_SUCCESS_MSG": "User info has been updated successfully."
+    },
+    "OPTIMIZATION_COMPLETED_MSG": "Optimization completed succcessfully. Do you want to view solution?",
+    "OPTIMIZATION_ERROR_ALERT": "Unable to find feasible routes. Please double check vehicle restriction and constraints options",
+    "OPTIMIZATION_FINISHED_MSG": "Optimization finished",
+    "INVALID_FILE_FORMAT_ERR": "Invalid file format",
+    "CONNECTION_ERROR_MSG": "Unable to connect to server",
+    "NOT_FOUND_ERROR_MSG": "Unable to find page you are looking for",
+    "PASSWORD_PATTERN_ERROR_MSG": "Minimum eight characters, at least one uppercase letter, one lowercase letter and one number",
+    "PASSWORD_MISMATCH_ERROR_MSG": "Password is mismatch",
+    "INCORRECT_FORMAT_ERROR_MSG": "Incorrect format",
+    "REQUIRED_ERROR_MSG": "Field is required",
+    "AT_LEAST_1_ERROR_MSG": "Value must be at least 1",
+    "AT_LEAST_0_ERROR_MSG": "Value must be at least 0",
+    "GREATER_THAN_0_ERROR_MSG": "Value must be greater than 0",
+    "ALREADY_TAKEN_ERROR_MSG": "Value already taken",
+    "INCORRECT_POSTAL_FORMAT_ERROR_MSG": "Postal must consist of 6 numeric digits",
+    "NONEXISTENT_POSTAL_ERROR_MSG": "Postal does not exist",
+    "REFRESH_CHANGES_CONFIRM_MSG": "Unsaved changes will be removed, Are you sure to continue?"
+}

@@ -1,0 +1,59 @@
+<td-layout-nav [toolbarTitle]="(problem?.name || 'Unnamed Model')| truncate:15  ">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="center center" flex>
+        <span flex></span>
+
+        <nav class="text-upper text-sm" layout="row">
+            <ng-template ngFor [ngForOf]="tableList" let-item>
+                <a class="push-right text-nodecoration" [routerLinkActive]="['active']" [routerLink]="[]" [queryParams]="{tableName:item.name}">{{item.label}}
+                    ({{problem&& problem[item.name].length}})</a>
+            </ng-template>
+            <a class="push-right text-nodecoration" [routerLinkActive]="['active']" [routerLink]="[]" [queryParams]="{tableName:'map'}">Map</a>
+        </nav>
+
+        <button mat-icon-button (click)="save()" matTooltip="Save">
+            <td-notification-count [notifications]="isChanged">
+                <mat-icon>save</mat-icon>
+            </td-notification-count>
+        </button>
+
+        <button mat-icon-button matTooltip='Optimize' [disabled]='tableName!=="map"' (click)="createOptimalSolution()">
+            <mat-icon>desktop_mac</mat-icon>
+        </button>
+
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menuOptimize" matTooltip='Optimize'><mat-icon >desktop_mac</mat-icon></button>-->
+
+        <button mat-icon-button matTooltip='Reload' (click)='load(true)'>
+            <mat-icon>refresh</mat-icon>
+        </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
+
+    <div [ngSwitch]="tableName" flex *tdLoading="'vrp-problem-detail.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+        <vrp-table *ngSwitchDefault #vrpTable [id]='"tableProblemDetail_"+tableName' [columns]="tableColumns[tableName]" [data]="tableData"
+            [tableHeight]="tableHeight" [tableActions]='tableActions' [itemActions]='tableItemActions' (editRow)="editItem($event)"
+            (deleteRow)="isChanged=true"></vrp-table>
+
+        <div *ngSwitchCase="'map'" layout-fill [style.height.px]='pageHeight'>
+            <vrp-solution-detail #vrpSolution [problem]='problem' (onSolutionsChanged)='isChanged=true' (onOptimizationEnd)='onOptimizationEnd($event)'
+                (onCreateSolutionWithInitial)='createOptimalSolution($event)' (onCreateSolutionWithTurnOver)='reoptimizeSolutionWithTurnOverTime($event)'></vrp-solution-detail>
+        </div>
+    </div>
+</td-layout-nav>
+
+<mat-menu x-position="before" y-position="below" #menuOptimize="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item (click)="createBlankSolution()">Create Blank Solution</a>
+    <a mat-menu-item (click)="createOptimalSolution()">Create Optimal Solution</a>>
+</mat-menu>
+
+<mat-menu x-position="before" y-position="below" #menu="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item (click)="itemMenu.click()" *ngFor="let itemMenu of toolbarDropdownMenu">
+        <mat-icon>{{itemMenu.icon}}</mat-icon> {{itemMenu.label}}
+    </a>
+</mat-menu>

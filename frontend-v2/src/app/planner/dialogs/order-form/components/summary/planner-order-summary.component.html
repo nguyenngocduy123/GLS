@@ -1,0 +1,68 @@
+<div class='summary-container'>
+    <mat-card *ngFor='let d of order.DeliveryDetails' layout="column" layout-padding layout-margin>
+        <div flex layout="row">
+            <span class="title">Job Type</span>
+            <span flex></span>
+
+            <span class='md-subhead'> {{ d.JobType}}</span>
+        </div>
+
+        <div flex layout="row">
+            <span class="title">Address</span>
+            <span flex></span>
+
+            <span class='md-subhead text-right'>
+                {{d.Address}}
+                <br> {{d.Postal}}
+            </span>
+        </div>
+
+        <div flex layout="row">
+            <span class="title">Time Window</span>
+            <span flex></span>
+
+            <span> {{d.StartTimeWindow | date:'short'}} to {{d.EndTimeWindow | date:'shortTime'}}</span>
+        </div>
+
+        <div flex layout="row">
+            <span class="title">Contact</span>
+            <span flex></span>
+
+            <span class='md-subhead text-right'>
+                {{d.ContactName}}
+                <br> {{d.ContactPhone}}
+                <br> {{d.ContactEmail}}
+            </span>
+        </div>
+
+        <div flex layout="row">
+            <span class="title">Planner's Note</span>
+            <span flex></span>
+
+            <div layout="row" *ngFor='let note  of d.NoteFromPlanner'>
+                <b>{{note.key}}</b>: {{note.value}}
+            </div>
+            <span *ngIf='!d.NoteFromPlanner ||  d.NoteFromPlanner.length === 0'>N.A</span>
+        </div>
+
+        <div flex layout="row">
+            <span class="title">Driver's Note</span>
+            <span flex></span>
+
+            <vrp-planner-driver-notes [job]="d"></vrp-planner-driver-notes>
+        </div>
+
+        <div flex layout="row">
+            <span class="title">POD</span>
+            <span flex></span>
+
+            <vrp-planner-pod [job]="d"></vrp-planner-pod>
+        </div>
+
+        <div flex layout="row">
+            <span class="title">Items</span>
+            <span flex></span>
+            <!-- <vrp-planner-items [Items]="d.DeliveryItems" readonly='true'></vrp-planner-items> -->
+        </div>
+    </mat-card>
+</div>

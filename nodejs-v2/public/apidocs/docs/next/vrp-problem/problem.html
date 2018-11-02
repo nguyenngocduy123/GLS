@@ -1,0 +1,579 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Problem · (LM)2</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Reference"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Problem · (LM)2"/><meta property="og:type" content="website"/><meta property="og:url" content="http://localhost/docs/index.html"/><meta property="og:description" content="## Reference"/><meta name="twitter:card" content="summary"/><meta name="robots" content="noindex"/><link rel="shortcut icon" href="/docs/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css"/><link rel="stylesheet" href="/css/custom.css"/><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/logo.png" alt="(LM)2"/><h2 class="headerTitleWithLogo">(LM)2</h2></a><a href="/docs/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/sitemap" target="_self">Sitemap</a></li><li class=""><a href="/docs/docs/next/integration/create-order" target="_self">Integration</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Problem</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General Information</h3><ul><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/problem-glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/problem-types">Problem Types</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/solution-types">Solution Types</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Problem</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/next/vrp-problem/problem">Problem</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/geocode">Geocode</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/distance-matrix">Distance Matrix</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-problem/optimization">Optimization</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Problem</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<p>Prefix the URLs with the server URL.</p>
+<p>For example:</p>
+<p><code>/web/data/v2.1/example/:id</code> =&gt; <a href="http://localhost/web/data/v2.1/example/:id">http://localhost/web/data/v2.1/example/:id</a></p>
+<table>
+<thead>
+<tr><th>I want to...</th><th>CSRF Enabled</th><th>API</th></tr>
+</thead>
+<tbody>
+<tr><td>Create a problem</td><td>Yes</td><td><a href="#post-web-problem-v2">POST <code>/web/problem/v2</code></a></td></tr>
+<tr><td>Update problem property</td><td>Yes</td><td><a href="#patch-web-problem-v2-problemid-update">PATCH <code>/web/problem/v2/:problemId/update</code></a></td></tr>
+<tr><td>Remove problem property</td><td>Yes</td><td><a href="#patch-web-problem-v2-problemid-remove">PATCH <code>/web/problem/v2/:problemId/remove</code></a></td></tr>
+<tr><td>Delete problems</td><td>Yes</td><td><a href="#post-web-problem-v2-destroy">POST <code>/web/problem/v2/destroy</code></a></td></tr>
+<tr><td>Get a problem</td><td>Yes</td><td><a href="#get-web-problem-v2-problemid">GET <code>/web/problem/v2/:problemId</code></a></td></tr>
+<tr><td>Get abstract information of problems</td><td>Yes</td><td><a href="#get-web-problem-v2-abstract">GET <code>/web/problem/v2/abstract</code></a></td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-web-problem-v2"></a><a href="#post-web-problem-v2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/web/problem/v2</code></h2>
+<p>Create a problem</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info"></a><a href="#resource-info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Admin, Default, Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body"></a><a href="#request-body" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>name</td><td>required</td><td>String</td><td>p_<code>MMDDYYYY[_]HHmm</code></td><td>Name of problem</td></tr>
+<tr><td>fleet_size</td><td>required</td><td>String</td><td>FINITE</td><td>Whether number of vehicles available for optimisation. Accepted values: FINITE, INFINITE</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>FINITE</code> - number of vehicles are predefined and fixed</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>INFINITE</code> - number of vehicles cannot be determined before optimising</td></tr>
+<tr><td>coord_mode</td><td>required</td><td>String</td><td>REAL</td><td>Types of coordinates used. Accepted values: REAL, 2D</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>REAL</code> - Use latitudes and longitudes and real distances (for real-world problem)</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><code>2D</code> - Use x/y and Cartesian distances (for research)</td></tr>
+<tr><td>username</td><td>optional</td><td>String[]</td><td></td><td>List of usernames that are allowed to read this problem</td></tr>
+<tr><td>vehicle_types</td><td>required</td><td><a href="problem-types#vehicle-type">VehicleType[]</a></td><td></td><td>List of vehicle types that each vehicle is assigned to</td></tr>
+<tr><td>vehicles</td><td>required</td><td><a href="problem-types#vehicle">Vehicles[]</a></td><td></td><td>List of vehicles to assign jobs to</td></tr>
+<tr><td>services</td><td>required</td><td><a href="problem-types#service">Service[]</a></td><td></td><td>List of single jobs (either pickup or delivery)</td></tr>
+<tr><td>shipments</td><td>required</td><td><a href="problem-types#shipment">Shipment[]</a></td><td></td><td>List of double jobs (pickup with delivery)</td></tr>
+<tr><td>solutions</td><td>required</td><td><a href="problem-types#simplified">Solution[]</a></td><td></td><td>Possible solutions for this problem</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example"></a><a href="#request-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2</span>
+    {
+        <span class="hljs-string">"fleet_size"</span>: <span class="hljs-string">"FINITE"</span>,
+        <span class="hljs-string">"coord_mode"</span>: <span class="hljs-string">"REAL"</span>,
+        <span class="hljs-string">"vehicle_types"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"Van"</span>,
+            <span class="hljs-string">"capacity"</span>: [<span class="hljs-number">1000</span>],
+            <span class="hljs-string">"fixed_costs"</span>: <span class="hljs-number">100</span>,
+            <span class="hljs-string">"distance_dependent_costs"</span>:<span class="hljs-number">0.0001</span>,
+            <span class="hljs-string">"time_dependent_costs"</span>: <span class="hljs-number">0.0017</span>,
+            <span class="hljs-string">"waiting_time_dependent_costs"</span>: <span class="hljs-number">0.0017</span>
+        }],
+        <span class="hljs-string">"vehicles"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+            <span class="hljs-string">"type_id"</span>: <span class="hljs-string">"Van"</span>,
+            <span class="hljs-string">"earliest_start"</span>: <span class="hljs-string">"2018-01-01T05:00:00.000Z"</span>,
+            <span class="hljs-string">"latest_end"</span>: <span class="hljs-string">"2018-01-01T12:00:00.000Z"</span>,
+            <span class="hljs-string">"start_address"</span>: {
+                <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018906"</span>,
+                <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.27582919242</span>,
+                <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.849576389</span>
+            },
+            <span class="hljs-string">"end_address"</span>: {
+                <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018906"</span>,
+                <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.27582919242</span>,
+                <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.849576389</span>
+            },
+            <span class="hljs-string">"return_to_depot"</span>: <span class="hljs-literal">false</span>
+        }],
+        <span class="hljs-string">"items"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"weight"</span>,
+            <span class="hljs-string">"weight"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"description"</span>: <span class="hljs-string">"in Kg"</span>
+        }],
+        <span class="hljs-string">"services"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 1"</span>,
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"customer 1"</span>,
+            <span class="hljs-string">"size"</span>: [<span class="hljs-number">100</span>],
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"delivery"</span>,
+            <span class="hljs-string">"address"</span>: {
+                <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018985"</span>,
+                <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.28076943504</span>,
+                <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.852658562</span>
+            },
+            <span class="hljs-string">"service_duration"</span>: <span class="hljs-number">900</span>,
+            <span class="hljs-string">"allowed_vehicles"</span>: <span class="hljs-string">"vehicle 1"</span>,
+            <span class="hljs-string">"time_windows"</span>: [{
+                <span class="hljs-string">"start"</span>: <span class="hljs-string">"2018-01-01T02:00:00.000Z"</span>,
+                <span class="hljs-string">"end"</span>: <span class="hljs-string">"2018-01-01T10:00:00.000Z"</span>
+            }]
+        }],
+        <span class="hljs-string">"shipments"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 2"</span>,
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"customer 2"</span>,
+            <span class="hljs-string">"size"</span>: [<span class="hljs-number">100</span>],
+            <span class="hljs-string">"pickup_address"</span>: {
+                <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018985"</span>,
+                <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.28076943504</span>,
+                <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.852658562</span>
+            },
+            <span class="hljs-string">"pickup_duration"</span>: <span class="hljs-number">900</span>,
+            <span class="hljs-string">"pickup_time_windows"</span>: [{
+                <span class="hljs-string">"start"</span>: <span class="hljs-string">"2018-01-01T02:00:00.000Z"</span>,
+                <span class="hljs-string">"end"</span>: <span class="hljs-string">"2018-01-01T10:00:00.000Z"</span>
+            }],
+            <span class="hljs-string">"delivery_address"</span>: {
+                <span class="hljs-string">"postal"</span>: <span class="hljs-string">"048620"</span>,
+                <span class="hljs-string">"lat"</span>: <span class="hljs-number">1.283426</span>,
+                <span class="hljs-string">"lon"</span>: <span class="hljs-number">103.851804</span>
+            },
+            <span class="hljs-string">"delivery_duration"</span>: <span class="hljs-number">900</span>,
+            <span class="hljs-string">"delivery_time_windows"</span>: [{
+                <span class="hljs-string">"start"</span>: <span class="hljs-string">"2018-01-01T11:00:00.000Z"</span>,
+                <span class="hljs-string">"end"</span>: <span class="hljs-string">"2018-01-01T13:00:00.000Z"</span>
+            }],
+            <span class="hljs-string">"allowed_vehicles"</span>: <span class="hljs-literal">null</span>
+        }],
+        <span class="hljs-string">"solutions"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"solution 1"</span>,
+            <span class="hljs-string">"routes"</span>: [{
+                <span class="hljs-string">"vehicle_id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+                <span class="hljs-string">"act"</span>: [{
+                    <span class="hljs-string">"type"</span>: <span class="hljs-string">"service"</span>,
+                    <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 1"</span>,
+                    <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"delivery"</span>
+                }, {
+                    <span class="hljs-string">"type"</span>: <span class="hljs-string">"shipment"</span>,
+                    <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                    <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"pickup"</span>
+                }, {
+                    <span class="hljs-string">"type"</span>: <span class="hljs-string">"shipment"</span>,
+                    <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                    <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"delivery"</span>
+                }]
+            }]
+        }]
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response"></a><a href="#success-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>_id</td><td>required</td><td>String</td><td></td><td>Problem identifier</td></tr>
+<tr><td></td><td>required</td><td><a href="#request-body">Problem</a></td><td></td><td>Actual problem that was saved into the database</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example"></a><a href="#success-response-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/api/data/v2.1/job/100/attempt</span>
+    {
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5bb1c088f52ea34c8949bff5"</span>,
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"p_01012018_0100"</span>,
+        <span class="hljs-string">"fleet_size"</span>: <span class="hljs-string">"FINITE"</span>,
+        <span class="hljs-string">"coord_mode"</span>: <span class="hljs-string">"REAL"</span>,
+        <span class="hljs-string">"vehicle_types"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"Van"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"vehicles"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+            <span class="hljs-string">"type_id"</span>: <span class="hljs-string">"Van"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"items"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"weight"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"services"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 1"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"shipments"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 2"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"solutions"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"solution 1"</span>,
+            <span class="hljs-comment">// ...</span>
+        }]
+    }
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="patch-web-problem-v2-problemid-update"></a><a href="#patch-web-problem-v2-problemid-update" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PATCH <code>/web/problem/v2/:problemId/update</code></h2>
+<p>Update any property in a problem based on filter. The property can be root or a nested property</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-1"></a><a href="#resource-info-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Admin, Default, Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-params"></a><a href="#request-params" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Params</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>problemId</td><td>required</td><td>Integer</td><td></td><td><code>_id</code> of problem</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body-1"></a><a href="#request-body-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>update</td><td>required</td><td>Object</td><td></td><td>New values</td></tr>
+<tr><td>query</td><td>optional</td><td>Object</td><td></td><td>Filter to select the document to update</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example-1"></a><a href="#request-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<p><strong>Update root property</strong></p>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/5bb1c088f52ea34c8949bff5/update</span>
+    {
+        <span class="hljs-string">"update"</span>: {
+            <span class="hljs-string">"coord_mode"</span>: <span class="hljs-string">"INFINITE"</span>
+        }
+    }
+</code></pre>
+<p><strong>Update object in an array property</strong></p>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/5bb1c088f52ea34c8949bff5/update</span>
+    {
+        <span class="hljs-string">"update"</span>: {
+            <span class="hljs-string">"solutions.$"</span>: { <span class="hljs-comment">// entire object will be overwritten</span>
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"solution 2"</span>,
+                <span class="hljs-string">"routes"</span>: [{
+                    <span class="hljs-string">"vehicle_id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+                    <span class="hljs-string">"act"</span>: [{
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"service"</span>,
+                        <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 1"</span>,
+                        <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"delivery"</span>
+                    }, {
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"shipment"</span>,
+                        <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                        <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"pickup"</span>
+                    }, {
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"shipment"</span>,
+                        <span class="hljs-string">"job_id"</span>: <span class="hljs-string">"order 2"</span>,
+                        <span class="hljs-string">"job_prop"</span>: <span class="hljs-string">"delivery"</span>
+                    }]
+                }]
+            }
+        },
+        <span class="hljs-string">"query"</span>: {
+            <span class="hljs-string">"solutions.id"</span>: <span class="hljs-string">"solution 1"</span>
+        }
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response-1"></a><a href="#success-response-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>_id</td><td>required</td><td>String</td><td></td><td>Problem identifier</td></tr>
+<tr><td></td><td>required</td><td><a href="#request-body">Problem</a></td><td></td><td>Updated problem</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-1"></a><a href="#success-response-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/5bb1c088f52ea34c8949bff5/update</span>
+    {
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5bb1c088f52ea34c8949bff5"</span>,
+        <span class="hljs-string">"fleet_size"</span>: <span class="hljs-string">"INFINITE"</span>,
+        <span class="hljs-comment">// ...</span>
+    }
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="patch-web-problem-v2-problemid-remove"></a><a href="#patch-web-problem-v2-problemid-remove" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PATCH <code>/web/problem/v2/:problemId/remove</code></h2>
+<p>Remove element(s) in an <strong>array</strong> in a problem based on filter</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-2"></a><a href="#resource-info-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Admin, Default, Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-params-1"></a><a href="#request-params-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Params</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>problemId</td><td>required</td><td>Integer</td><td></td><td><code>_id</code> of problem</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body-2"></a><a href="#request-body-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>update</td><td>required</td><td>Object</td><td></td><td>Filter to decide how to remove element in array property</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example-2"></a><a href="#request-example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/5bb1c088f52ea34c8949bff5/remove</span>
+    {
+        <span class="hljs-string">"update"</span>: {
+            <span class="hljs-string">"solutions"</span>: {
+                <span class="hljs-string">"id"</span>: {
+                    <span class="hljs-string">"$in"</span>: [<span class="hljs-string">"solution 1"</span>]
+                }
+            }
+        }
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response-2"></a><a href="#success-response-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>_id</td><td>required</td><td>String</td><td></td><td>Problem identifier</td></tr>
+<tr><td></td><td>required</td><td><a href="#request-body">Problem</a></td><td></td><td>Updated problem</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-2"></a><a href="#success-response-example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/5bb1c088f52ea34c8949bff5/remove</span>
+    {
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5bb1c088f52ea34c8949bff5"</span>,
+        <span class="hljs-string">"solutions"</span>: []
+        <span class="hljs-comment">// ...</span>
+    }
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-web-problem-v2-destroy"></a><a href="#post-web-problem-v2-destroy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/web/problem/v2/destroy</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-3"></a><a href="#resource-info-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Admin, Default, Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body-3"></a><a href="#request-body-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>ids</td><td>required</td><td>String[]</td><td></td><td>List of Ids of problems to delete</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example-3"></a><a href="#request-example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/destroy</span>
+    {
+        <span class="hljs-string">"ids"</span>: [<span class="hljs-string">"5bb1c088f52ea34c8949bff5"</span>]
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response-3"></a><a href="#success-response-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td></td><td>Integer</td><td></td><td>Number of deleted problems</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-3"></a><a href="#success-response-example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// HTTP/1.1 200 OK</span>
+    <span class="hljs-number">1</span> <span class="hljs-comment">// one problem deleted</span>
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="get-web-problem-v2-problemid"></a><a href="#get-web-problem-v2-problemid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/web/problem/v2/:problemId</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-4"></a><a href="#resource-info-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Admin, Default, Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-params-2"></a><a href="#request-params-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Params</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>problemId</td><td>required</td><td>Integer</td><td></td><td><code>_id</code> of problem</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example-4"></a><a href="#request-example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<ul>
+<li>Get details of problem
+<ul>
+<li><code>http://localhost/web/problem/v2/5bb1c088f52ea34c8949bff5</code></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="success-response-4"></a><a href="#success-response-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>_id</td><td>required</td><td>String</td><td></td><td>Problem identifier</td></tr>
+<tr><td></td><td>required</td><td><a href="#request-body">Problem</a></td><td></td><td>Problem details</td></tr>
+<tr><td>addresses</td><td>required</td><td><a href="problem-types#address">Address[]</a></td><td></td><td>List of addresses in the problem</td></tr>
+<tr><td>modified_date</td><td>required</td><td>String</td><td></td><td>Date of last modification in ISO8601 format</td></tr>
+<tr><td>created_date</td><td>required</td><td>String</td><td></td><td>Date of creation in ISO8601 format</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-4"></a><a href="#success-response-example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/5bb1c088f52ea34c8949bff5</span>
+    {
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5bb1c088f52ea34c8949bff5"</span>,
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"p_01012018_0100"</span>,
+        <span class="hljs-string">"fleet_size"</span>: <span class="hljs-string">"FINITE"</span>,
+        <span class="hljs-string">"coord_mode"</span>: <span class="hljs-string">"REAL"</span>,
+        <span class="hljs-string">"modified_date"</span>: <span class="hljs-string">"2018-01-01T01:00:00.000Z"</span>,
+        <span class="hljs-string">"created_date"</span>: <span class="hljs-string">"2018-01-01T01:00:00.000Z"</span>
+        <span class="hljs-string">"vehicle_types"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"Van"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"vehicles"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"vehicle 1"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"items"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"weight"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"services"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 1"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"shipments"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"order 2"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"solutions"</span>: [{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"solution 1"</span>,
+            <span class="hljs-comment">// ...</span>
+        }],
+        <span class="hljs-string">"addresses"</span>: [{
+            <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018906"</span>,
+            <span class="hljs-comment">// ...</span>
+        }, {
+            <span class="hljs-string">"postal"</span>: <span class="hljs-string">"018985"</span>,
+            <span class="hljs-comment">// ...</span>
+        }, {
+            <span class="hljs-string">"postal"</span>: <span class="hljs-string">"048620"</span>,
+            <span class="hljs-comment">// ...</span>
+        }]
+    }
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="get-web-problem-v2-abstract"></a><a href="#get-web-problem-v2-abstract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/web/problem/v2/abstract</code></h2>
+<p>Get brief summary of each solution in the database</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-5"></a><a href="#resource-info-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Admin, Default, Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example-5"></a><a href="#request-example-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<ul>
+<li>Get abstract information / brief summary
+<ul>
+<li><code>http://localhost/web/problem/v2/abstract</code></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="success-response-5"></a><a href="#success-response-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>[]</td><td>required</td><td>String</td><td></td><td>List of problems in the database</td></tr>
+<tr><td>[]._id</td><td>required</td><td>String</td><td></td><td>Problem identifier</td></tr>
+<tr><td>[].name</td><td>required</td><td>String</td><td></td><td>Name of problem</td></tr>
+<tr><td>[].fleet_size</td><td>required</td><td>String</td><td></td><td>Whether number of vehicles available for optimisation</td></tr>
+<tr><td>[].coord_mode</td><td>required</td><td>String</td><td></td><td>Types of coordinates used</td></tr>
+<tr><td>[].no_of_orders</td><td>required</td><td>Integer</td><td></td><td>Numbers of orders (service + shipment) in the problem</td></tr>
+<tr><td>[].no_of_vehicles</td><td>required</td><td>Integer</td><td></td><td>Numbers of vehicles in the problem</td></tr>
+<tr><td>[].no_of_solutions</td><td>required</td><td>Integer</td><td></td><td>Numbers of solutions in the problem</td></tr>
+<tr><td>[].modified_date</td><td>required</td><td>String</td><td></td><td>Date of last modification in ISO8601 format</td></tr>
+<tr><td>[].created_date</td><td>required</td><td>String</td><td></td><td>Date of creation in ISO8601 format</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-5"></a><a href="#success-response-example-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/problem/v2/abstract</span>
+    [{
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5bb1c088f52ea34c8949bff5"</span>,
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"p_01012018_0100"</span>,
+        <span class="hljs-string">"fleet_size"</span>: <span class="hljs-string">"FINITE"</span>,
+        <span class="hljs-string">"coord_mode"</span>: <span class="hljs-string">"REAL"</span>,
+        <span class="hljs-string">"no_of_orders"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">"no_of_vehicles"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"no_of_solutions"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"modified_date"</span>: <span class="hljs-string">"2018-01-01T01:00:00.000Z"</span>,
+        <span class="hljs-string">"created_date"</span>: <span class="hljs-string">"2018-01-01T01:00:00.000Z"</span>
+    }]
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/next/vrp-problem/solution-types">← Solution Types</a><a class="docs-next button" href="/docs/docs/next/vrp-problem/geocode">Geocode →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#reference">Reference</a></li><li><a href="#post-web-problem-v2">POST <code>/web/problem/v2</code></a><ul class="toc-headings"><li><a href="#resource-info">Resource Info</a></li><li><a href="#request-body">Request Body</a></li><li><a href="#success-response">Success Response</a></li></ul></li><li><a href="#patch-web-problem-v2-problemid-update">PATCH <code>/web/problem/v2/:problemId/update</code></a><ul class="toc-headings"><li><a href="#resource-info-1">Resource Info</a></li><li><a href="#request-params">Request Params</a></li><li><a href="#request-body-1">Request Body</a></li><li><a href="#success-response-1">Success Response</a></li></ul></li><li><a href="#patch-web-problem-v2-problemid-remove">PATCH <code>/web/problem/v2/:problemId/remove</code></a><ul class="toc-headings"><li><a href="#resource-info-2">Resource Info</a></li><li><a href="#request-params-1">Request Params</a></li><li><a href="#request-body-2">Request Body</a></li><li><a href="#success-response-2">Success Response</a></li></ul></li><li><a href="#post-web-problem-v2-destroy">POST <code>/web/problem/v2/destroy</code></a><ul class="toc-headings"><li><a href="#resource-info-3">Resource Info</a></li><li><a href="#request-body-3">Request Body</a></li><li><a href="#success-response-3">Success Response</a></li></ul></li><li><a href="#get-web-problem-v2-problemid">GET <code>/web/problem/v2/:problemId</code></a><ul class="toc-headings"><li><a href="#resource-info-4">Resource Info</a></li><li><a href="#request-params-2">Request Params</a></li><li><a href="#success-response-4">Success Response</a></li></ul></li><li><a href="#get-web-problem-v2-abstract">GET <code>/web/problem/v2/abstract</code></a><ul class="toc-headings"><li><a href="#resource-info-5">Resource Info</a></li><li><a href="#success-response-5">Success Response</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/logo.png" alt="(LM)2" width="66" height="58"/></a><div><h5>Quick References</h5><a href="/docs/docs/vrp-user/authentication">User</a><a href="/docs/docs/vrp-data/general-information">Data</a><a href="/docs/docs/vrp-message/message">Message Box</a><a href="/docs/docs/vrp-map-service/postal">Map</a><a href="/docs/docs/vrp-problem/problem">Problem</a></div><div><h5>Help</h5><a href="/docs/docs/integration/create-order">How to integrate</a></div><div><h5>Contact</h5><div class="footer-text"><p>For documentation-related queries, email to tandzj@simtech.a-star.edu.sg</p><p>For all other issues, email to simtech.pom.msa@gmail.com</p></div></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Singapore Institute of Manufacturing Technology (SIMTech)</section></footer></div></body></html>

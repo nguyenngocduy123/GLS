@@ -1,0 +1,13 @@
+{
+    "name": "SIMTech LM2 Driver Application",
+    "short_name": "LM2",
+    "start_url": "index.html",
+    "display": "standalone",
+    "icons": [{
+        "src": "assets/images/logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "background_color": "#4e8ef7",
+    "theme_color": "#4e8ef7"
+}

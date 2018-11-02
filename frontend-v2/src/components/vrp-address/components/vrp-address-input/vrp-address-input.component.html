@@ -1,0 +1,41 @@
+<div layout='row' style='width:200px'>
+    <mat-form-field flex>
+        <input matInput [placeholder]="label" type="text" [(ngModel)]="displayText" disabled>
+
+        <a matSuffix [matMenuTriggerFor]="menuAddress" #trigger="matMenuTrigger">
+            <mat-icon>edit</mat-icon>
+        </a>
+    </mat-form-field>
+</div>
+
+<mat-menu x-position="after" y-position="below" #menuAddress="matMenu" [overlapTrigger]="false">
+    <div layout="column" layout-margin layout-padding (click)="stopPropagation($event)">
+
+        <mat-form-field flex>
+            <input matInput placeholder="Address" type="text" [(ngModel)]="_address.address">
+        </mat-form-field>
+
+        <div layout="row" layout-margin>
+            <mat-form-field flex>
+                <input flex matInput #elementPostal #userControl="ngModel" placeholder="Postal" type="text" maxlength="6"
+                    minlength="6" [(ngModel)]="_address.postal" (ngModelChange)="postalChanged($event)">
+                <mat-hint align="end"> {{elementPostal.value.length}}/6</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field flex>
+                <input #elementLat matInput [(ngModel)]="_address.lat" placeholder="Lattitude" type='number' min="-90"
+                    max="90" required>
+            </mat-form-field>
+
+            <mat-form-field flex>
+                <input #elementLon matInput [(ngModel)]="_address.lng" placeholder="Longitude" type='number' min="-180"
+                    max="180" required>
+            </mat-form-field>
+        </div>
+
+        <div layout="row">
+            <button flex mat-button color='primary' matTooltip='Undo' (click)='cancel(); trigger.closeMenu()'>CANCEL</button>
+            <button flex mat-button color='accent' matTooltip='Save' (click)='save(); trigger.closeMenu()'>SAVE</button>
+        </div>
+    </div>
+</mat-menu>

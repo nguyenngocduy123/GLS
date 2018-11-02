@@ -1,0 +1,18 @@
+<td-layout #layout [class]="activeTheme">
+    <td-navigation-drawer [sidenavTitle]="user?.username+(user?.usergroup?('@'+user.usergroup): '')" [name]="user?.fullname"
+        [email]="user?.email" icon='person' flex color="primary">
+        <mat-nav-list>
+            <a *ngFor='let item of userDropdownMenu' mat-list-item [href]='item?.href' (click)="layout.close()">
+                <mat-icon matListIcon>{{item?.icon}}</mat-icon>{{item?.label}}
+            </a>
+            <a mat-list-item (click)="logout()">
+                <mat-icon matListIcon>exit_to_app</mat-icon>{{'Logout'| translate}}</a>
+        </mat-nav-list>
+    </td-navigation-drawer>
+
+    <div td-sidenav-content class="td-layout-footer pad">
+        &copy; 2018 Grocery Logistics Of Singapore Pte Ltd<br> (Version: {{version}})
+    </div>
+
+    <router-outlet></router-outlet>
+</td-layout>

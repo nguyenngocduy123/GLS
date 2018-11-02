@@ -1,0 +1,29 @@
+<div *ngIf='job' layout="column">
+    <span *ngIf="job.NoteFromDriver" class=' text-left' layout='column'>
+        <span *ngFor='let note of job.NoteFromDriver'>
+            <span *ngIf='note.key ==="Comments" '>
+                <b>Comments</b>: {{note.value}}
+            </span>
+
+            <span *ngIf='note.key ==="Template" '>
+                <b>Comments</b>: {{note.value}}
+            </span>
+
+            <span *ngIf='note.key ==="ActualDeliveryLocation" '>
+                <b>GPS Coordinates</b>: {{note.value.lat}}, {{note.value.lng}}
+            </span>
+            <br/>
+
+            <span *ngIf='note.key ==="ActualDeliveryLocation" '>
+                <b>Distance</b>: {{circleDistance | number: '1.2-2' }} Meters
+            </span>
+        </span>
+    </span>
+
+    <div layout='row'>
+        <figure *ngFor='let photo of job.DeliveryNotePhoto ; let i=index;'>
+            <img [src]="'data:image/png;base64,'+photo" class='photo-container'>
+            <figcaption class='text-center'>Photo ({{i+1}})</figcaption>
+        </figure>
+    </div>
+</div>

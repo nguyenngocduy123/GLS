@@ -1,0 +1,12 @@
+<h2 matDialogTitle *ngIf='title'> {{title}}</h2>
+
+<mat-dialog-content layout="column" layout-margin>
+    <div flex>{{message.text}}</div>
+    <mat-progress-bar *ngIf='!message.finished' flex mode="indeterminate"> </mat-progress-bar>
+</mat-dialog-content>
+
+<mat-dialog-actions layout="row">
+    <div flex></div>
+    <button mat-button color='warn' [matDialogClose]="false" [disabled]='message.finished'>Cancel</button>
+    <button mat-button color='primary' [matDialogClose]="true" [disabled]='!message.finished'>Done</button>
+</mat-dialog-actions>

@@ -1,0 +1,54 @@
+<mat-sidenav-container layout-fill>
+    <mat-sidenav #sidenav mode="side" opened="true">
+        <vrp-nav-list #navList [data]='navData' [settings]='navSettings'></vrp-nav-list>
+    </mat-sidenav>
+
+    <div layout-fill>
+        <vrp-leaflet #leafletMap [clusteringMode]='false' [legends]='legends'></vrp-leaflet>
+    </div>
+</mat-sidenav-container>
+
+<ng-template #solutionItemTemplate let-d="item">
+    <span>{{d?.id | truncate:30}}
+        <i *ngIf="d.approved" class="tc-blue-900">(Approved)</i><br>
+
+        <span class="tc-red-700">{{d?.distance|m2km}}</span>
+        <span class="tc-blue-700">, {{d?.routes.length}} route(s)</span>
+        <span class="tc-purple-700">, {{d?.no_unassigned_jobs}}<span *ngIf='d.no_total_orders'>/{{d.no_total_orders}}</span>
+            unassigned</span>, used {{d?.engine| engineLabel }}, {{d?.calc_date| timeAgo}}
+    </span>
+</ng-template>
+
+<ng-template #routeItemTemplate let-d="item">
+    <span [style.color]="d.color">{{d.tags.vehicle_id}}</span>&nbsp;
+    <span *ngIf='d.tags.driver_name'>({{d.tags.driver_name}})</span><br>
+
+    <strong>{{d.tags.distance | m2km}}</strong> - {{d.tags.start_time|date:'HH:mm'}} to {{d.tags.end_time|date:'HH:mm'}}<br>
+    <!-- Note: Load is only accurate for chinh engine -->
+    <strong>Load</strong>: {{d.tags.act[0].load_before}}/{{d.tags.vehicle_capacity}},&nbsp;
+    <strong>Jobs</strong>: {{d.markers.length}}/{{d.tags.max_num_job || '-'}}
+</ng-template>
+
+<ng-template #actItemTemplate let-m="item">
+    Order
+    <a href='javascript:;' (click)='onJobDetailsOpened.emit(m.tags.id)'>#{{ m.tags.id}}</a><br>
+
+    <span>
+        arrives <span class='tc-red-500'>{{ m.arrivalTime?.start| date:'HH:mm'}}</span>
+        leave <span class='tc-red-500'>{{m.arrivalTime?.end | date:'HH:mm'}}</span>
+    </span>
+</ng-template>
+
+<mat-menu #menuActList="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item>
+        <mat-icon>edit</mat-icon>Change vehicle</a>
+
+    <!-- <a mat-menu-item (click)="evaluateRoute(selectedRoute)">
+        <mat-icon>edit</mat-icon>Evaluate</a> -->
+
+    <a mat-menu-item>
+        <mat-icon>edit</mat-icon>Send to driver</a>
+
+    <a mat-menu-item>
+        <mat-icon>delete</mat-icon>Delete</a>
+</mat-menu>

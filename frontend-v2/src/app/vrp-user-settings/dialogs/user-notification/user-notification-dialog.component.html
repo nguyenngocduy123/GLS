@@ -1,0 +1,69 @@
+<h2 matDialogTitle> Notification Settings</h2>
+
+<form [formGroup]="f" (ngSubmit)="save(f.value)">
+    <mat-dialog-content layout-wrap layout-margin layout-align="start center">
+        <div flex layout="column">
+            <h3>
+                <mat-icon>notifications</mat-icon> Jobs Updates
+            </h3>
+
+            <mat-divider></mat-divider>
+
+            <div layout="row" layout-margin>
+                <div flex="80" layout="column">
+                    <span> Bell Notification</span>
+                </div>
+
+                <div class='pad-left'>
+                    <mat-slide-toggle formControlName='jobBellNotification'></mat-slide-toggle>
+                </div>
+            </div>
+
+            <h3>
+                <mat-icon>folder_open</mat-icon> Data Updates
+            </h3>
+
+            <mat-divider></mat-divider>
+
+            <div layout="row" layout-margin>
+                <div flex="80" layout="column">
+                    <span>Toast Notification</span>
+                </div>
+                <div class='pad-left'>
+                    <mat-slide-toggle formControlName="dataToastNotification"></mat-slide-toggle>
+                </div>
+            </div>
+
+            <h3>
+                <mat-icon>mail</mat-icon> Messages
+            </h3>
+
+            <mat-divider></mat-divider>
+
+            <div layout="row" layout-margin>
+                <div flex="80" layout="column">
+                    <span>Toast Notification</span>
+                </div>
+                <div class='pad-left'>
+                    <mat-slide-toggle formControlName='msgToastNotification'></mat-slide-toggle>
+                </div>
+            </div>
+
+            <div layout="row" layout-margin>
+                <div flex="80" layout="column">
+                    <span>Bell Notification</span>
+                </div>
+
+                <div class='pad-left'>
+                    <mat-slide-toggle formControlName='msgBellNotification'></mat-slide-toggle>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions layout="row">
+        <div flex></div>
+        <button mat-button color='primary' matDialogClose>CANCEL</button>
+        <button mat-button color='accent' type='submit' [disabled]='!f.valid'>{{'SAVE'}}</button>
+    </mat-dialog-actions>
+</form>

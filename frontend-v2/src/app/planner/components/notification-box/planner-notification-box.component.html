@@ -1,0 +1,28 @@
+<button mat-icon-button [matMenuTriggerFor]="notificationsMenu" [disabled]='notificationMsg.get().length===0'>
+    <td-notification-count [notifications]="notificationMsg.get().length">
+        <mat-icon>notifications</mat-icon>
+    </td-notification-count>
+</button>
+
+<mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
+    <td-menu>
+        <mat-nav-list dense>
+            <ng-template let-item let-last="last" ngFor [ngForOf]="notificationMsg.get()">
+                <mat-list-item>
+                    <mat-icon mat-list-avatar>today</mat-icon>
+
+                    <h4 matLine>
+                        <span class="text-wrap">{{item.Status | statusLabel}} {{item.JobType}} Order #{{item.DeliveryMasterId}}
+                            </span>
+                    </h4>
+
+                    <p matLine> for {{item.ContactName}} at {{item.ActualDeliveryTime | timeAgo}} </p>
+                </mat-list-item>
+
+                <mat-divider *ngIf="!last"></mat-divider>
+            </ng-template>
+        </mat-nav-list>
+
+        <button td-menu-footer mat-button color='accent' (click)='notificationMsg.set([])'>Dismiss All</button>
+    </td-menu>
+</mat-menu>

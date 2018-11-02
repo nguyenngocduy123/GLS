@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>How to authenticate? · (LM)2</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 1. Request for API token"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="How to authenticate? · (LM)2"/><meta property="og:type" content="website"/><meta property="og:url" content="http://localhost/docs/index.html"/><meta property="og:description" content="## 1. Request for API token"/><meta name="twitter:card" content="summary"/><meta name="robots" content="noindex"/><link rel="shortcut icon" href="/docs/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css"/><link rel="stylesheet" href="/css/custom.css"/><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/logo.png" alt="(LM)2"/><h2 class="headerTitleWithLogo">(LM)2</h2></a><a href="/docs/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/sitemap" target="_self">Sitemap</a></li><li class="siteNavGroupActive"><a href="/docs/docs/next/integration/create-order" target="_self">Integration</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Integration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/next/integration/authentication">How to authenticate?</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/integration/create-order">How to create order?</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/integration/update-order">How to update order?</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/integration/get-order">How to get orders?</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">How to authenticate?</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="1-request-for-api-token"></a><a href="#1-request-for-api-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Request for API token</h2>
+<p><a href="../vrp-user/authentication#post-api-auth-v2-login">API Documentation: Log in</a></p>
+<p>Repeat the same steps to get a new token</p>
+<h3><a class="anchor" aria-hidden="true" id="request"></a><a href="#request" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request</h3>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// POST http://localhost/api/auth/v2/login</span>
+    {
+        <span class="hljs-string">"username"</span>: <span class="hljs-string">"user_doe"</span>,
+        <span class="hljs-string">"password"</span>: <span class="hljs-string">"123"</span>
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="response"></a><a href="#response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Response</h3>
+<p>Subsequent requests <strong>MUST</strong> provide <code>token</code> in the request header[<code>x-access-token</code>]</p>
+<p>Each token is valid for (<code>5</code>) days</p>
+<p><strong>Do not</strong> take it for granted that the API will always return status 200</p>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// HTTP/1.1 200 OK</span>
+    {
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"58118ee072e0c18ab626501e"</span>,
+        <span class="hljs-string">"username"</span>: <span class="hljs-string">"user_doe"</span>,
+        <span class="hljs-string">"fullname"</span>: <span class="hljs-string">"Planner Doe"</span>,
+        <span class="hljs-string">"role"</span>: <span class="hljs-string">"planner"</span>
+        <span class="hljs-string">"usergroup"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">"forceChangePassword"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"token"</span>: <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"</span>
+    }
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/docs/next/integration/create-order">How to create order? →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-request-for-api-token">1. Request for API token</a><ul class="toc-headings"><li><a href="#request">Request</a></li><li><a href="#response">Response</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/logo.png" alt="(LM)2" width="66" height="58"/></a><div><h5>Quick References</h5><a href="/docs/docs/vrp-user/authentication">User</a><a href="/docs/docs/vrp-data/general-information">Data</a><a href="/docs/docs/vrp-message/message">Message Box</a><a href="/docs/docs/vrp-map-service/postal">Map</a><a href="/docs/docs/vrp-problem/problem">Problem</a></div><div><h5>Help</h5><a href="/docs/docs/integration/create-order">How to integrate</a></div><div><h5>Contact</h5><div class="footer-text"><p>For documentation-related queries, email to tandzj@simtech.a-star.edu.sg</p><p>For all other issues, email to simtech.pom.msa@gmail.com</p></div></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Singapore Institute of Manufacturing Technology (SIMTech)</section></footer></div></body></html>

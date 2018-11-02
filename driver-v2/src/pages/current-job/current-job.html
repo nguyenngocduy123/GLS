@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header>{{'PAGE.CURRENT_JOB.Header' | translate}}</vrp-header>
+
+        <ion-buttons end *ngIf="enableMail">
+            <button ion-button (tap)="btnCustomerService()" color="secondary">
+                <ion-icon large name="mail"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <vrp-job-details [job]="job" showItems="true"></vrp-job-details>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-6 no-padding>
+                <a button ion-button full large color="navy" no-margin href="tel:{{this.job.ContactPhone}}">
+                    <div>
+                        <ion-icon name="call"></ion-icon>
+                        {{'PAGE.CURRENT_JOB.BtnCall' | translate}}
+                    </div>
+                </a>
+            </ion-col>
+
+            <ion-col col-6 no-padding>
+                <button ion-button full large color="blue" no-margin (tap)="btnNavigate()">
+                    <div>
+                        <ion-icon name="navigate"></ion-icon>
+                        {{'PAGE.CURRENT_JOB.BtnNavigate' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-6 no-padding>
+                <button ion-button full large [color]="disableBtnDo ? 'grey' : 'orange'" no-margin (tap)="btnFail()">
+                    <div>
+                        <ion-icon name="close-circle"></ion-icon>
+                        {{'PAGE.CURRENT_JOB.BtnFail' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+
+            <ion-col col-6 no-padding>
+                <button ion-button full large [color]="disableBtnDo ? 'grey' : 'green'" no-margin (tap)="btnSuccess()">
+                    <div>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                        {{'PAGE.CURRENT_JOB.BtnSuccess' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

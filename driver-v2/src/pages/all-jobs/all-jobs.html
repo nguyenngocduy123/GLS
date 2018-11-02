@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header>All Jobs</vrp-header>
+
+        <button end ion-button menuToggle="right">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid no-padding no-margin>
+        <ion-row>
+            <ion-col>
+                <vrp-progress-bar [jobs]="allJobs"></vrp-progress-bar>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col class="small-margin">
+                <ion-segment [(ngModel)]="selectedIndex" (ionChange)="segmentChanged($event)">
+                    <ion-segment-button *ngFor="let segment of segments; let i = index" [value]="i">
+                        {{segment.title}}
+                    </ion-segment-button>
+                </ion-segment>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <ion-item *ngIf="enableReorder && canReorder && !showCheckboxView">
+                    <ion-label color="primary">Reorder jobs</ion-label>
+                    <ion-toggle item-end [(ngModel)]="btnReorderVal"></ion-toggle>
+                </ion-item>
+
+                <ion-list *ngIf="showCheckboxView">
+                    <ion-item *ngFor="let job of currList">
+                        <ion-label>
+                            <vrp-job-summary [job]="job"></vrp-job-summary>
+                        </ion-label>
+                        <ion-checkbox (ionChange)="btnSelectedJob(job, $event)"></ion-checkbox>
+                    </ion-item>
+                </ion-list>
+
+                <ion-list *ngIf="!showCheckboxView" [reorder]="btnReorderVal" (ionItemReorder)="itemReorder($event)">
+                    <ion-item-sliding *ngFor="let job of currList">
+                        <button ion-item [attr.track]="getColor(job)" (tap)="btnJob(job)">
+                            <vrp-job-summary [job]="job"></vrp-job-summary>
+                        </button>
+
+                        <ion-item-options side="right">
+                            <button ion-button (tap)="btnViewFullDetails(job)" color="green">
+                                <ion-icon name="information-circle"></ion-icon>
+                                Details
+                            </button>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-fab bottom right #fab *ngIf="enableMail && canSendMail && !btnReorderVal">
+        <button ion-fab color="orange" (tap)="btnChangeView()">
+            <ion-icon name="checkbox"></ion-icon>
+        </button>
+        <ion-fab-list side="top">
+            <button ion-fab color="secondary" (tap)="btnSendMail()">
+                <ion-icon name="mail"></ion-icon>
+            </button>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

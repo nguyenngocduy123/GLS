@@ -1,0 +1,104 @@
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col text-center>
+                <h2>{{'PAGE.LICENSE_AGREEMENT.Header' | translate}}</h2>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <h3>
+                    This End-User Licence Agreement (“EULA”) is a legal agreement between you (either an individual or a single entity) and Exploit
+                    Technologies Private Limited (“Exploit Technologies”) that governs your use of the Web Service (i.e web
+                    services hosted by Exploit Technologies or its affiliates) and Software (i.e mobile applications for
+                    iOS or Android), installed on or made available by Exploit Technologies or Exploit Technologies’ affiliates.
+                    By clicking the "ACCEPT" button, you agree to be bound by the terms and conditions of this EULA. The
+                    Software and Web Service are made available to you at no cost. If you do not agree to the terms and conditions
+                    of this Agreement, please do not proceed.
+                </h3>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <ol>
+                    <li>
+                        <span>Rights of Use</span>
+                        <ol>
+                            <li>The Software and Web Service are provided solely for non-commercial and evaluation purposes only.
+                                You may, at any one time, access the Web Service over the web from your mobile computer that
+                                is under your control.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <span>Term</span>
+                        <ol>
+                            <li>The Software and Web Service shall expire after 90 days from acceptance of the EULA, unless otherwise
+                                extended or terminated at Exploit Technologies’ discretion.</li>
+                            <li>This EULA will be come into effect from the time you agree to the Terms herein, and will terminate
+                                if you fail to abide by any of the terms of this Agreement.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <span>Ownership</span>
+                        <ol>
+                            <li>Exploit Technologies shall at all times retain ownership of the Software and the Web Service.</li>
+                            <li>Exploit Technologies does not assert ownership over any data files (e.g. audio files) submitted
+                                by you through the Web Service. Save as expressly provided herein, all title and intellectual
+                                property rights in and arising from the provision of the Software and Web Service belong
+                                to the Exploit Technologies. You agree to grant Exploit Technologies, and Exploit Technologies’
+                                affiliates a perpetual, fully-paid-up right to use the submitted data files for their internal
+                                research purposes.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <span>Warranties</span>
+                        <ol>
+                            <li>The Software and Web Service are provided “as is” and with no warranties. If Exploit Technologies
+                                is notified of significant errors in the Software or the Web Service, it will attempt to
+                                correct any such demonstrable errors within a reasonable time.</li>
+                            <li>You warrant that you own all submitted Data Files, or that if any submitted Data Files belong
+                                to a third party, you have obtained the necessary authorisation or licence to use them with
+                                the Software and Web Service.
+                            </li>
+                            <li>The express terms of this Agreement are in lieu of all warranties, conditions, undertakings,
+                                terms and obligations implied by statute, common law, trade usage, course of dealing or otherwise
+                                all of which are hereby excluded to the fullest extend permitted by law.</li>
+                            <li>Exploit Technologies does not warrant that the Software and Web Service will meet your requirements
+                                or that the operation of the Software and Web Service will be uninterrupted or error-free
+                                or that defects in the Software and Web Service will be corrected. You shall use the Software
+                                and Web Service at your own risk and in no event will Exploit Technologies be liable to you
+                                for any loss or damage of any kind (except personal injury or death resulting from Exploit
+                                Technologies’ gross negligence) including lost profits or other consequential loss arising
+                                from your use of or inability to use the Software and Web Service, or from errors or deficiencies
+                                in it whether caused by negligence or otherwise except as expressly provided herein.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <span>Other Terms</span>
+                        <ol>
+                            <li>You acknowledge and agree that Exploit Technologies has the full discretion in deciding whether
+                                or not to provide you with the Software and Web Service, and that your rights to use may
+                                be terminated by Exploit Technologies at will.</li>
+                            <li>Exploit Technologies reserves the right to modify the terms and conditions of this Agreement
+                                by amending the same at its discretion, and any new versions shall be effective immediately
+                                upon release on the website. You will be deemed to have notice of, and agree to any such
+                                new terms and conditions.</li>
+                            <li>The laws of Singapore shall govern this Agreement.</li>
+                        </ol>
+                    </li>
+                </ol>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button round full large-padding icon-right (tap)="btnAccept()">
+                    <ion-icon name="checkmark-circle"></ion-icon>&nbsp;&nbsp;{{'PAGE.LICENSE_AGREEMENT.BtnAccept' | translate}}
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

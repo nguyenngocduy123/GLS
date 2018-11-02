@@ -1,0 +1,69 @@
+<td-layout-nav toolbarTitle="Monitor">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="end center" flex>
+        <vrp-planner-date-navigator [viewDate]="jobQuery.startDate" (viewDateChange)='changeQueryParams({viewDate:$event.toISODate()})'
+            (dateClick)="openDateSelection()" [allowPast]="allowPastDateChange" [allowFuture]="allowFutureDateChange" [readOnly]="readOnly"></vrp-planner-date-navigator>
+
+        <button mat-button [matMenuTriggerFor]="timeFilterMenu" *ngIf='allowTimeFilter'>
+            Time Filter: {{timeFilter.start || '00:00'}} - {{timeFilter.end || '23:59'}}
+            <mat-icon>filter_list</mat-icon>
+        </button>
+
+        <span flex></span>
+
+        <nav class="text-upper text-sm" layout="row">
+            <ng-template let-tab ngFor [ngForOf]="tabList">
+                <a class="push-right text-nodecoration" [routerLinkActive]="['active']" [queryParamsHandling]='"merge"' [routerLink]="[tab.name]">
+                    {{tab.label }}
+                </a>
+            </ng-template>
+        </nav>
+
+        <button mat-icon-button [matMenuTriggerFor]="menuPlanChanged" [disabled]="changedRoutes.length===0">
+            <td-notification-count [notifications]="changedRoutes.length">
+                <mat-icon>save</mat-icon>
+            </td-notification-count>
+        </button>
+
+        <vrp-planner-mail-notification></vrp-planner-mail-notification>
+        <vrp-planner-notification-box></vrp-planner-notification-box>
+
+        <button mat-icon-button matTooltip="Refresh" (click)="refresh($event)">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <router-outlet></router-outlet>
+
+</td-layout-nav>
+
+<mat-menu #timeFilterMenu="matMenu" [overlapTrigger]="false">
+    <vrp-time-filter-menu (applyFilter)='applyTimeFilter($event)'></vrp-time-filter-menu>
+</mat-menu>
+
+<mat-menu #menuPlanChanged="matMenu" [overlapTrigger]="false">
+    <td-menu>
+        <div td-menu-header layout='row'>
+            <button flex mat-button color="primary" td-menu-footer (click)='approvePlan()'>
+                Save All
+            </button>
+            <button flex mat-button color="accent" td-menu-footer (click)='discardChanges()'>
+                Discard
+            </button>
+        </div>
+        <mat-nav-list dense>
+            <ng-template let-last="last" ngFor [ngForOf]="changedRoutes" let-item>
+                <a mat-list-item>
+                    <mat-icon mat-list-avatar>today</mat-icon>
+                    <h4 matLine>
+                        <span class="text-wrap">{{item.id}}'s route modified</span>
+                    </h4>
+                </a>
+                <mat-divider *ngIf="!last"></mat-divider>
+            </ng-template>
+        </mat-nav-list>
+    </td-menu>
+</mat-menu>

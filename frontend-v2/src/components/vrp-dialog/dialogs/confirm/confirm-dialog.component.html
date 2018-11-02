@@ -1,0 +1,13 @@
+<h2 matDialogTitle *ngIf="title"> {{title}}</h2>
+
+<mat-dialog-content layout='column' layout-margin>
+    <span class="line-breaker">
+        {{message}}
+    </span>
+</mat-dialog-content>
+
+<mat-dialog-actions layout="row">
+    <div flex></div>
+    <button mat-button [matDialogClose]='false'>{{cancelButton}}</button>
+    <button mat-button color="accent" [matDialogClose]='true'>{{acceptButton}}</button>
+</mat-dialog-actions>

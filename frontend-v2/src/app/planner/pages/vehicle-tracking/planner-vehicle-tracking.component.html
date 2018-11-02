@@ -1,0 +1,37 @@
+<mat-sidenav-container [style.height.px]='innerHeight'>
+    <mat-sidenav #sidenav mode="side" opened>
+        <vrp-nav-list #navList [data]='navData' [settings]='navSettings'></vrp-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav #sideNavRight mode="over" position="end" style='width:100%' disableClose (closedStart)='navList.filter()'>
+        <vrp-planner-dispatch *ngIf="sideNavRight.opened" #plannerDispatch [vehicles]="vehicles" [selectedVehicle]='selectedVehicle||clickedVehicle'
+            [unassignedJobMarkers]='unassignedJobMarkers' (jobsAddedToVehicle)='onJobsAddedToVehicle($event)'>
+        </vrp-planner-dispatch>
+    </mat-sidenav>
+
+    <vrp-leaflet #leafletMap [legends]='legends'></vrp-leaflet>
+</mat-sidenav-container>
+
+<a mat-fab color="accent" [matTooltip]="sideNavRight.opened?'Close Dispatch Panel':'Open Dispatch Panel'" matTooltipPosition="before"
+    class="mat-fab-bottom-right z-3 fixed fab-pad" style='z-index:500' (click)="toggleDispatchPanel(!sideNavRight.opened)">
+    <mat-icon>{{sideNavRight.opened?'close':'edit'}}</mat-icon>
+</a>
+
+<ng-template #vehicleItemTemplate let-d="item">
+    <span [style.color]="d.color">
+        {{d.Id}} <span *ngIf='d.DriverUsername'>({{d.DriverUsername}})</span>
+    </span>
+    <br>
+    <span *ngIf='d.route'> {{d.route && d.route.markers.length}} jobs</span>
+</ng-template>
+
+<ng-template #actItemTemplate let-m="item">
+    Order
+    <a href='javascript:;' [style.color]='statusColors[m.tags.Status]' (click)='openOrderDetailDialog(m.tags.DeliveryMasterId)'>#{{
+        m.tags.DeliveryMasterId}}
+    </a>
+    <br>
+    <span *ngIf='m.tags.ActualDeliveryTime'>finished at
+        <span class='tc-red-500'>{{ m.tags.ActualDeliveryTime| date:'HH:mm'}}</span>
+    </span>
+</ng-template>

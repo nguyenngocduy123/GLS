@@ -1,0 +1,143 @@
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+
+// Plus imports for other components in your app.
+// Include the base styles for Angular Material core. We include this here so that you only have to load a single css file for Angular Material in your app.
+@include mat-core();
+
+
+// Custom orange contrast
+$mat-orange-custom: ( 50: #FFF3E0,
+100: #FFE0B2,
+200: #FFCC80,
+300: #FFB74D,
+400: #FFA726,
+500: #FF9800,
+600: #FB8C00,
+700: #F57C00,
+800: #EF6C00,
+900: #E65100,
+A100: #FFD180,
+A200: #FFAB40,
+A400: #FF9100,
+A700: #FF6D00,
+contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $white-87-opacity,
+    )
+);
+
+$primary: mat-palette($mat-blue-grey, 900);
+$accent:  mat-palette($mat-orange-custom, A700, A100, A400);
+$warn:    mat-palette($mat-red, 600);
+
+
+
+// $primary: mat-palette($mat-blue, 700);
+// $accent:  mat-palette($mat-orange, 800, A100, A400);
+// $warn:    mat-palette($mat-red, 600);
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+@include covalent-theme($theme);
+
+
+
+// Custom theme examples
+.blue-orange {
+    $primary: mat-palette($mat-blue, 700);
+    $accent:  mat-palette($mat-orange, 800, A100, A400);
+    $warn:    mat-palette($mat-red, 600);
+    $theme: mat-light-theme($primary, $accent, $warn);
+    @include angular-material-theme($theme);
+    @include covalent-theme($theme);
+}
+
+.white-orange {
+    $primary2: mat-palette($mat-grey, 50);
+    $accent2:  mat-palette($mat-orange, 800);
+    $warn2:    mat-palette($mat-red, 600);
+
+    $white-orange: mat-light-theme($primary2, $accent2, $warn2);
+
+    @include angular-material-theme($white-orange);
+    @include covalent-theme($white-orange);
+}
+
+.dark-grey-blue {
+    $primary3: mat-palette($mat-blue-grey, 800);
+    $accent3:  mat-palette($mat-teal, 500);
+    $warn3:    mat-palette($mat-red, 600);
+
+    $dark-grey-blue: mat-dark-theme($primary3, $accent3, $warn3);
+
+    @include angular-material-theme($dark-grey-blue);
+    @include covalent-theme($dark-grey-blue);
+}
+
+.light-blue-red {
+    $primary4: mat-palette($mat-light-blue, 700);
+    $accent4:  mat-palette($mat-red, 700);
+    $warn4:    mat-palette($mat-deep-orange, 800);
+
+    $light-blue-red: mat-light-theme($primary4, $accent4, $warn4);
+
+    @include angular-material-theme($light-blue-red);
+    @include covalent-theme($light-blue-red);
+}
+
+/* ------------------------------------------------------------------------------- */
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
+
+// Apply theme for this app
+
+// mat-nav-list {
+//     [mat-list-item].active {
+//         mat-icon[mat-list-avatar] {
+//             background-color: mat-color($accent);
+//             color: mat-color($accent, default-contrast)
+//         }
+//         mat-icon[mat-list-icon] {
+//             color: mat-color($accent);
+//         }
+//     }
+// }
+
+mat-nav-list, mat-list {
+    [mat-list-item].active {
+        mat-icon[matListAvatar] {
+            background-color: mat-color($accent);
+            color: mat-color($accent, default-contrast);
+        }
+        mat-icon[matListIcon] {
+            color: mat-color($accent);
+        }
+    }
+}
+
+nav {
+    a {
+        line-height: 4;
+        display: block;
+        &:not(.active) {
+            color: mat-color($accent, default-contrast);
+        }
+        &.active {
+            color: mat-color($accent);
+            border-bottom: 2px solid mat-color($accent);
+        }
+    }
+}
+

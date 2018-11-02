@@ -1,0 +1,47 @@
+<div class='full-screen' *ngIf='f && jobs'>
+    <form [formGroup]='f' (ngSubmit)="save()">
+        <mat-toolbar color="primary">
+            <button mat-icon-button color='warn' matDialogClose>
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+
+            <span flex></span>
+
+            <nav class="text-upper text-sm" layout="row">
+                <a href='javascript:;' class="push-right text-nodecoration" [ngClass]="{'active': selectedIndex === 0}" (click)='selectTab("Customer Info")'>Customer
+                    Info {{order.valid?'':'(*)'}}</a>
+
+                <span *ngFor="let d of jobs.controls; let i = index">
+                    <a href='javascript:;' class="push-right text-nodecoration" [ngClass]="{'active': selectedIndex === (i + 2)}" (click)='selectTab("Job",i)'>
+                        {{d.value.JobType}} {{d.valid?'':'(*)'}}</a>
+                </span>
+
+                <a href='javascript:;' class="push-right text-nodecoration" [ngClass]="{'active': selectedIndex === 1 }" (click)='selectTab("Summary")'
+                    *ngIf='!createNew'>Summary</a>
+            </nav>
+
+            <button *ngIf='!readonly && jobs.value.length <=1 ' mat-button color="warn" (click)="addNewJob()">
+                <mat-icon>add</mat-icon>
+                ADD JOB
+            </button>
+
+            <button mat-icon-button matTooltip='Undo' (click)='createForm(originalOrder)' [disabled]='f.pristine'>
+                <mat-icon>undo</mat-icon>
+            </button>
+
+            <button mat-icon-button matTooltip='Save' type='submit' [disabled]='!f.valid || f.pristine'>
+                <td-notification-count color="warn" [notifications]="f.valid && f.dirty">
+                    <mat-icon>save</mat-icon>
+                </td-notification-count>
+            </button>
+        </mat-toolbar>
+
+        <vrp-planner-delivery-master [hidden]='selectedIndex!==0' [orderForm]="f.controls.DeliveryMaster" [readonly]='readonly' [allowToChangeId]='createNew'></vrp-planner-delivery-master>
+
+        <vrp-planner-delivery-detail *ngFor="let job of jobs.controls; let i = index" [hidden]='selectedIndex!=2+i' [jobForm]='job'
+            [originalJob]='selectedJob' [readonly]='readonly' [allowDeleteJob]='jobs.controls.length>1' [allowChangeJobType]='jobs.controls.length===1'
+            (jobDelete)='jobDelete(i)'></vrp-planner-delivery-detail>
+
+        <vrp-planner-order-summary *ngIf='selectedIndex===1' [order]="originalOrder"></vrp-planner-order-summary>
+    </form>
+</div>

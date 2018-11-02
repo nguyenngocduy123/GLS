@@ -1,0 +1,25 @@
+$categories: (
+    blue: color($colors, blue),
+    green: color($colors, green),
+    red: color($colors, red),
+    orange: color($colors, orange),
+    purple: color($colors, purple),
+);
+
+@function auxiliary-categories() {
+    @return map-remove($categories);
+}
+
+page-all-jobs {
+    @each $track,
+    $value in auxiliary-categories() {
+        button[ion-item][track=#{$track}] ion-label {
+            border-left: 2px solid $value;
+            padding-left: 10px;
+        }
+    }
+
+    ion-col.small-margin {
+        margin-bottom: 2px;
+    }
+}

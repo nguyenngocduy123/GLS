@@ -1,0 +1,27 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        {{label}}: {{_tws.length}} timeslots
+    </mat-expansion-panel-header>
+
+    <div layout='rows' *ngFor='let w of _tws; let i=index'>
+        <vrp-datetime-input flex='40' [(date)]='w.start' label='Start'></vrp-datetime-input>
+        <vrp-datetime-input flex='40' [(date)]='w.end' label='End'></vrp-datetime-input>
+        <span flex></span>
+        <button mat-icon-button [matMenuTriggerFor]="menuRef">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <mat-menu #menuRef="matMenu" [overlapTrigger]="false">
+            <a mat-menu-item (click)="_tws.splice(i,1)">Remove</a>
+            <hr />
+            <a mat-menu-item *ngFor='let s of timeSlots' (click)='setTimeSlot(w,s)'>
+                {{s.label}}
+            </a>
+        </mat-menu>
+    </div>
+
+    <mat-action-row>
+        <a mat-button (click)="insertTimeWindow()">
+            Add New Timewindow
+        </a>
+    </mat-action-row>
+</mat-expansion-panel>

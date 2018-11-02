@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header>{{'PAGE.PLANNER_NOTES.Header' | translate}}</vrp-header>
+
+        <button end ion-button menuToggle="right">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item-group *ngFor="let job of driver.jobs">
+            <ng-container *ngIf="job.NoteFromPlanner.length">
+                <ion-item-divider sticky>
+                    <ion-label item-start>
+                        <strong>#{{job.DeliveryMasterId}}</strong>
+                    </ion-label>
+                    <vrp-jobtype-label [jobtype]="job.JobType" item-end></vrp-jobtype-label>
+                </ion-item-divider>
+
+                <ion-item text-wrap>
+                    <vrp-jobnote-label [notes]="job.NoteFromPlanner"></vrp-jobnote-label>
+                </ion-item>
+            </ng-container>
+        </ion-item-group>
+    </ion-list>
+</ion-content>

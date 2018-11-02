@@ -1,0 +1,46 @@
+<ion-content>
+    <span *ngIf="!currentJob.verified">
+        <ion-card full color="dark">
+            <ion-card-content>
+                <ion-icon item-start name="alert"></ion-icon> {{'PAGE.VERIFY_CODE.Prompt' | translate}}.
+            </ion-card-content>
+        </ion-card>
+
+        <ion-item no-lines>
+            <ion-label color="primary" stacked>{{'PAGE.VERIFY_CODE.AskToEnter' | translate}}</ion-label>
+            <ion-input type="text" clearInput placeholder="{{'JOB.VerificationCode' | translate}}" [(ngModel)]="code"></ion-input>
+        </ion-item>
+    </span>
+
+    <ion-card full *ngIf="currentJob.verified">
+        <ion-card-header text-wrap color="secondary">
+            <ion-icon item-start name="checkmark-circle"></ion-icon> {{'PAGE.VERIFY_CODE.Verified' | translate}}
+        </ion-card-header>
+
+        <ion-card-content>
+            <p>
+                {{'PAGE.VERIFY_CODE.HowToNavigate' | translate}}
+            </p>
+            <p>
+                <span ion-text color="secondary">
+                    <ion-icon name="return-right"></ion-icon> {{'PAGE.VERIFY_CODE.BtnPressProceed' | translate}}.
+                </span>
+            </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-footer class="hide-on-keyboard-open">
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12 no-padding>
+                <button ion-button full large color="secondary" no-margin (tap)="btnConfirm()">
+                    <div>
+                        <ion-icon name="return-right"></ion-icon>
+                        {{'BUTTON.Proceed' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

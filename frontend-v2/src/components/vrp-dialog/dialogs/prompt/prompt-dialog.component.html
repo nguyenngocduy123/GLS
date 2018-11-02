@@ -1,0 +1,16 @@
+<h2 matDialogTitle *ngIf="title" color="warn"> {{title}}</h2>
+
+<mat-dialog-content layout='column' layout-margin>
+    {{message}}
+    <form #form="ngForm" layout="row" novalidate flex>
+        <mat-form-field flex>
+            <input matInput #input (focus)="input.select()" [(ngModel)]="value" name="value" required />
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions layout="row">
+    <div flex></div>
+    <button mat-button matDialogClose>{{cancelButton}}</button>
+    <button mat-button color="accent" #acceptBtn [disabled]="!form.valid" [matDialogClose]='value'>{{acceptButton}}</button>
+</mat-dialog-actions>

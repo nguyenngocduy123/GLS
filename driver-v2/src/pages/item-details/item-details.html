@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{'PAGE.ITEM_DETAILS.Header' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="btnClose()">{{'BUTTON.Close' | translate}}</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item-group>
+            <ion-list-header>
+                {{'ITEM.Id' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap>
+                <ion-icon name="arrow-round-forward" item-start></ion-icon>
+                {{item.Id}}
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-list-header>
+                {{'ITEM.Weight' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap>
+                <ion-icon name="pricetag" item-start></ion-icon>
+                {{item.Weight}}
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-list-header>
+                {{'ITEM.Description' | translate}}
+            </ion-list-header>
+            <ion-item text-wrap>
+                <ion-icon name="paper" item-start></ion-icon>
+                {{item.Description}}
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+</ion-content>

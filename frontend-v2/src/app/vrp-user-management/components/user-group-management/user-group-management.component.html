@@ -1,0 +1,16 @@
+<td-layout-nav [toolbarTitle]="'Manage User Group'|translate">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="center center" flex>
+        <span flex></span>
+        <button [matTooltip]="'Refresh'| translate" mat-icon-button (click)="load(true)">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <vrp-table *tdLoading="'vrp-user-group-management.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'"
+        [columns]="columns" [data]="usergroups" [tableHeight]="tableHeight" [itemMenu]='itemMenu' [selectActions]='selectActions'
+        [tableActions]='tableActions' showSelectColumns='false'></vrp-table>
+</td-layout-nav>

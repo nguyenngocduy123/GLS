@@ -1,0 +1,24 @@
+/*
+ * Copyright (C) 2018 Singapore Institute of Manufacturing Technology - All Rights Reserved
+ *
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
+'use strict';
+
+const { SCHEMA } = require('./config/config');
+const table = {
+    tableName: 'DeliveryDetail',
+    schema: SCHEMA,
+};
+const indexName = 'IX_DeliveryDetail_Status_StartTimeWindow';
+
+module.exports = {
+    up: async (queryInterface, Sequelize) => {
+        // http://10.218.68.162:8888/root/vrp-nodejs/issues/255
+        await queryInterface.sequelize.query(`CREATE NONCLUSTERED INDEX [${indexName}] ON [${table.schema}].[${table.tableName}] ([Status], [StartTimeWindow]) INCLUDE ([DeliveryMasterId])`);
+    },
+    down: async (queryInterface, Sequelize) => {
+        await queryInterface.removeIndex(table, indexName);
+    },
+};

@@ -1,0 +1,94 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "com-badrit-base64": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+      "OKHTTP_VERSION": "3.10.0",
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-background-geolocation-lt": {
+      "LICENSE": "6433036445aedcafc210cf04ead2345ed7f705ce9b7c98d75ed8e06dd58db56d",
+      "GOOGLE_API_VERSION": "11.8.0",
+      "APPCOMPAT_VERSION": "27.0.0",
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    },
+    "cordova-plugin-background-fetch": {
+      "PACKAGE_NAME": "sg.glsapp.gls"
+    }
+  }
+}

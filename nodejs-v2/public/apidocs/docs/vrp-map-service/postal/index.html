@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Postal · (LM)2</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Reference"/><meta name="docsearch:version" content="1.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Postal · (LM)2"/><meta property="og:type" content="website"/><meta property="og:url" content="http://localhost/docs/index.html"/><meta property="og:description" content="## Reference"/><meta name="twitter:card" content="summary"/><meta name="robots" content="noindex"/><link rel="shortcut icon" href="/docs/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css"/><link rel="stylesheet" href="/css/custom.css"/><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/logo.png" alt="(LM)2"/><h2 class="headerTitleWithLogo">(LM)2</h2></a><a href="/docs/versions"><h3>1.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/sitemap" target="_self">Sitemap</a></li><li class=""><a href="/docs/docs/integration/create-order" target="_self">Integration</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Map</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General Information</h3><ul><li class="navListItem"><a class="navItem" href="/docs/docs/vrp-map-service/map-service-glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Map</h3><ul><li class="navListItem"><a class="navItem" href="/docs/docs/vrp-map-service/map-service">Map Service</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/vrp-map-service/postal">Postal</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Postal</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<p>Prefix the URLs with the server URL.</p>
+<p>For example:</p>
+<p><code>/web/data/v2.1/example/:id</code> =&gt; <a href="http://localhost/web/data/v2.1/example/:id">http://localhost/web/data/v2.1/example/:id</a></p>
+<table>
+<thead>
+<tr><th>I want to...</th><th>CSRF Enabled</th><th>API</th></tr>
+</thead>
+<tbody>
+<tr><td>Create/Update postal code</td><td>Yes</td><td><a href="#post-web-map-v2-coords">POST <code>/web/map/v2/coords</code></a></td></tr>
+<tr><td>Delete postal code</td><td>Yes</td><td><a href="#delete-web-map-v2-coords-postal">DELETE <code>/web/map/v2/coords/:postal</code></a></td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-web-map-v2-coords"></a><a href="#post-web-map-v2-coords" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/web/map/v2/coords</code></h2>
+<p>Create/update (upsert) a user-specified postal code</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info"></a><a href="#resource-info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>Text</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body"></a><a href="#request-body" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<p>The coordinates must be within the area of Singapore, Jakarta, Shanghai and Kuching.</p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>addresses</td><td>required</td><td>Object[]</td><td></td><td>Details of postal code</td></tr>
+<tr><td>addresses[].postal</td><td>required</td><td>String(6)</td><td></td><td>Postal code</td></tr>
+<tr><td>addresses[].lat</td><td>required</td><td>Float</td><td></td><td>Latitude of postal in degrees</td></tr>
+<tr><td>addresses[].lng</td><td>required</td><td>Float</td><td></td><td>Longitude of postal in degrees</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example"></a><a href="#request-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/map/v2/coords</span>
+    {
+        <span class="hljs-string">"addresses"</span>: [{
+            <span class="hljs-string">"postal"</span>: <span class="hljs-string">"123123"</span>,
+            <span class="hljs-string">"lat"</span>: <span class="hljs-string">"1.446151"</span>,
+            <span class="hljs-string">"lng"</span>: <span class="hljs-string">"103.815652"</span>
+        }]
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response"></a><a href="#success-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td></td><td>required</td><td>Integer</td><td></td><td>Number of postal codes upserted</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example"></a><a href="#success-response-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/map/v2/coords</span>
+    <span class="hljs-number">1</span> <span class="hljs-comment">// one record inserted</span>
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="delete-web-map-v2-coords-postal"></a><a href="#delete-web-map-v2-coords-postal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DELETE <code>/web/map/v2/coords/:postal</code></h2>
+<p>Delete a user-specified postal code</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-1"></a><a href="#resource-info-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>Text</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Planner</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-params"></a><a href="#request-params" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Params</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>postal</td><td>required</td><td>String</td><td></td><td>Postal code</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example-1"></a><a href="#request-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<ul>
+<li>Delete postal code
+<ul>
+<li><code>http://localhost/web/map/v2/coords/123123</code></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="success-response-1"></a><a href="#success-response-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td></td><td>required</td><td>Integer</td><td></td><td>Number of postal codes deleted</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-1"></a><a href="#success-response-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/map/v2/coords/123123</span>
+    <span class="hljs-number">1</span> <span class="hljs-comment">// one record deleted</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/vrp-map-service/map-service">← Map Service</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#reference">Reference</a></li><li><a href="#post-web-map-v2-coords">POST <code>/web/map/v2/coords</code></a><ul class="toc-headings"><li><a href="#resource-info">Resource Info</a></li><li><a href="#request-body">Request Body</a></li><li><a href="#success-response">Success Response</a></li></ul></li><li><a href="#delete-web-map-v2-coords-postal">DELETE <code>/web/map/v2/coords/:postal</code></a><ul class="toc-headings"><li><a href="#resource-info-1">Resource Info</a></li><li><a href="#request-params">Request Params</a></li><li><a href="#success-response-1">Success Response</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/logo.png" alt="(LM)2" width="66" height="58"/></a><div><h5>Quick References</h5><a href="/docs/docs/vrp-user/authentication">User</a><a href="/docs/docs/vrp-data/general-information">Data</a><a href="/docs/docs/vrp-message/message">Message Box</a><a href="/docs/docs/vrp-map-service/postal">Map</a><a href="/docs/docs/vrp-problem/problem">Problem</a></div><div><h5>Help</h5><a href="/docs/docs/integration/create-order">How to integrate</a></div><div><h5>Contact</h5><div class="footer-text"><p>For documentation-related queries, email to tandzj@simtech.a-star.edu.sg</p><p>For all other issues, email to simtech.pom.msa@gmail.com</p></div></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Singapore Institute of Manufacturing Technology (SIMTech)</section></footer></div></body></html>

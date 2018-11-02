@@ -1,0 +1,64 @@
+<div layout='column' class='planner-items-table'>
+    <div layout="row" class='planner-items-table-header' *ngIf='itemsValue.length>0 || !readonly; else noItemTemplate'>
+        <div flex="10">No. </div>
+        <div flex="30">Item ID </div>
+        <div flex="20">Quantity </div>
+        <div flex="20">Actual Qty.</div>
+        <div flex>
+            <!-- <a *ngIf='!readonly' href='javascript:;' (click)="update()">
+                <mat-icon>save</mat-icon>
+            </a> -->
+        </div>
+    </div>
+
+    <mat-divider inset></mat-divider>
+
+    <ng-template let-item let-last="last" let-i="index" ngFor [ngForOf]="itemsValue">
+        <div layout="row">
+            <span flex="10">{{i+1}}</span>
+
+            <div flex="30">
+                <input type='text' [value]='item.ItemId' disabled />
+            </div>
+
+            <div flex="20">
+                <input type='number' #qtyControl="ngModel" min="1" [(ngModel)]='item.ItemQty' [disabled]='readonly' (ngModelChange)="update()"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                />
+            </div>
+
+            <div flex="20">
+                <input type='number' min="0" [value]='item.ActualItemQty' disabled />
+            </div>
+
+            <a flex *ngIf='!readonly && itemsValue.length>0' href='javascript:;' (click)="deleteRow(i)">
+                <mat-icon>delete</mat-icon>
+            </a>
+        </div>
+    </ng-template>
+
+    <div layout="row" *ngIf='!readonly'>
+        <mat-divider></mat-divider>
+
+        <div flex="10">-</div>
+
+        <mat-form-field flex="30">
+            <vrp-search-select-form-field [value]="newRow.ItemId" [selections]='selectableItems' placeholder="Item Id" optionTemplateName='item'
+                (selectionChange)='newRow.ItemId = $event.value' valueField='Id' [searchFields]='["Id"]'></vrp-search-select-form-field>
+        </mat-form-field>
+
+        <mat-form-field flex="20">
+            <input matInput type='number' #qtyControl="ngModel" min="0" [(ngModel)]='newRow.ItemQty' placeholder="Qty" required>
+        </mat-form-field>
+
+        <button flex [disabled]=' !newRow.ItemId || !newRow.ItemQty' mat-button matTooltip="Add" (click)="addRow()" color="accent">
+            Add New Item
+        </button>
+    </div>
+</div>
+
+<ng-template #noItemTemplate>
+    <div class='text-center'>
+        No Item
+    </div>
+</ng-template>

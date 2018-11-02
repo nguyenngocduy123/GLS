@@ -1,0 +1,9 @@
+<button mat-raised-button color='warn' matTooltip='Change Date Range' [matMenuTriggerFor]="ordermenu">
+    {{range.startDate| date : 'mediumDate'}} - {{range.endDate| date : 'mediumDate'}}
+</button>
+
+<mat-menu #ordermenu="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item (click)="itemMenu.click()" *ngFor="let itemMenu of dropdownMenu">
+        {{itemMenu.label}}
+    </a>
+</mat-menu>

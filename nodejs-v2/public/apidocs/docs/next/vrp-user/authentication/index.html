@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Authentication · (LM)2</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Reference"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Authentication · (LM)2"/><meta property="og:type" content="website"/><meta property="og:url" content="http://localhost/docs/index.html"/><meta property="og:description" content="## Reference"/><meta name="twitter:card" content="summary"/><meta name="robots" content="noindex"/><link rel="shortcut icon" href="/docs/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css"/><link rel="stylesheet" href="/css/custom.css"/><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/docs/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/logo.png" alt="(LM)2"/><h2 class="headerTitleWithLogo">(LM)2</h2></a><a href="/docs/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/sitemap" target="_self">Sitemap</a></li><li class=""><a href="/docs/docs/next/integration/create-order" target="_self">Integration</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Authentication</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Authentication</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/next/vrp-user/authentication">Authentication</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">User Management</h3><ul><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-user/user-glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-user/user">User</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-user/user-management">User Management</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">UserGroup Management</h3><ul><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-user/usergroup-glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/next/vrp-user/usergroup">Usergroup</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Authentication</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<p>Prefix the URLs with the server URL.</p>
+<p>For example:</p>
+<p><code>/web/data/v2.1/example/:id</code> =&gt; <a href="http://localhost/web/data/v2.1/example/:id">http://localhost/web/data/v2.1/example/:id</a></p>
+<table>
+<thead>
+<tr><th>I want to...</th><th>CSRF Enabled</th><th>API</th></tr>
+</thead>
+<tbody>
+<tr><td>Log in</td><td>Yes</td><td><a href="#post-web-auth-v2-login">POST <code>/web/auth/v2/login</code></a></td></tr>
+<tr><td>Log in</td><td>No</td><td><a href="#post-api-auth-v2-login">POST <code>/api/auth/v2/login</code></a></td></tr>
+<tr><td>Check if user is logged in</td><td></td><td><a href="#get-web-auth-v2-isloggedin">GET <code>/web/auth/v2/isLoggedIn</code></a></td></tr>
+<tr><td>Log out</td><td>Yes</td><td><a href="#post-web-auth-v2-logout">POST <code>/web/auth/v2/logout</code></a></td></tr>
+<tr><td>Log out</td><td>No</td><td><a href="#post-api-auth-v2-logout">POST <code>/api/auth/v2/logout</code></a></td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-web-auth-v2-login"></a><a href="#post-web-auth-v2-login" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/web/auth/v2/login</code></h2>
+<p>Logs non-driver users into the system. For drivers, see <a href="#post-api-auth-v2-login">POST <code>/api/auth/v2/login</code></a>.</p>
+<p>Only one active session allowed per user.</p>
+<ul>
+<li>For administrators, the previous user will be forced to log out.</li>
+<li>For other users, API will return error response 500.</li>
+</ul>
+<p>Account lockout is enabled after (<code>5</code>) consecutive unsuccessful logins.</p>
+<p>Account lockout period is (<code>30</code>) seconds.</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info"></a><a href="#resource-info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>No</td></tr>
+<tr><td>Authorised Role</td><td>Planner, Default, Admin</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body"></a><a href="#request-body" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>username</td><td>required</td><td>String</td><td></td><td>Username of the user</td></tr>
+<tr><td>password</td><td>required</td><td>String</td><td></td><td>Password of the user</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example"></a><a href="#request-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/web/auth/v2/login</span>
+    {
+        <span class="hljs-string">"username"</span>: <span class="hljs-string">"user_doe"</span>,
+        <span class="hljs-string">"password"</span>: <span class="hljs-string">"123"</span>
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response"></a><a href="#success-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>_id</td><td>String</td><td></td><td>User identifier</td></tr>
+<tr><td>username</td><td>String</td><td></td><td>Username of the user</td></tr>
+<tr><td>fullname</td><td>String</td><td></td><td>Fullname of the user</td></tr>
+<tr><td>role</td><td>String</td><td></td><td>Role of the user</td></tr>
+<tr><td>usergroup</td><td>String</td><td>null</td><td>Usergroup of the user</td></tr>
+<tr><td>forceChangePassword</td><td>Boolean</td><td></td><td><code>true</code> if the user must change his password</td></tr>
+<tr><td>token</td><td>String</td><td></td><td>API token. Value can be added into subsequent API request headers <code>x-access-token</code></td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example"></a><a href="#success-response-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// HTTP/1.1 200 OK</span>
+    {
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"58118ee072e0c18ab626501e"</span>,
+        <span class="hljs-string">"username"</span>: <span class="hljs-string">"user_doe"</span>,
+        <span class="hljs-string">"fullname"</span>: <span class="hljs-string">"John Doe"</span>,
+        <span class="hljs-string">"role"</span>: <span class="hljs-string">"planner"</span>
+        <span class="hljs-string">"usergroup"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">"forceChangePassword"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"token"</span>: <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"</span>
+    }
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-api-auth-v2-login"></a><a href="#post-api-auth-v2-login" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/api/auth/v2/login</code></h2>
+<p>Logs planner or driver users into the system. For other users, see <a href="#post-web-auth-v2-login">POST <code>/web/auth/v2/login</code></a>.</p>
+<p>Only one active session allowed per user.</p>
+<ul>
+<li>For administrators, the previous user will be forced to log out.</li>
+<li>For other users, API will return error response 500.</li>
+</ul>
+<p>Account lockout is enabled after (<code>5</code>) consecutive unsuccessful logins.</p>
+<p>Account lockout period is (<code>30</code>) seconds.</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-1"></a><a href="#resource-info-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>No</td></tr>
+<tr><td>Authorised Role</td><td>Planner, Driver</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>No</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="request-body-1"></a><a href="#request-body-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Body</h3>
+<table>
+<thead>
+<tr><th>Field</th><th>Required</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>username</td><td>required</td><td>String</td><td></td><td>Username of the user</td></tr>
+<tr><td>password</td><td>required</td><td>String</td><td></td><td>Password of the user</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="request-example-1"></a><a href="#request-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// http://localhost/api/auth/v2/login</span>
+    {
+        <span class="hljs-string">"username"</span>: <span class="hljs-string">"user_doe"</span>,
+        <span class="hljs-string">"password"</span>: <span class="hljs-string">"123"</span>
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="success-response-1"></a><a href="#success-response-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>_id</td><td>String</td><td></td><td>User identifier</td></tr>
+<tr><td>username</td><td>String</td><td></td><td>Username of the user</td></tr>
+<tr><td>fullname</td><td>String</td><td></td><td>Fullname of the user</td></tr>
+<tr><td>role</td><td>String</td><td></td><td>Role of the user</td></tr>
+<tr><td>usergroup</td><td>String</td><td>null</td><td>Usergroup of the user</td></tr>
+<tr><td>forceChangePassword</td><td>Boolean</td><td></td><td><code>true</code> if the user must change his password</td></tr>
+<tr><td>token</td><td>String</td><td></td><td>API token. Value can be added into subsequent API request headers <code>x-access-token</code></td></tr>
+<tr><td>vehicleId</td><td>String</td><td></td><td>Id of the vehicle assigned to the driver</td></tr>
+<tr><td>vehiclePlateNumber</td><td>String</td><td></td><td>Plate number of the vehicle assigned to the driver</td></tr>
+<tr><td>vehicleUserGroup</td><td>String</td><td>null</td><td>Usergroup of the vehicle assigned to the driver</td></tr>
+<tr><td>serverDate</td><td>String</td><td></td><td>Current server time in ISO8601 format</td></tr>
+<tr><td>noteOptions</td><td>Object</td><td></td><td>Configuration for &quot;Add Note&quot; page in driver application</td></tr>
+<tr><td>noteOptions.option</td><td>Object</td><td></td><td>Configuration for note option / dropdown list</td></tr>
+<tr><td>noteOptions.option.required</td><td>Boolean</td><td>false</td><td><code>true</code> if note option is required</td></tr>
+<tr><td>noteOptions.option.list</td><td>String[]</td><td></td><td>List of selectable note options</td></tr>
+<tr><td>noteOptions.photo</td><td>Object</td><td></td><td>Configuration for note photos</td></tr>
+<tr><td>noteOptions.photo.maxCount</td><td>Integer</td><td>3</td><td>Maximum number of note photos</td></tr>
+<tr><td>podOptions</td><td>Object</td><td></td><td>Configuration for &quot;Proof of Delivery&quot; page in driver application</td></tr>
+<tr><td>podOptions.photo</td><td>Object</td><td></td><td>Configuration for photo pod</td></tr>
+<tr><td>podOptions.photo.required</td><td>Boolean</td><td>false</td><td><code>true</code> if photo pod is required</td></tr>
+<tr><td>itemOptions</td><td>Object</td><td></td><td>Configuration for &quot;Items Handled&quot; page in driver application</td></tr>
+<tr><td>itemOptions.input</td><td>Object</td><td></td><td>Configuration for input method for item quantity</td></tr>
+<tr><td>itemOptions.input.default</td><td>String</td><td>TEXT</td><td>Default input method for item quantity. Possible values: BARCODE, TEXT</td></tr>
+<tr><td>itemOptions.input.allowToggle</td><td>Boolean</td><td>false</td><td><code>true</code> if allowed to switch input methods at freewill</td></tr>
+<tr><td>itemOptions.barcode</td><td>Object</td><td></td><td>Configuration for barcode input method</td></tr>
+<tr><td>itemOptions.barcode.formats</td><td>Object</td><td></td><td>List of <a href="https://github.com/phonegap/phonegap-plugin-barcodescanner#using-the-plugin">barcode formats</a> allowed to be used for scanning</td></tr>
+<tr><td>statusLabels</td><td>Object[]</td><td></td><td>Mappings of status values to its label</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-1"></a><a href="#success-response-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// HTTP/1.1 200 OK</span>
+    {
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"58118ee072e0c18ab626501e"</span>,
+        <span class="hljs-string">"username"</span>: <span class="hljs-string">"user_doe"</span>,
+        <span class="hljs-string">"fullname"</span>: <span class="hljs-string">"John Doe"</span>,
+        <span class="hljs-string">"role"</span>: <span class="hljs-string">"planner"</span>
+        <span class="hljs-string">"usergroup"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">"forceChangePassword"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"token"</span>: <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"</span>,
+        <span class="hljs-string">"vehicleId"</span>: <span class="hljs-string">"Truck3Ft"</span>,
+        <span class="hljs-string">"vehiclePlateNumber"</span>: <span class="hljs-string">"SJJ1234M"</span>,
+        <span class="hljs-string">"vehicleUserGroup"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">"serverDate"</span>: <span class="hljs-string">"2018-01-01T02:03:00Z"</span>,
+        <span class="hljs-string">"noteOptions"</span>: {
+            <span class="hljs-string">"option"</span>: {
+                <span class="hljs-string">"required"</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">"list"</span>: [
+                    <span class="hljs-string">"Customer Not Around"</span>,
+                    <span class="hljs-string">"Some Damaged"</span>,
+                    <span class="hljs-string">"Other Reasons"</span>
+                ]
+            },
+            <span class="hljs-string">"photo"</span>: {
+                <span class="hljs-string">"maxCount"</span>: <span class="hljs-number">3</span>
+            }
+        },
+        <span class="hljs-string">"podOptions"</span>: {
+            <span class="hljs-string">"photo"</span>: {
+                <span class="hljs-string">"required"</span>: <span class="hljs-literal">false</span>
+            }
+        },
+        <span class="hljs-string">"itemOptions"</span>: {
+            <span class="hljs-string">"input"</span>: {
+                <span class="hljs-string">"default"</span>: <span class="hljs-string">"TEXT"</span>,
+                <span class="hljs-string">"allowToggle"</span>: <span class="hljs-literal">false</span>
+            },
+            <span class="hljs-string">"barcode"</span>: {
+                <span class="hljs-string">"format"</span>: <span class="hljs-string">"DATA_MATRIX,UPC_A,UPC_E,EAN_8,EAN_13,CODE_39,CODE_128,ITF"</span>
+            }
+        },
+        <span class="hljs-string">"statusLabels"</span>: [
+            { <span class="hljs-string">"value"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"label"</span>: <span class="hljs-string">"PENDING"</span> },
+            { <span class="hljs-string">"value"</span>: <span class="hljs-number">2</span>, <span class="hljs-string">"label"</span>: <span class="hljs-string">"LATE"</span> }
+            <span class="hljs-comment">// ...</span>
+        ]
+    }
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="get-web-auth-v2-isloggedin"></a><a href="#get-web-auth-v2-isloggedin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/web/auth/v2/isLoggedIn</code></h2>
+<p>Checks if user is logged into the system based on current session</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-2"></a><a href="#resource-info-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Planner, Default, Admin, Driver</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="success-response-2"></a><a href="#success-response-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p>For planner, default users and admins, refer to <a href="#success-response">success Response for non-drivers</a>.</p>
+<p>For drivers, refer to <a href="#success-response-1">success Response for drivers only</a>.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-web-auth-v2-logout"></a><a href="#post-web-auth-v2-logout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/web/auth/v2/logout</code></h2>
+<p>Logs user out of the system</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-3"></a><a href="#resource-info-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Planner, Default, Admin, Driver</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="success-response-3"></a><a href="#success-response-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>logout</td><td>Boolean</td><td>true</td><td>Value is always <code>true</code></td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-2"></a><a href="#success-response-example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// HTTP/1.1 200 OK</span>
+    {
+        <span class="hljs-string">"logout"</span>: <span class="hljs-literal">true</span>
+    }
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="post-api-auth-v2-logout"></a><a href="#post-api-auth-v2-logout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/api/auth/v2/logout</code></h2>
+<p>Logs user out of the system</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-info-4"></a><a href="#resource-info-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Info</h3>
+<table>
+<thead>
+<tr><th>Information</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Response format</td><td>JSON</td></tr>
+<tr><td>Requires authentication?</td><td>Yes</td></tr>
+<tr><td>Authorised Role</td><td>Planner, Default, Admin, Driver</td></tr>
+<tr><td>Rate limited?</td><td>No</td></tr>
+<tr><td>CSRF enabled</td><td>No</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="success-response-4"></a><a href="#success-response-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response</h3>
+<p><strong>HTTP Status 200</strong></p>
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>logout</td><td>Boolean</td><td>true</td><td>Value is always <code>true</code></td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="success-response-example-3"></a><a href="#success-response-example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Success Response Example</h4>
+<pre><code class="hljs css language-js">    <span class="hljs-comment">// HTTP/1.1 200 OK</span>
+    {
+        <span class="hljs-string">"logout"</span>: <span class="hljs-literal">true</span>
+    }
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/docs/next/vrp-user/user-glossary">User Glossary →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#reference">Reference</a></li><li><a href="#post-web-auth-v2-login">POST <code>/web/auth/v2/login</code></a><ul class="toc-headings"><li><a href="#resource-info">Resource Info</a></li><li><a href="#request-body">Request Body</a></li><li><a href="#success-response">Success Response</a></li></ul></li><li><a href="#post-api-auth-v2-login">POST <code>/api/auth/v2/login</code></a><ul class="toc-headings"><li><a href="#resource-info-1">Resource Info</a></li><li><a href="#request-body-1">Request Body</a></li><li><a href="#success-response-1">Success Response</a></li></ul></li><li><a href="#get-web-auth-v2-isloggedin">GET <code>/web/auth/v2/isLoggedIn</code></a><ul class="toc-headings"><li><a href="#resource-info-2">Resource Info</a></li><li><a href="#success-response-2">Success Response</a></li></ul></li><li><a href="#post-web-auth-v2-logout">POST <code>/web/auth/v2/logout</code></a><ul class="toc-headings"><li><a href="#resource-info-3">Resource Info</a></li><li><a href="#success-response-3">Success Response</a></li></ul></li><li><a href="#post-api-auth-v2-logout">POST <code>/api/auth/v2/logout</code></a><ul class="toc-headings"><li><a href="#resource-info-4">Resource Info</a></li><li><a href="#success-response-4">Success Response</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/logo.png" alt="(LM)2" width="66" height="58"/></a><div><h5>Quick References</h5><a href="/docs/docs/vrp-user/authentication">User</a><a href="/docs/docs/vrp-data/general-information">Data</a><a href="/docs/docs/vrp-message/message">Message Box</a><a href="/docs/docs/vrp-map-service/postal">Map</a><a href="/docs/docs/vrp-problem/problem">Problem</a></div><div><h5>Help</h5><a href="/docs/docs/integration/create-order">How to integrate</a></div><div><h5>Contact</h5><div class="footer-text"><p>For documentation-related queries, email to tandzj@simtech.a-star.edu.sg</p><p>For all other issues, email to simtech.pom.msa@gmail.com</p></div></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Singapore Institute of Manufacturing Technology (SIMTech)</section></footer></div></body></html>

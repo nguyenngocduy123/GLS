@@ -1,0 +1,47 @@
+<h2 matDialogTitle> {{createNew ? 'Create New' : 'Edit'}} Vehicle Type</h2>
+
+<form [formGroup]="f" (ngSubmit)="save(f.value, f.valid)">
+    <mat-dialog-content>
+        <div layout="row" layout-wrap layout-margin layout-align="start center">
+            <mat-form-field flex='45'>
+                <input matInput type="text" placeholder="Name" formControlName="Name" [readonly]='!createNew' maxlength="50">
+                <mat-error *ngIf="f.controls.Name.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.Name.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.Name.errors?.existence" translate>ALREADY_TAKEN_ERROR_MSG</mat-error>
+                <mat-hint align="end">{{f.controls.Name.value?.length}} / 50</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field flex='45'>
+                <input matInput type="number" placeholder="Capacity" formControlName="Capacity" min="0.0001">
+                <mat-error *ngIf="f.controls.Capacity.errors?.min" translate>GREATER_THAN_0_ERROR_MSG</mat-error>
+            </mat-form-field>
+
+            <mat-form-field flex='45'>
+                <input matInput type="number" placeholder="Fixed Cost ($)" formControlName="FixedCost" min="0">
+                <mat-error *ngIf="f.controls.FixedCost.errors?.min" translate>AT_LEAST_0_ERROR_MSG</mat-error>
+            </mat-form-field>
+
+            <mat-form-field flex='45'>
+                <input matInput type="number" placeholder="Distance Cost ($/km)" formControlName="DistanceCost" min="0">
+                <mat-error *ngIf="f.controls.DistanceCost.errors?.min" translate>AT_LEAST_0_ERROR_MSG</mat-error>
+            </mat-form-field>
+
+            <mat-form-field flex='45'>
+                <input matInput type="number" placeholder="Travel Time Cost ($/min)" formControlName="TravelTimeCost" min="0">
+                <mat-error *ngIf="f.controls.TravelTimeCost.errors?.min" translate>AT_LEAST_0_ERROR_MSG</mat-error>
+            </mat-form-field>
+
+            <mat-form-field flex='45'>
+                <input matInput type="number" placeholder="Waiting Time Cost ($/min)" formControlName="WaitingTimeCost" min="0">
+                <mat-error *ngIf="f.controls.WaitingTimeCost.errors?.min" translate>AT_LEAST_0_ERROR_MSG</mat-error>
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions layout="row">
+        <div flex></div>
+        <button mat-button color='primary' matDialogClose>CANCEL</button>
+        <!-- <button mat-button color='warn' type='reset' [disabled]='f.pristine'>UNDO</button> -->
+        <button mat-button color='accent' type='submit' [disabled]='!f.valid || f.pristine'>{{createNew?'CREATE':'SAVE'}}</button>
+    </mat-dialog-actions>
+</form>

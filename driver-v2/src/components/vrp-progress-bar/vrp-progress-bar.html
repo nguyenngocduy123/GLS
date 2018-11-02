@@ -1,0 +1,11 @@
+<div class="progress-bar" text-center tappable (tap)="toggleLegend()">
+    <span *ngFor="let progress of summary" class="progress-bar-fill" [ngClass]="progress.color" [ngStyle]="{ width: progress.percent + '%'}">{{progress.count}}</span>
+    <div class="progress-legend" *ngIf="showProgress">
+        <ol>
+            <li *ngFor="let progress of summary">
+                <span class="bullet" [ngClass]="progress.color"></span> {{progress.title}}
+                <span class="percent">{{progress.count}}</span>
+            </li>
+        </ol>
+    </div>
+</div>

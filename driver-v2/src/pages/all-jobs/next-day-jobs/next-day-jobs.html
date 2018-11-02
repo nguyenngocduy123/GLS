@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header>{{'PAGE.NEXT_DAY.Header' | translate}}</vrp-header>
+
+        <button end ion-button menuToggle="right">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header color="dark">
+            {{'Date' | translate}}: {{date}}
+        </ion-list-header>
+
+        <ion-card full *ngIf="!jobs.length">
+            <ion-card-header text-wrap color="secondary">
+                <ion-icon item-start name="thumbs-up"></ion-icon>
+                {{'Ok' | translate}}
+            </ion-card-header>
+
+            <ion-card-content>
+                {{'PAGE.NEXT_DAY.NoJobs' | translate}}.
+            </ion-card-content>
+        </ion-card>
+
+        <ion-item *ngFor="let job of jobs">
+            <vrp-job-summary [job]="job"></vrp-job-summary>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,17 @@
+<mat-form-field class="pad-left pad-right block">
+    <mat-select [formControl]="selectCtrl" [(ngModel)]='selected' [placeholder]="placeholder" disableOptionCentering>
+        <ngx-mat-select-search [formControl]="selectFilterCtrl" placeholderLabel='Search' noEntriesFoundLabel='Not found'></ngx-mat-select-search>
+
+        <mat-option *ngIf='unselectOptionTemplate'>
+            <ng-template [ngTemplateOutlet]="unselectOptionTemplate"></ng-template>
+        </mat-option>
+
+        <mat-option *ngIf='showUndefinedOption && ! unselectOptionTemplate'>
+            &lt;None&gt;
+        </mat-option>
+
+        <mat-option *ngFor="let item of filteredSelections | async" [value]="valueField ?  item[valueField] : item">
+            <ng-template [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{item:item}"></ng-template>
+        </mat-option>
+    </mat-select>
+</mat-form-field>

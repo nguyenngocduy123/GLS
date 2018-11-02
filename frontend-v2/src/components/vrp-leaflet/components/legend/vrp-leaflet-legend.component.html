@@ -1,0 +1,15 @@
+<div class='vrp-legend-div'>
+    <table>
+        <tr *ngFor='let l of legends; let i=index'>
+            <td>
+                <div [className]='l.className' style='width:20px;height:20px'></div>
+            </td>
+
+            <td class='vrp-leaflet-legend-text'>{{l.text}}</td>
+
+            <td *ngIf='l.toggle'>
+                <mat-slide-toggle [(ngModel)]="l.checked" (change)='l.toggle(i)' [disabled]='l.disabled'></mat-slide-toggle>
+            </td>
+        </tr>
+    </table>
+</div>

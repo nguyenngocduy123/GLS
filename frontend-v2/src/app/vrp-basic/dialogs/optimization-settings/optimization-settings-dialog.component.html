@@ -1,0 +1,76 @@
+<div class='full-screen'>
+    <mat-toolbar color="primary">
+        <button mat-icon-button color='warn' (click)="cancel()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span>{{title}}</span>
+        <span flex></span>
+        <button mat-raised-button color='warn' (click)="close()" [disabled]='selectedOrders.length===0 ||  selectedVehicles.length===0'>Run
+            ({{selectedOrders?.length }} orders, {{selectedVehicles?.length }} vehicles)</button>
+    </mat-toolbar>
+
+    <div layout='row'>
+        <mat-vertical-stepper [linear]="false" [selectedIndex]='selectedIndex' (selectionChange)='selectedIndex=$event.selectedIndex'>
+            <mat-step completed='false'>
+                <ng-template matStepLabel>Select orders ({{selectedOrders.length }}) </ng-template>
+            </mat-step>
+
+            <mat-step completed='false'>
+                <ng-template matStepLabel>Select Vehicles ({{selectedVehicles.length }})</ng-template>
+            </mat-step>
+
+            <mat-step completed='false'>
+                <ng-template matStepLabel>Other Settings</ng-template>
+            </mat-step>
+        </mat-vertical-stepper>
+
+        <div flex [ngSwitch]="selectedIndex" class='pad-left'>
+            <vrp-table #orderTable *ngSwitchCase="0" id='tableOptimizationSelectOrders' [columns]="orderColumns" [data]="orders"
+                [editable]="false" [tableHeight]="tableHeight" [tableActions]='tableOrderActions' [(ngModel)]="selectedOrders"
+                [selectActions]="[]"></vrp-table>
+
+            <vrp-table *ngSwitchCase="1" id='tableOptimizationSelectVehicles' [columns]="vehicleColumns" [data]="vehicles"
+                [editable]="false" [tableHeight]="tableHeight" [(ngModel)]="selectedVehicles" [selectActions]="[]"
+                [requiredData]="requiredVehicles"></vrp-table>
+
+            <ng-template *ngSwitchCase="2" [ngTemplateOutlet]="otherSettingsTemplate"></ng-template>
+        </div>
+    </div>
+</div>
+
+<ng-template #otherSettingsTemplate>
+    <div layout="row" layout-wrap layout-margin layout-align="start center" *ngFor='let elementRows of elements'>
+        <ng-template let-p ngFor [ngForOf]="elementRows">
+            <mat-form-field flex *ngIf='p.type ==="text" || !p.type'>
+                <input matInput [placeholder]='p.label' [disabled]='p.readonly' type="text" [(ngModel)]='form[p.name]'>
+            </mat-form-field>
+
+            <mat-form-field flex *ngIf='p.type ==="number"'>
+                <input matInput [placeholder]='p.label' [disabled]='p.readonly' type="number" [(ngModel)]='form[p.name]'>
+            </mat-form-field>
+
+            <span flex *ngIf='p.type === "checkbox"'>
+                <mat-checkbox [(ngModel)]='form[p.name]' [disabled]='p.readonly'> {{p.label}}</mat-checkbox>
+            </span>
+
+            <mat-form-field flex *ngIf='p.type === "select"'>
+                <mat-select [placeholder]='p.label' [(ngModel)]='form[p.name]' [disabled]='p.readonly'>
+                    <mat-option *ngFor='let s of p.selections; let i=index;' [value]='s'>{{
+                        p.selectionLabels?p.selectionLabels[i]:s}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </ng-template>
+    </div>
+
+    <div layout="row">
+        <p>
+            <span class="mat-caption">
+                * = Options that are only available in Hybrid Improvement engine
+            </span>
+        </p>
+    </div>
+</ng-template>
+
+<mat-menu #timeFilterMenu="matMenu" [overlapTrigger]="false">
+    <vrp-time-filter-menu (applyFilter)='applyDueTimeFilter($event)'></vrp-time-filter-menu>
+</mat-menu>

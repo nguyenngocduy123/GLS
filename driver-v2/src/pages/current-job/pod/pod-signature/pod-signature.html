@@ -1,0 +1,22 @@
+<ion-content #signatureContainer text-center>
+    <signature-pad (onEndEvent)="onDrawComplete()"></signature-pad>
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-6 no-padding>
+                <vrp-btn-clear (pressed)="btnClear()"></vrp-btn-clear>
+            </ion-col>
+
+            <ion-col col-6 no-padding>
+                <button ion-button full large color="secondary" no-margin (tap)="btnConfirm()">
+                    <div>
+                        <ion-icon name="return-right"></ion-icon>
+                        {{'BUTTON.Proceed' | translate}}
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

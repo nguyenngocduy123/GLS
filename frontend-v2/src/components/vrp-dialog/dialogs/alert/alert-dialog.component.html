@@ -1,0 +1,12 @@
+<h2 matDialogTitle *ngIf="title"> {{title}}</h2>
+
+<mat-dialog-content layout="column" layout-margin>
+    {{message}}<br>
+    <br>
+    <div *ngFor="let item of customData">{{item}}</div>
+</mat-dialog-content>
+
+<mat-dialog-actions layout="row">
+    <div flex></div>
+    <button mat-button color="accent" matDialogClose>{{closeButton}}</button>
+</mat-dialog-actions>

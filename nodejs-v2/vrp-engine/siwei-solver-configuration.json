@@ -1,0 +1,61 @@
+{
+	"compareChoice": "distance",
+	"neighborSize": 50,
+	"mapService": "osm",
+	"algorithmName": "ma",
+	"rof": {
+		"reduceVehIter": 5,
+		"intensity": 1,
+		"maxStuck": 5,
+		"maxPerturbs": 1,
+		"epsilon": 0.1,
+		"useRecordToRecord": true
+	},
+	"ma": {
+		"populationSize": 6,
+		"generation": 5,
+		"epsilon": 0.1
+	},
+	"fma": {
+		"populationSize": 6,
+		"generation": 5,
+		"epsilon": 0.1
+	},
+	"cma": {
+		"populationSize": 6,
+		"generation": 5,
+		"epsilon": 0.1
+	},
+	"comment": {
+		"CompareChoice": "combination/distance/time/waitingTime",
+		"neighborSize": "default=50",
+		"neighborSize": "default=osm",
+		"algorithmName": "rof/ma/fma/cma/pr2r/pma",
+		"rof": {
+			"reduceVehIter": "10;forReduceVehicle()*reduceVehIter",
+			"intensity": "1;foruphill()*intensity",
+			"maxStuck": "5;forRTR()*maxStuckOREjectInject()*maxStuck",
+			"maxPerturbs": "1;forRTR()*maxStuck*maxPerturbs",
+			"epsilon": "0.1;for(1+epsilon)*recordacceptancerule",
+			"saveCost": "true/falsemeansuseRecordToRecord/EjectInject"
+		},
+		"ma": {
+			"populationSize": "6",
+			"generation": "5",
+			"epsilon": "0.1;for(1+epsilon)*recordacceptancerule",
+			"maxStuck": 2
+		},
+		"fma": {
+			"populationSize": "6",
+			"generation": "5",
+			"epsilon": "0.1;for(1+epsilon)*recordacceptancerule",
+			"maxStuck": 2
+		},
+		"cma": {
+			"populationSize": "6",
+			"generation": "5",
+			"epsilon": "0.1;for(1+epsilon)*recordacceptancerule",
+			"maxStuck": 2
+		}
+	}
+}

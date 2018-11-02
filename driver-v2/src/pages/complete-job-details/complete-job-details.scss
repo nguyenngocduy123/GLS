@@ -1,0 +1,15 @@
+page-complete-job-details {
+    ion-list:first-child {
+        margin-bottom: 0 !important;
+    }
+
+    button.viewBtns {
+        font-size: 1.5rem !important;
+        height: 3.8rem !important;
+        padding: 1.5rem 4rem !important;
+    }
+
+    button.viewBtns ion-icon {
+        margin-right: 5px;
+    }
+}

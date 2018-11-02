@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar>
+        <vrp-header showDialog="true">{{'PAGE.ITEMS_HANDLED.Header' | translate}}</vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header color="dark">
+            #{{job.DeliveryMasterId}}
+            <vrp-jobtype-label [jobtype]="job.JobType" item-end></vrp-jobtype-label>
+        </ion-list-header>
+
+        <ion-item-group *ngIf="currentJob.items.length === 0">
+            <ion-card full>
+                <ion-card-header text-wrap color="danger">
+                    <ion-icon item-start name="warning"></ion-icon> {{'Error' | translate}}
+                </ion-card-header>
+
+                <ion-card-content>
+                    There are no items to pick-up or deliver.
+                </ion-card-content>
+            </ion-card>
+        </ion-item-group>
+
+        <ion-item-group *ngIf="allowSwitchInput && currentJob.items.length > 0">
+            <ion-item>
+                <button ion-button block icon-left padding color="primary" *ngIf="!inputByKeyboard" (tap)="notifySwitch()" (press)="switchInput()">
+                    <ion-icon name="keypad"></ion-icon>
+                    {{'PAGE.ITEMS_HANDLED.BtnChangeInput' | translate}} &nbsp;&nbsp;
+                    <strong>{{'PAGE.ITEMS_HANDLED.Keyboard' | translate}}</strong>
+                </button>
+                <button ion-button block icon-left padding color="secondary" *ngIf="inputByKeyboard" (tap)="notifySwitch()" (press)="switchInput()">
+                    <ion-icon name="qr-scanner"></ion-icon>
+                    {{'PAGE.ITEMS_HANDLED.BtnChangeInput' | translate}} &nbsp;&nbsp;
+                    <strong>{{'PAGE.ITEMS_HANDLED.Barcode' | translate}}</strong>
+                </button>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group *ngFor="let item of currentJob.items; let i = index">
+            <ion-item-divider text-wrap color="light">
+                <ion-badge item-start>#{{i+1}}</ion-badge>
+                <strong>
+                    {{item.name}}
+                </strong>
+            </ion-item-divider>
+
+            <ion-item>
+                <ion-label stacked>{{'JOB.DeliveryItemsExpected' | translate}}</ion-label>
+                <ion-input type="text" [value]="item.expected" disabled></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{'JOB.DeliveryItemsActual' | translate}}</ion-label>
+                <ion-input type="number" [(ngModel)]="item.actual" placeholder="{{(inputByKeyboard ? 'PAGE.ITEMS_HANDLED.KeyboardPlaceholder' : 'PAGE.ITEMS_HANDLED.ScanBarcodePlaceholder') | translate}}"
+                    [disabled]="!inputByKeyboard" min="0" clearInput></ion-input>
+
+                <button ion-button icon-only item-end clear color="primary" *ngIf="!inputByKeyboard" (tap)="btnScan(item)">
+                    <ion-icon name="barcode"></ion-icon>
+                </button>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="hide-on-keyboard-open">
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-6 no-padding>
+                <vrp-btn-clear (pressed)="btnClear()"></vrp-btn-clear>
+            </ion-col>
+
+            <ion-col col-6 no-padding>
+                <button ion-button full large color="secondary" no-margin (tap)="btnConfirm()">
+                    <div>
+                        <ion-icon name="return-right"></ion-icon>
+                        Proceed
+                    </div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

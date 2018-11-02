@@ -1,0 +1,28 @@
+page-licence-agreement {
+    h2 {
+        font-size: 1.7rem;
+    }
+    h3 {
+        text-align: justify;
+        font-size: 1.7rem;
+    }
+    ol {
+        counter-reset: item;
+    }
+    ol>li span {
+        font-weight: bold;
+        padding: 0;
+    }
+    ol>li {
+        display: block;
+        padding: 0;
+        margin-left: -1.6em;
+        margin-bottom: 2em;
+        list-style-type: none;
+    }
+    ol>li:before {
+        content: counters(item, ".") ".";
+        counter-increment: item;
+        font-weight: bold;
+    }
+}

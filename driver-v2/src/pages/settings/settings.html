@@ -1,0 +1,11 @@
+<ion-header no-border>
+    <ion-navbar>
+        <vrp-header>{{'PAGE.SETTINGS.Header' | translate}}</vrp-header>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-tabs>
+        <ion-tab *ngFor="let tab of tabs" [root]="tab.page" [tabTitle]="tab.title" [tabIcon]="tab.icon"></ion-tab>
+    </ion-tabs>
+</ion-content>

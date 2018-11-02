@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{'ATTEMPTED_JOB.Title' | translate}} {{job.jobId}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="btnClose()">{{'BUTTON.Close' | translate}}</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list no-lines>
+        <ion-item text-wrap>
+            <ion-icon name="clock"></ion-icon>&nbsp;
+            <strong>{{'ATTEMPTED_JOB.Time' | translate}}</strong>
+            <br> {{job.deliveryTime|date:'short'}}
+        </ion-item>
+
+        <ion-item text-wrap>
+            <ion-icon name="car"></ion-icon>&nbsp;
+            <strong>{{'ATTEMPTED_JOB.DoneBy' | translate}}</strong>
+            <br> {{job.attemptedByDriver}} ({{job.attemptedByVehicle}})
+        </ion-item>
+
+        <ion-item text-wrap>
+            <ion-icon name="paper"></ion-icon>&nbsp;
+            <strong>{{'ATTEMPTED_JOB.Remarks' | translate}}</strong>
+            <br>
+            <vrp-jobnote-label [notes]="job.note"></vrp-jobnote-label>
+        </ion-item>
+
+        <ion-item text-wrap>
+            <ion-icon name="photos"></ion-icon>&nbsp;
+            <strong>{{'ATTEMPTED_JOB.NotePhotos' | translate}}</strong>
+            <br>
+            <vrp-photos [photos]="job.notePhotosB64" *ngIf="job.notePhotosB64.length"></vrp-photos>
+        </ion-item>
+
+        <ion-item text-wrap>
+            <ion-icon name="basket"></ion-icon>&nbsp;
+            <strong>{{'ATTEMPTED_JOB.ItemsDone' | translate}}</strong>
+            <br> {{job.delivered ? 'Yes' : 'No'}}
+        </ion-item>
+
+        <ng-container *ngIf="job.delivered">
+            <ion-item text-wrap>
+                <ion-icon name="create"></ion-icon>&nbsp;
+                <strong>{{'ATTEMPTED_JOB.POD' | translate}}</strong>
+                <br>
+                <vrp-photos [photos]="[job.signatureB64, job.photoB64]"></vrp-photos>
+            </ion-item>
+
+            <ion-item text-wrap>
+                <ion-icon name="apps"></ion-icon>&nbsp;
+                <strong>{{'ATTEMPTED_JOB.DeliveryItems' | translate}}</strong>
+                <br>
+                <ion-grid no-padding>
+                    <ion-row *ngFor="let item of job.items; let i = index">
+                        <ion-col col-12>
+                            <ion-badge>#{{i+1}}</ion-badge>
+                            {{item.Id}}
+                        </ion-col>
+                        <ion-col col-12>
+                            {{'ATTEMPTED_JOB.Quantity' | translate}}: {{item.ActualItemQty}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ng-container>
+    </ion-list>
+</ion-content>

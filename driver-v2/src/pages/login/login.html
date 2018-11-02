@@ -1,0 +1,50 @@
+<ion-content padding>
+    <ion-grid>
+        <ion-row padding-top>
+            <ion-col text-center>
+                <img [src]="img.path" [attr.height]="img.height">
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <ion-list inset>
+                    <ion-item>
+                        <ion-label stacked>{{'PAGE.LOGIN.Username' | translate}}</ion-label>
+                        <ion-input type="text" placeholder="{{'PAGE.LOGIN.Username' | translate}}" [(ngModel)]="username"
+                            autocomplete="off" autocorrect="off" autocapitalize="off" clearInput></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label stacked>{{'PAGE.LOGIN.Password' | translate}}</ion-label>
+                        <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="{{'PAGE.LOGIN.Password' | translate}}"
+                            [(ngModel)]="password" autocomplete="off" autocorrect="off" autocapitalize="off"
+                            clearOnEdit=false clearInput></ion-input>
+                        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'" item-right tappable (tap)="btnTogglePasswordView()"></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button full round large-padding icon-right (tap)="btnLogIn()">
+                    {{'PAGE.LOGIN.BtnLogIn' | translate}}
+                    <ion-icon name="log-in"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-fab top right *ngIf="enableChangeUrl">
+        <button ion-fab mini color="orange" (tap)="btnChangeUrl()">
+            <ion-icon name="qr-scanner"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
+
+<ion-footer class="hide-on-keyboard-open" text-center padding no-border>
+    {{'PAGE.LOGIN.PoweredBy' | translate}}
+    <img src="assets/images/logo_simtech.png">
+    <img src="assets/images/logo_mct.png">
+</ion-footer>
