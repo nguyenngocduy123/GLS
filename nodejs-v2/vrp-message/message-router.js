@@ -39,5 +39,5 @@ router.post('/v2', Auth.m_isAuthDriver, Message.m_createMessages, Message.m_addU
  *  Middleware protected from CSRF
  * ================================================================================ */
 csrfRouter.get('/v2', Auth.m_isAuthPlannerOrController, Message.m_userGroupFilter, Message.m_getAll, Message.m_addUserDetails);
-csrfRouter.get('/v2/unprocessedCount', Auth.m_isAuthAdminOrPlanner, Message.m_userGroupFilter, Message.m_getTotalUnprocessedCount); // get number of unprocessed messages
+csrfRouter.get('/v2/unprocessedCount', Auth.m_isAuthAdminOrPlannerOrController, Message.m_userGroupFilter, Message.m_getTotalUnprocessedCount); // get number of unprocessed messages
 csrfRouter.put('/v2/process/:id', Auth.m_isAuthPlanner, Message.m_processMessage, Message.m_addUserDetails, Message.m_broadcastWSToPlanner); // update message

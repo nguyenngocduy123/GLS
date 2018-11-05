@@ -58,8 +58,10 @@ exports.m_isAuthDriver = [m_isLoggedIn, m_isRole(vrpEnum.UserRole.DRIVER)];
 exports.m_isAuthController = [m_isLoggedIn, m_isRole(vrpEnum.UserRole.CONTROLLER)];
 
 
-exports.m_isAuthAdminOrPlanner = [m_isLoggedIn, m_isRole([vrpEnum.UserRole.ADMIN, vrpEnum.UserRole.PLANNER, vrpEnum.UserRole.CONTROLLER])];
-exports.m_isAuthPlannerOrDriver = [m_isLoggedIn, m_isRole([vrpEnum.UserRole.PLANNER, vrpEnum.UserRole.DRIVER, vrpEnum.UserRole.CONTROLLER])];
+exports.m_isAuthAdminOrPlanner = [m_isLoggedIn, m_isRole([vrpEnum.UserRole.ADMIN, vrpEnum.UserRole.PLANNER])];
+exports.m_isAuthAdminOrPlannerOrController = [m_isLoggedIn, m_isRole([vrpEnum.UserRole.ADMIN, vrpEnum.UserRole.PLANNER, vrpEnum.UserRole.CONTROLLER])];
+exports.m_isAuthPlannerOrDriver = [m_isLoggedIn, m_isRole([vrpEnum.UserRole.PLANNER, vrpEnum.UserRole.DRIVER])];
+exports.m_isAuthNotAdmin= [m_isLoggedIn, m_isRole([vrpEnum.UserRole.PLANNER, vrpEnum.UserRole.DRIVER, vrpEnum.UserRole.CONTROLLER])];
 exports.m_isAuthNotDriver = [m_isLoggedIn, m_isRole([vrpEnum.UserRole.ADMIN, vrpEnum.UserRole.PLANNER, vrpEnum.UserRole.DEFAULT, vrpEnum.UserRole.CONTROLLER])];
 exports.m_isAuthPlannerOrController = [m_isLoggedIn, m_isRole([vrpEnum.UserRole.PLANNER, vrpEnum.UserRole.CONTROLLER])];
 
@@ -171,7 +173,7 @@ exports.m_returnUserInfo = async (req, res, next) => {
  *  Private Middlewares
  * ================================================================================ */
 function m_isLoggedIn(req, res, next) {
-    
+
     log.debug('m_isLoggedIn', _.get(req, 'user.username'));
 
     vrpPassportUtils.isLoggedIn((err) => {
@@ -187,7 +189,7 @@ function m_isLoggedIn(req, res, next) {
 }
 
 function m_login(req, res, next) {
-    
+
     log.debug('m_login');
 
     return vrpPassportUtils.login(async (err, user) => {

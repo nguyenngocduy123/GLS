@@ -29,7 +29,7 @@ exports.setup = (mongoDb, routerType) => {
 /* ================================================================================
  *  Middleware not protected from CSRF (by api)
  * ================================================================================ */
-router.post('/v2/login', Auth.m_login, Auth.m_isAuthPlannerOrDriver, Scopes.m_addAuthz, Auth.m_returnUserInfo);
+router.post('/v2/login', Auth.m_login, Auth.m_isAuthNotAdmin, Scopes.m_addAuthz, Auth.m_returnUserInfo);
 router.post('/v2/logout', Auth.m_logout);
 
 /* ================================================================================
