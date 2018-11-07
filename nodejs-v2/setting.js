@@ -88,7 +88,19 @@ module.exports = {
         //         maxDeleteCount: 10000,                
         //     },
         // },
-        sql: {
+        // sql: {
+        //     username: 'mcloyalty',
+        //     password: '@TEG123@',
+        //     host: '115.78.6.171',
+        //     port: 1433,
+        //     dialect: 'mssql',
+        //     database: 'GLS_Test',
+        //     custom: { // application-specific
+        //         schema: 'Logistics',
+        //         maxDeleteCount: 10000,
+        //     },
+        // },
+         sql: {
             username: 'gls',
             password: 'G!Ukd^7f#SpAJ&eo',
             host: 'VM-BESV2',
