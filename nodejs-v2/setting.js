@@ -16,7 +16,7 @@ module.exports = {
     tempFolder: 'tmp', // folder to store scratch files
     server: {
         http: {
-            port: 81,
+            port: 8080,
         },
         https: { // https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener
             port: 443,
@@ -73,7 +73,6 @@ module.exports = {
     },
     database: {
         mongo: {
-            //url: 'mongodb://admin:vrp123456@127.0.0.1:27017/cvrp',
             url: 'mongodb://192.168.50.211:27017/cvrp',
         },
         // sql: { // http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor
@@ -88,19 +87,7 @@ module.exports = {
         //         maxDeleteCount: 10000,                
         //     },
         // },
-        // sql: {
-        //     username: 'mcloyalty',
-        //     password: '@TEG123@',
-        //     host: '115.78.6.171',
-        //     port: 1433,
-        //     dialect: 'mssql',
-        //     database: 'GLS_Test',
-        //     custom: { // application-specific
-        //         schema: 'Logistics',
-        //         maxDeleteCount: 10000,
-        //     },
-        // },
-         sql: {
+        sql: {
             username: 'gls',
             password: 'G!Ukd^7f#SpAJ&eo',
             host: 'VM-BESV2',
