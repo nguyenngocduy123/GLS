@@ -16,7 +16,7 @@ module.exports = {
     tempFolder: 'tmp', // folder to store scratch files
     server: {
         http: {
-            port: 8080,
+            port: 81,
         },
         https: { // https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener
             port: 443,
