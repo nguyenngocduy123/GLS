@@ -3647,63 +3647,63 @@ var map = {
 		25
 	],
 	"../pages/all-jobs/next-day-jobs/next-day-jobs.module": [
-		1090,
+		1088,
 		24
 	],
 	"../pages/all-jobs/planner-notes/planner-notes.module": [
-		1093,
+		1089,
 		23
 	],
 	"../pages/app-permission/app-permission.module": [
-		1088,
+		1090,
 		22
 	],
 	"../pages/complete-job-details/complete-job-details.module": [
-		1089,
+		1091,
 		21
 	],
 	"../pages/current-job/add-note/add-note.module": [
-		1095,
+		1092,
 		20
 	],
 	"../pages/current-job/current-job.module": [
-		1091,
+		1093,
 		19
 	],
 	"../pages/current-job/items-handled/items-handled.module": [
-		1097,
+		1094,
 		18
 	],
 	"../pages/current-job/pod/pod-photo/pod-photo.module": [
-		1092,
+		1095,
 		17
 	],
 	"../pages/current-job/pod/pod-signature/pod-signature.module": [
-		1094,
+		1096,
 		0
 	],
 	"../pages/current-job/pod/pod.module": [
-		1102,
+		1097,
 		16
 	],
 	"../pages/current-job/pod/verify-code/verify-code.module": [
-		1096,
+		1098,
 		15
 	],
 	"../pages/current-job/summary/summary.module": [
-		1101,
+		1099,
 		14
 	],
 	"../pages/customer-service/customer-service.module": [
-		1098,
+		1100,
 		13
 	],
 	"../pages/home/home.module": [
-		1100,
+		1101,
 		12
 	],
 	"../pages/item-details/item-details.module": [
-		1099,
+		1102,
 		11
 	],
 	"../pages/login/check-app-version/check-app-version.module": [
@@ -3715,19 +3715,19 @@ var map = {
 		9
 	],
 	"../pages/login/login.module": [
-		1108,
+		1105,
 		8
 	],
 	"../pages/login/scan-server-url/scan-server-url.module": [
-		1105,
+		1106,
 		7
 	],
 	"../pages/settings/change-driver-details/change-driver-details.module": [
-		1106,
+		1107,
 		6
 	],
 	"../pages/settings/logout/logout.module": [
-		1107,
+		1108,
 		5
 	],
 	"../pages/settings/offline-job-modal/offline-job-modal.module": [
@@ -3735,11 +3735,11 @@ var map = {
 		4
 	],
 	"../pages/settings/offline-sync/offline-sync.module": [
-		1111,
+		1110,
 		3
 	],
 	"../pages/settings/reset-password/reset-password.module": [
-		1110,
+		1111,
 		1
 	],
 	"../pages/settings/settings.module": [
@@ -3856,7 +3856,7 @@ var Note = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CurrentJobProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_base64__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_base64__ = __webpack_require__(811);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_es__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__classes_job__ = __webpack_require__(136);
@@ -4166,8 +4166,8 @@ var CurrentJobProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CameraProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(810);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_barcode_scanner__ = __webpack_require__(811);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_barcode_scanner__ = __webpack_require__(810);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash_es__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__globals__ = __webpack_require__(40);
@@ -4324,9 +4324,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__ = __webpack_require__(807);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_background_mode__ = __webpack_require__(805);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__ = __webpack_require__(810);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_barcode_scanner__ = __webpack_require__(811);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_base64__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_barcode_scanner__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_base64__ = __webpack_require__(811);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_diagnostic__ = __webpack_require__(808);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_http__ = __webpack_require__(804);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_keyboard__ = __webpack_require__(851);
@@ -4428,30 +4428,30 @@ var AppModule = /** @class */ (function () {
                 }, {
                     links: [
                         { loadChildren: '../pages/all-jobs/all-jobs.module#AllJobsPageModule', name: 'AllJobsPage', segment: 'all-jobs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/all-jobs/next-day-jobs/next-day-jobs.module#NextDayJobsPageModule', name: 'NextDayJobsPage', segment: 'next-day-jobs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/all-jobs/planner-notes/planner-notes.module#PlannerNotesPageModule', name: 'PlannerNotesPage', segment: 'planner-notes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/app-permission/app-permission.module#AppPermissionPageModule', name: 'AppPermissionPage', segment: 'app-permission', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/complete-job-details/complete-job-details.module#CompleteJobDetailsPageModule', name: 'CompleteJobDetailsPage', segment: 'complete-job-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/all-jobs/next-day-jobs/next-day-jobs.module#NextDayJobsPageModule', name: 'NextDayJobsPage', segment: 'next-day-jobs', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/current-job/current-job.module#CurrentJobPageModule', name: 'CurrentJobPage', segment: 'current-job', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/current-job/pod/pod-photo/pod-photo.module#PodPhotoPageModule', name: 'PodPhotoPage', segment: 'pod-photo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/all-jobs/planner-notes/planner-notes.module#PlannerNotesPageModule', name: 'PlannerNotesPage', segment: 'planner-notes', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/current-job/pod/pod-signature/pod-signature.module#PodSignaturePageModule', name: 'PodSignaturePage', segment: 'pod-signature', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/add-note/add-note.module#AddNotePageModule', name: 'AddNotePage', segment: 'add-note', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/current-job/pod/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/current-job/current-job.module#CurrentJobPageModule', name: 'CurrentJobPage', segment: 'current-job', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/items-handled/items-handled.module#ItemsHandledPageModule', name: 'ItemsHandledPage', segment: 'items-handled', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/customer-service/customer-service.module#CustomerServicePageModule', name: 'CustomerServicePage', segment: 'customer-service', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/item-details/item-details.module#ItemDetailsPageModule', name: 'ItemDetailsPage', segment: 'item-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/current-job/summary/summary.module#SummaryPageModule', name: 'SummaryPage', segment: 'summary', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/current-job/pod/pod-photo/pod-photo.module#PodPhotoPageModule', name: 'PodPhotoPage', segment: 'pod-photo', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/current-job/pod/pod-signature/pod-signature.module#PodSignaturePageModule', name: 'PodSignaturePage', segment: 'pod-signature', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/pod/pod.module#PodPageModule', name: 'PodPage', segment: 'pod', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/current-job/pod/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/current-job/summary/summary.module#SummaryPageModule', name: 'SummaryPage', segment: 'summary', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/customer-service/customer-service.module#CustomerServicePageModule', name: 'CustomerServicePage', segment: 'customer-service', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/item-details/item-details.module#ItemDetailsPageModule', name: 'ItemDetailsPage', segment: 'item-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/check-app-version/check-app-version.module#CheckAppVersionPageModule', name: 'CheckAppVersionPage', segment: 'check-app-version', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/licence-agreement/licence-agreement.module#LicenceAgreementPageModule', name: 'LicenceAgreementPage', segment: 'licence-agreement', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/scan-server-url/scan-server-url.module#ScanServerUrlPageModule', name: 'ScanServerUrlPage', segment: 'scan-server-url', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/settings/change-driver-details/change-driver-details.module#ChangeDriverDetailsPageModule', name: 'ChangeDriverDetailsPage', segment: 'change-driver-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/settings/logout/logout.module#LogoutPageModule', name: 'LogoutPage', segment: 'logout', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/settings/offline-job-modal/offline-job-modal.module#OfflineJobModalPageModule', name: 'OfflineJobModalPage', segment: 'offline-job-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/settings/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/settings/offline-sync/offline-sync.module#OfflineSyncPageModule', name: 'OfflineSyncPage', segment: 'offline-sync', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/settings/reset-password/reset-password.module#ResetPasswordPageModule', name: 'ResetPasswordPage', segment: 'reset-password', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/settings/settings.module#SettingPageModule', name: 'SettingPage', segment: 'settings', priority: 'low', defaultHistory: [] }
                     ]
                 }),

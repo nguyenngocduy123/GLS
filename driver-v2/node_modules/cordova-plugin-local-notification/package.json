@@ -1,19 +1,19 @@
 {
-  "_from": "cordova-plugin-local-notification@0.9.0-beta.2",
+  "_from": "cordova-plugin-local-notification@^0.9.0-beta.2",
   "_id": "cordova-plugin-local-notification@0.9.0-beta.2",
   "_inBundle": false,
   "_integrity": "sha512-63n77K1pt8dnbWnNR8QWETi9Glezi1bvNHvHWmGNIOv0xCb0phZnm+Ku49BQ+omwe8Z5voMvrA4I03SYPpv38w==",
   "_location": "/cordova-plugin-local-notification",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-local-notification@0.9.0-beta.2",
+    "raw": "cordova-plugin-local-notification@^0.9.0-beta.2",
     "name": "cordova-plugin-local-notification",
     "escapedName": "cordova-plugin-local-notification",
-    "rawSpec": "0.9.0-beta.2",
+    "rawSpec": "^0.9.0-beta.2",
     "saveSpec": null,
-    "fetchSpec": "0.9.0-beta.2"
+    "fetchSpec": "^0.9.0-beta.2"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-local-notification/-/cordova-plugin-local-notification-0.9.0-beta.2.tgz",
   "_shasum": "e3a0b4a35d11f95bb4f1e367d9baee9909cca695",
-  "_spec": "cordova-plugin-local-notification@0.9.0-beta.2",
+  "_spec": "cordova-plugin-local-notification@^0.9.0-beta.2",
   "_where": "G:\\GLS\\TMS SC\\New folder\\driver-v2",
   "author": {
     "name": "Sebastián Katzer"

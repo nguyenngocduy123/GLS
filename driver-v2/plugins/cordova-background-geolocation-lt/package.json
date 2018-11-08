@@ -1,27 +1,27 @@
 {
-  "_from": "cordova-background-geolocation-lt@2.13.2",
-  "_id": "cordova-background-geolocation-lt@2.13.2",
+  "_from": "cordova-background-geolocation-lt@^2.14.0",
+  "_id": "cordova-background-geolocation-lt@2.14.0",
   "_inBundle": false,
-  "_integrity": "sha512-NBf7Y8iVG9hS0wIfvAqzAKUZkhtgoDOFzIKGokBMxlwxfcuuA3QCarj1DB/Drmu5BjDI+OtFcYGMrJgu2whzFQ==",
+  "_integrity": "sha512-zlFjkOWr8HuGQ7KWyB/JKyK02lNvQE0bzaOZz5x5la4+QyBfWQVVljzdH9o+5H19afiH380qrl2Z4acSVdCpBA==",
   "_location": "/cordova-background-geolocation-lt",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-background-geolocation-lt@2.13.2",
+    "raw": "cordova-background-geolocation-lt@^2.14.0",
     "name": "cordova-background-geolocation-lt",
     "escapedName": "cordova-background-geolocation-lt",
-    "rawSpec": "2.13.2",
+    "rawSpec": "^2.14.0",
     "saveSpec": null,
-    "fetchSpec": "2.13.2"
+    "fetchSpec": "^2.14.0"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-background-geolocation-lt/-/cordova-background-geolocation-lt-2.13.2.tgz",
-  "_shasum": "1ffd6e60b2e27b453059127afbdd37649f6389d0",
-  "_spec": "cordova-background-geolocation-lt@2.13.2",
+  "_resolved": "https://registry.npmjs.org/cordova-background-geolocation-lt/-/cordova-background-geolocation-lt-2.14.0.tgz",
+  "_shasum": "0cd38d6b7b8304905fa80519a48cea7507733a19",
+  "_spec": "cordova-background-geolocation-lt@^2.14.0",
   "_where": "G:\\GLS\\TMS SC\\New folder\\driver-v2",
   "author": {
     "name": "Chris Scott, Transistor Software"
@@ -39,6 +39,11 @@
   },
   "deprecated": false,
   "description": "Cordova Background Geolocation.  The most sophisticated, cross-platform location-tracking and geofencing plugin with battery-conscious motion-detection intelligence.",
+  "devDependencies": {
+    "typedoc": "^0.12.0",
+    "typedoc-plugin-gitlink": "^0.0.3",
+    "typedoc-theme-transistor": "git+https://github.com/transistorsoft/typedoc-theme-transistor.git"
+  },
   "engines": {
     "cordovaDependencies": {
       "2.12.0": {
@@ -73,10 +78,15 @@
     "phonegap"
   ],
   "license": "Apache-2.0",
+  "main": "src/ionic/index.js",
   "name": "cordova-background-geolocation-lt",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/transistorsoft/cordova-background-geolocation-lt.git"
   },
-  "version": "2.13.2"
+  "scripts": {
+    "build": "tsc -p src/ionic",
+    "prepublish": "npm run build"
+  },
+  "version": "2.14.0"
 }

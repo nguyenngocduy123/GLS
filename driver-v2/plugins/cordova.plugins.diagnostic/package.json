@@ -1,19 +1,19 @@
 {
-  "_from": "cordova.plugins.diagnostic@4.0.10",
+  "_from": "cordova.plugins.diagnostic@^4.0.10",
   "_id": "cordova.plugins.diagnostic@4.0.10",
   "_inBundle": false,
   "_integrity": "sha512-t+3+s/7oD3gn0E5hXVmpkttIi70rvicMzYpYAjyzZD6orROYw5lNsG3qOI2VIxBJxd2S+kMBm7cYkcdRHqYU6g==",
   "_location": "/cordova.plugins.diagnostic",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "cordova.plugins.diagnostic@4.0.10",
+    "raw": "cordova.plugins.diagnostic@^4.0.10",
     "name": "cordova.plugins.diagnostic",
     "escapedName": "cordova.plugins.diagnostic",
-    "rawSpec": "4.0.10",
+    "rawSpec": "^4.0.10",
     "saveSpec": null,
-    "fetchSpec": "4.0.10"
+    "fetchSpec": "^4.0.10"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova.plugins.diagnostic/-/cordova.plugins.diagnostic-4.0.10.tgz",
   "_shasum": "f3ba207544eab755eaa4e4111db28c54b8c1f755",
-  "_spec": "cordova.plugins.diagnostic@4.0.10",
+  "_spec": "cordova.plugins.diagnostic@^4.0.10",
   "_where": "G:\\GLS\\TMS SC\\New folder\\driver-v2",
   "author": {
     "name": "Dave Alden"

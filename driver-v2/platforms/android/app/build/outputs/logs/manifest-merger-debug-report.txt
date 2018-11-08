@@ -35,7 +35,7 @@ MERGED from [com.commit451:PhotoView:1.2.4] C:\Users\admin\.gradle\caches\transf
 MERGED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:2:1-52:12
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:2:1-14:12
 MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:2:1-30:12
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:2:1-55:12
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:2:1-55:12
 MERGED from [com.github.tony19:logback-android:1.1.1-9] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\logback-android-1.1.1-9.aar\8f16d4a75de42ec3dd08295798028c5e\AndroidManifest.xml:2:1-11:12
 MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\f25e9bde753674f7af702407c7876695\AndroidManifest.xml:2:1-9:12
@@ -96,8 +96,8 @@ ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\And
 		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
 uses-permission#android.permission.INTERNET
 ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:15:5-67
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:15:5-67
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:15:5-67
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:15:5-67
 	android:name
 		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
 application
@@ -106,8 +106,8 @@ MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\trans
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:11:5-12:19
 MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:14:5-28:19
 MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:14:5-28:19
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:24:5-53:19
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:24:5-53:19
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:24:5-53:19
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:24:5-53:19
 MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:11:5-16:19
 MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:11:5-16:19
 MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\f25e9bde753674f7af702407c7876695\AndroidManifest.xml:7:5-20
@@ -242,8 +242,8 @@ MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\trans
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\8e1b88a8280e805aef8cb3acb34dfb38\AndroidManifest.xml:7:5-9:41
 MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:7:5-9:41
 MERGED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:7:5-9:41
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:7:5-9:41
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:7:5-9:41
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.tony19:logback-android:1.1.1-9] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\logback-android-1.1.1-9.aar\8f16d4a75de42ec3dd08295798028c5e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.tony19:logback-android:1.1.1-9] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\logback-android-1.1.1-9.aar\8f16d4a75de42ec3dd08295798028c5e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:7:5-9:41
@@ -300,8 +300,8 @@ MERGED from [android.arch.core:runtime:1.1.0] C:\Users\admin\.gradle\caches\tran
 		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:33:15-41
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:34:5-79
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:11:5-79
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:11:5-79
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:11:5-79
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:11:5-79
 	android:name
 		ADDED from G:\GLS\TMS SC\New folder\driver-v2\platforms\android\app\src\main\AndroidManifest.xml:34:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
@@ -402,14 +402,14 @@ ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\trans
 		ADDED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\f9d96075e7fa7b9142451c9a9adeec68\AndroidManifest.xml:50:22-86
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:11:5-81
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:17:5-81
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:17:5-81
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:17:5-81
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:17:5-81
 	android:name
 		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.GET_TASKS
 ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:12:5-68
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:18:5-68
-MERGED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:18:5-68
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:18:5-68
+MERGED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:18:5-68
 	android:name
 		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:12:22-65
 receiver#com.transistorsoft.tsbackgroundfetch.FetchAlarmReceiver
@@ -439,69 +439,69 @@ ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\c
 	android:name
 		ADDED from [com.transistorsoft:tsbackgroundfetch:0.2.0] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tsbackgroundfetch-0.2.0.aar\c34fd448a619a02fcb758fe4d3e4b4cf\AndroidManifest.xml:25:25-81
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:12:5-81
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:12:22-78
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:13:5-79
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:13:22-76
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:13:22-76
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:14:5-89
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:14:5-89
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:14:22-86
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:14:22-86
 uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:16:5-94
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:16:5-94
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:16:22-91
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:16:22-91
 uses-feature#android.hardware.location.gps
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:20:5-22:36
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:20:5-22:36
 	android:required
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:22:9-33
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:22:9-33
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:21:9-53
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:21:9-53
 service#com.transistorsoft.locationmanager.BackgroundGeolocationService
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:25:9-99
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:25:9-99
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:25:18-96
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:25:18-96
 service#com.transistorsoft.locationmanager.LocationService
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:26:9-86
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:26:9-86
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:26:18-83
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:26:18-83
 service#com.transistorsoft.locationmanager.ActivityRecognitionService
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:27:9-97
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:27:9-97
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:27:18-94
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:27:18-94
 service#com.transistorsoft.locationmanager.geofence.GeofenceService
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:28:9-95
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:28:9-95
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:28:18-92
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:28:18-92
 receiver#com.transistorsoft.locationmanager.scheduler.ScheduleAlarmReceiver
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:30:9-103
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:30:9-103
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:30:19-100
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:30:19-100
 service#com.transistorsoft.locationmanager.scheduler.ScheduleJobService
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:32:9-35:72
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:32:9-35:72
 	android:exported
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:34:13-36
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:34:13-36
 	android:permission
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:35:13-69
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:35:13-69
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:33:13-91
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:33:13-91
 receiver#com.transistorsoft.locationmanager.BootReceiver
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:37:9-42:20
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:37:9-42:20
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:37:19-81
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:37:19-81
 provider#com.transistorsoft.locationmanager.util.LogFileProvider
-ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:44:9-52:20
+ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:44:9-52:20
 	android:grantUriPermissions
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:48:13-47
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:48:13-47
 	android:authorities
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:46:13-82
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:46:13-82
 	android:exported
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:47:13-37
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:47:13-37
 	android:name
-		ADDED from [com.transistorsoft:tslocationmanager:2.13.4] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.13.4.aar\4f3265d50126e02ead70d49e7e365d9a\AndroidManifest.xml:45:13-83
+		ADDED from [com.transistorsoft:tslocationmanager:2.14.1] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\tslocationmanager-2.14.1.aar\0a96e7860a415a6a15636d5bf14b8a21\AndroidManifest.xml:45:13-83
 activity#com.intentfilter.androidpermissions.PermissionsActivity
 ADDED from [com.intentfilter:android-permissions:0.1.6] C:\Users\admin\.gradle\caches\transforms-1\files-1.1\android-permissions-0.1.6.aar\ab43a108f48b3de74fcaaef7dec77e5c\AndroidManifest.xml:12:9-15:59
 	android:excludeFromRecents
