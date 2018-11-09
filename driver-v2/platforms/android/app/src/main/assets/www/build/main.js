@@ -2963,7 +2963,7 @@ var Globals = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Globals.defaultUrl = 'https://glsapp.com.sg';
+    Globals.defaultUrl = 'http://test.gls.beyondedge.com.sg:82';
     Globals._url = Globals.defaultUrl;
     /**
      * `````````````````````````````````````````````
@@ -3691,15 +3691,15 @@ var map = {
 		15
 	],
 	"../pages/current-job/summary/summary.module": [
-		1101,
+		1099,
 		14
 	],
 	"../pages/customer-service/customer-service.module": [
-		1099,
+		1100,
 		13
 	],
 	"../pages/home/home.module": [
-		1100,
+		1101,
 		12
 	],
 	"../pages/item-details/item-details.module": [
@@ -4439,9 +4439,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/current-job/pod/pod-signature/pod-signature.module#PodSignaturePageModule', name: 'PodSignaturePage', segment: 'pod-signature', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/pod/pod.module#PodPageModule', name: 'PodPage', segment: 'pod', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/pod/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/current-job/summary/summary.module#SummaryPageModule', name: 'SummaryPage', segment: 'summary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/customer-service/customer-service.module#CustomerServicePageModule', name: 'CustomerServicePage', segment: 'customer-service', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/current-job/summary/summary.module#SummaryPageModule', name: 'SummaryPage', segment: 'summary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-details/item-details.module#ItemDetailsPageModule', name: 'ItemDetailsPage', segment: 'item-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/check-app-version/check-app-version.module#CheckAppVersionPageModule', name: 'CheckAppVersionPage', segment: 'check-app-version', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/licence-agreement/licence-agreement.module#LicenceAgreementPageModule', name: 'LicenceAgreementPage', segment: 'licence-agreement', priority: 'low', defaultHistory: [] },

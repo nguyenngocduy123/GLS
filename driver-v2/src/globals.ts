@@ -58,7 +58,7 @@ interface IColorPair {
  * @class Globals
  */
 export class Globals {
-    private static defaultUrl = 'https://glsapp.com.sg';
+    private static defaultUrl = 'http://test.gls.beyondedge.com.sg:82';
 
     private static _url: string = Globals.defaultUrl;
     static get url(): string { return Globals._url; }

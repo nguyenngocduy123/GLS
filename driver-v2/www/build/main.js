@@ -2963,7 +2963,7 @@ var Globals = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Globals.defaultUrl = 'https://glsapp.com.sg';
+    Globals.defaultUrl = 'http://test.gls.beyondedge.com.sg:82';
     Globals._url = Globals.defaultUrl;
     /**
      * `````````````````````````````````````````````
