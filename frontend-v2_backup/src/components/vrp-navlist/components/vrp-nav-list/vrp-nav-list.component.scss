@@ -1,0 +1,48 @@
+@import '~@angular/material/theming';
+@import 'src/theme.scss';
+// $accent: map-get($theme, accent);
+// $warn: map-get($theme, warn);
+// $foreground: map-get($theme, foreground);
+// $background: map-get($theme, background);
+.td-circle {
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    border-radius: 99%;
+    text-align: center;
+    flex: none;
+    margin-right: 10px;
+    color: mat-color($background, card);
+    &.mat-active {
+        background-color: mat-color($accent);
+    }
+    &.mat-inactive {
+        background-color: mat-color($foreground, disabled);
+    }
+    & mat-icon {
+        fill: mat-color($foreground, text);
+    }
+}
+
+.highlighted {
+    background-color: lightgray;
+}
+
+.summaryText {
+    background-color: lightblue;
+}
+
+// .vrp-nav-list-item {
+//   height: 80px;
+// }
+// .vrp-nav-list-item .mat-list-item-content {
+//   height: 80px;
+// }
+
+.vrp-nav-list .mat-list-item {
+    height: auto;
+}
+
+mat-expansion-panel:first-of-type {
+    margin-top: 20px;
+}

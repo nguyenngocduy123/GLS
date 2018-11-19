@@ -1,0 +1,48 @@
+<div class="centered-content" layout-fill>
+    <div layout='column'>
+        <form [formGroup]="f" novalidate (ngSubmit)="login(f.value, f.valid)">
+            <mat-card *tdLoading="'vrp-login.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+                <mat-card-title>
+                    <img src="assets/images/logo_company.png" width="120" />LM2 Logistics Planning
+                </mat-card-title>
+
+                <mat-divider></mat-divider>
+
+                <mat-card-content>
+                    <div layout="column">
+                        <mat-form-field flex>
+                            <input matInput [placeholder]="'Username'| translate" type="text" maxlength="30" formControlName="username" required>
+                            <span matPrefix style='font-size:2em'>
+                                <mat-icon class="tc-green-700">person</mat-icon>
+                            </span>
+                            <mat-hint align="end">{{f.controls.username.value.length}} / 30</mat-hint>
+                            <mat-error *ngIf="f.controls.username.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field flex>
+                            <input matInput [placeholder]="'Password'| translate" type="password" formControlName="password" required>
+                            <span matPrefix style='font-size:2em'>
+                                <mat-icon class="tc-red-700">lock</mat-icon> </span>
+                            <mat-hint align="end" translate>LOGIN.PASSWORD_HINT</mat-hint>
+
+                            <mat-error *ngIf="f.controls.password.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-card-content>
+
+                <mat-divider></mat-divider>
+
+                <div layout='row' layout-padding layout-align="center end">
+                    <div flex></div>
+
+                    <button mat-raised-button color="accent" [disabled]="!f.valid || submitted" type='submit' translate>Login</button>
+                </div>
+            </mat-card>
+        </form>
+
+        <div layout="row" layout-align="center end" class="text-center">
+            Powered by
+            <img src="assets/images/logo_powerby.png" height="30" />
+        </div>
+    </div>
+</div>

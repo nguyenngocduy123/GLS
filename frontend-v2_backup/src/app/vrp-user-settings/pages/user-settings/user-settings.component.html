@@ -1,0 +1,125 @@
+<td-layout-nav [toolbarTitle]="'Settings'| translate">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div layout="row">
+        <div flex="10" hide-xs> </div>
+
+        <mat-card flex>
+            <mat-list>
+                <h3 matSubheader>Personal Info</h3>
+
+                <mat-list-item>
+                    <mat-icon matListIcon>person</mat-icon>
+                    <h4 matLine>Full Name</h4>
+
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500">{{user.fullname}}</span>
+
+                    <button mat-icon-button (click)='updateFullname()' matTooltip="Click to edit">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListIcon>email</mat-icon>
+                    <h4 matLine>Email</h4>
+
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500">{{user.email}}</span>
+
+                    <button mat-icon-button (click)='updateEmail()' matTooltip="Click to edit">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListIcon>account_box</mat-icon>
+                    <h4 matLine>User Group</h4>
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500">{{user.usergroup}}</span>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListIcon>language</mat-icon>
+                    <h4 matLine>Language</h4>
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500">{{language | uppercase}}</span>
+
+                    <button mat-icon-button (click)='changeLanguage()' matTooltip="Click to toggle">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListIcon>https</mat-icon>
+                    <h4 matLine>Change Password</h4>
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500"></span>
+
+                    <button mat-icon-button (click)='updatePassword()' matTooltip="Click to edit">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                </mat-list-item>
+
+                <h3 matSubheader>Environment</h3>
+
+                <mat-list-item>
+                    <mat-icon matListIcon>color_lens</mat-icon>
+                    <h4 matLine>Theme</h4>
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500">{{activeTheme | uppercase}}</span>
+
+                    <button mat-icon-button [matMenuTriggerFor]="menuThemeSelection" matTooltip="Click to change">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon matListIcon>my_location</mat-icon>
+                    <h4 matLine>Primary Geocoding Service</h4>
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500">{{primaryGeocodingService | uppercase}}</span>
+
+                    <button mat-icon-button [matMenuTriggerFor]="menuPrimaryGeocodingSelection" matTooltip="Click to change">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                </mat-list-item>
+
+                <mat-list-item *ngIf="user.role !== 'admin'">
+                    <mat-icon matListIcon>notifications</mat-icon>
+                    <h4 matLine>Notifications</h4>
+                    <span flex></span>
+
+                    <span flex="60" class="pad-left md-body-1 tc-grey-500"></span>
+
+                    <button mat-icon-button (click)="updateNotification()" matTooltip="Click to configure">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                </mat-list-item>
+            </mat-list>
+        </mat-card>
+
+        <div flex="10" hide-xs> </div>
+    </div>
+</td-layout-nav>
+
+<mat-menu #menuThemeSelection="matMenu" [overlapTrigger]="false">
+    <ng-template let-itemMenu ngFor [ngForOf]="themeList" let-item>
+        <a mat-menu-item (click)='setActiveTheme(itemMenu)'> {{itemMenu.label | uppercase }} </a>
+    </ng-template>
+</mat-menu>
+
+<mat-menu #menuPrimaryGeocodingSelection="matMenu" [overlapTrigger]="false">
+    <ng-template let-itemMenu ngFor [ngForOf]="geocodingServiceList" let-item>
+        <a mat-menu-item (click)='primaryGeocodingService= itemMenu'> {{itemMenu.label | uppercase }} </a>
+    </ng-template>
+</mat-menu>

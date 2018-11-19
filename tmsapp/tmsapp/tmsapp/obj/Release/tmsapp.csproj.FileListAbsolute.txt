@@ -1,0 +1,20 @@
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\bin\Release\tmsapp.exe.config
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\bin\Release\tmsapp.exe
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\bin\Release\tmsapp.pdb
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\bin\Release\Oracle.DataAccess.dll
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.Form1.resources
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.Properties.Resources.resources
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.csproj.GenerateResource.Cache
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.exe
+C:\Users\ngcy\documents\visual studio 2015\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.pdb
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\bin\Release\tmsapp.exe.config
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\bin\Release\tmsapp.exe
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\bin\Release\tmsapp.pdb
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.csprojAssemblyReference.cache
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.Form1.resources
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.Properties.Resources.resources
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.csproj.GenerateResource.cache
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.csproj.CoreCompileInputs.cache
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.csproj.CopyComplete
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.exe
+G:\GLS\TMS-WM6 source\tmsapp\tmsapp\tmsapp\obj\Release\tmsapp.pdb

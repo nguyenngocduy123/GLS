@@ -1,0 +1,17 @@
+<div layout="row" class='pad'>
+    <button mat-icon-button mwlCalendarPreviousView view="day" [viewDate]="viewDate" [disabled]='readOnly || (!allowPast)' (viewDateChange)='viewDateChange.emit($event)'
+        matTooltip='Previous'>
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+
+    <span>
+        <a mat-raised-button color='warn' [disabled]='readOnly' (click)='!readOnly && dateClick.emit()'>
+            {{ viewDate | date:'fullDate' }}
+        </a>
+    </span>
+
+    <button mat-icon-button mwlCalendarNextView view="day" [viewDate]="viewDate" [disabled]='readOnly|| (!allowFuture)' (viewDateChange)='viewDateChange.emit($event)'
+        matTooltip='Next'>
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+</div>

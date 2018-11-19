@@ -1,0 +1,17 @@
+<td-layout-nav [toolbarTitle]="'Dashboard' | translate">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="center center" flex>
+        <span flex></span>
+        <button *ngFor="let item of toolbarButtons" mat-icon-button (click)="item.click()" [matTooltip]="item.label">
+            <mat-icon class="md-24">{{item.icon}}</mat-icon>
+        </button>
+    </div>
+
+    <div *tdLoading="'vrp-dashboard.load'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+        <vrp-table id='tableDashboard' [columns]="columns" [data]='data' sortBy='modified_date' [tableHeight]="tableHeight" [selectActions]='selectActions'
+            [itemActions]='itemActions'></vrp-table>
+    </div>
+</td-layout-nav>

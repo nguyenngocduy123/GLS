@@ -1,0 +1,21 @@
+<div #mapDiv id="LMap" class="leaflet-map"></div>
+
+<vrp-leaflet-legend class="bottom-left-fixed" *ngIf="legends" [legends]="legends"></vrp-leaflet-legend>
+
+<div class="leaflet-bar bottom-right-fixed vrp-control-div fixed">
+    <a class="vrp-control-a" href="javascript:;" (click)="fitBounds()" matTooltip="Fit screen">
+        <mat-icon>zoom_out_max</mat-icon>
+    </a>
+
+    <a class="vrp-control-a" href="javascript:;" (click)="toggleCurveMode()" [matTooltip]='"Switch to " + (curveMode ? "Straight" : "Curve" ) + " Mode"'>
+        <mat-icon>{{curveMode ? 'trending_down' : 'trending_flat'}}</mat-icon>
+    </a>
+
+    <a class="vrp-control-a" href="javascript:;" (click)="toggleMeasureMode()" [matTooltip]="(measureMode ? 'Disable' : 'Enable') + ' Measure'">
+        <mat-icon>{{measureMode ? 'speaker_notes_off' : 'straighten'}}</mat-icon>
+    </a>
+
+    <a class="vrp-control-a" href="javascript:;" (click)="toggleMarkerClustering()" [matTooltip]="(clusteringMode ? 'Disable' : 'Enable') + ' Clustering'">
+        <mat-icon>{{clusteringMode ? 'fullscreen_exit' : 'fullscreen'}}</mat-icon>
+    </a>
+</div>

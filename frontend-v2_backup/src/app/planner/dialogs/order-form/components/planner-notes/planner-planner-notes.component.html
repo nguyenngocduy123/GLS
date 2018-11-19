@@ -1,0 +1,47 @@
+<table class="table-style-one">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Topic</th>
+            <th>Note</th>
+            <th>
+                <a *ngIf='!readonly' href='javascript:;' (click)="update()">
+                    <mat-icon>save</mat-icon>
+                </a>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <ng-template let-item let-last="last" let-i="index" ngFor [ngForOf]="notesValue">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>
+                    <input type='text' [(ngModel)]='item.key'> </td>
+                <td>
+                    <input type='text' [(ngModel)]='item.value' [disabled]='readonly' />
+                </td>
+                <td>
+                    <a *ngIf='!readonly' href='javascript:;' (click)="removeNote(i)">
+                        <mat-icon>delete</mat-icon>
+                    </a>
+                </td>
+            </tr>
+        </ng-template>
+
+        <tr>
+            <td>-</td>
+            <td>
+                <input type='text' [(ngModel)]='newNote.key'>
+            </td>
+            <td>
+                <input type='text' [(ngModel)]='newNote.value'>
+            </td>
+            <td>
+                <a href='javascript:;' (click)="addNote()">
+                    <mat-icon>add</mat-icon>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

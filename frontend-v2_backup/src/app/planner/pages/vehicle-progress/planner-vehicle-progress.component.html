@@ -1,0 +1,81 @@
+<div layout='row'>
+    <mat-card flex class='pull-none make-scrollable' [style.height.px]='innerHeight'>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon matListAvatar>apps</mat-icon>
+
+                <div flex="30" layout="row" layout-align="start center" class="pad-left pad-right-sm">
+                    <strong *ngIf="!searchBox.searchVisible" class='text-xl'>Driver</strong>
+                    <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here"
+                        (searchDebounce)="filter()" [(ngModel)]="searchDriverNameTerm" flex>
+                    </td-search-box>
+                </div>
+
+                <strong flex="20" class="text-xl">Next Job</strong>
+                <strong flex class="text-xl">Delivery Progress</strong>
+            </mat-list-item>
+
+            <mat-divider></mat-divider>
+
+            <mat-list-item *ngIf='filteredVehicleStats.length===0'>
+                <strong flex class='text-center md-title'>No Active Driver</strong>
+            </mat-list-item>
+
+            <ng-template let-item let-last="last" ngFor [ngForOf]="filteredVehicleStats">
+                <mat-list-item>
+                    <img matListAvatar src='assets/images/driver.png' alt='Driver'>
+
+                    <div flex="30" layout="column" class='pad-left'>
+                        <span>{{item.DriverUsername}} ({{item.Id}})</span>
+                        <b *ngIf="item.recent">Last Updated:
+                            <a href="javascript:;" (click)='openJobs([item.recent])'>
+                                {{item.recent.ActualDeliveryTime|date:"hh:mm a"}}
+                            </a>
+                        </b>
+                    </div>
+
+                    <div flex="20" layout='column'>
+                        <a href="javascript:;" *ngIf="item.next" (click)='openJobs([item.next])'>
+                            {{item.next.ContactName || item.next.DeliveryMasterId}}
+                        </a>
+
+                        <span *ngIf='item.next'>Due on: {{item.next.EndTimeWindow | date:'shortTime'}}</span>
+
+                        <h4 *ngIf="!item.next">
+                            <span color='warn'>None</span>
+                        </h4>
+                    </div>
+
+                    <span flex layout='row'>
+                        <button mat-icon-button matTooltip='View All' (click)='openAllJobs(item)'>
+                            <mat-icon>launch</mat-icon>
+                        </button>
+
+                        <ng-template ngFor let-d [ngForOf]="item.series" let-i="index">
+                            <a *ngIf="d.data.length*100.0/maxValue" [style.background]="statusColors[i].primary" [style.color]='statusColors[i].textColor'
+                                [style.width]='d.data.length*100.0/maxValue + "%"' (click)='openJobs(d.data)' class='mat-elevation-z3 mat-caption text-center text-lg vrp-progress-horizontal-bar'>
+                                {{d.data.length}}
+                                <!-- /{{item.totalJobs}} -->
+                            </a>
+                        </ng-template>
+                    </span>
+                </mat-list-item>
+                <mat-divider matInset></mat-divider>
+            </ng-template>
+        </mat-list>
+    </mat-card>
+
+    <mat-card flex="20" class='pull-none make-scrollable' [style.height.px]='innerHeight'>
+        <mat-card-title>Overall progress</mat-card-title>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-content layout='column'>
+            <a *ngFor="let tile of allStats; let i=index;" [style.background]="statusColors[i].primary" [style.color]='statusColors[i].textColor'
+                class="mat-elevation-z3 vrp-badge" layout='row' (click)='openJobs(tile.data)'>
+                <span class='text-30 text-left'>{{tile.data.length}}</span>&nbsp;
+                <span class='text-20 text-left'>{{tile.status}}</span>
+            </a>
+        </mat-card-content>
+    </mat-card>
+</div>

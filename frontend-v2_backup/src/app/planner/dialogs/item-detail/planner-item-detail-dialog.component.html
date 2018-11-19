@@ -1,0 +1,33 @@
+<h2 matDialogTitle>{{createNew ? 'Create New' : 'Edit'}} Item</h2>
+
+<form [formGroup]="f" (ngSubmit)="save(f.value, f.valid)">
+    <mat-dialog-content>
+        <div layout="row" layout-wrap layout-margin layout-align="start center">
+            <mat-form-field flex='90'>
+                <input matInput type="text" placeholder="Id" formControlName="Id" [readonly]='!createNew' maxlength="30">
+                <mat-error *ngIf="f.controls.Id.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.Id.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.Id.errors?.existence" translate>ALREADY_TAKEN_ERROR_MSG</mat-error>
+                <mat-hint align="end">{{f.controls.Id.value?.length}} / 30</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field flex='90'>
+                <input matInput type="number" placeholder="Weight" formControlName="Weight" min="0.0001">
+                <mat-error *ngIf="f.controls.Weight.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.Weight.errors?.min" translate>GREATER_THAN_0_ERROR_MSG</mat-error>
+            </mat-form-field>
+
+            <mat-form-field flex='90'>
+                <input matInput type="text" placeholder="Description" formControlName="Description" maxlength="1024">
+                <mat-hint align="end">{{f.controls.Description.value?.length}} / 1024</mat-hint>
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions layout="row">
+        <div flex></div>
+        <button mat-button color='primary' matDialogClose>CANCEL</button>
+        <!-- <button mat-button color='warn' type='reset' [disabled]='f.pristine'>UNDO</button> -->
+        <button mat-button color='accent' type='submit' [disabled]='!f.valid || f.pristine'>{{createNew?'CREATE':'SAVE'}}</button>
+    </mat-dialog-actions>
+</form>

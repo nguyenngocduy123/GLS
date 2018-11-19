@@ -1,0 +1,79 @@
+<h2 matDialogTitle> {{createNew ? 'Register New' : 'Edit'}} User</h2>
+<form [formGroup]="f" (ngSubmit)="save(f.value, f.valid)">
+    <mat-dialog-content>
+        <div layout="row" layout-wrap layout-margin layout-align="start center">
+            <mat-form-field flex='40'>
+                <input matInput type="text" placeholder="Username (*)" formControlName="username" [readonly]='!createNew' maxlength="30">
+                <mat-error *ngIf="f.controls.username.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.username.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.username.errors?.existence" translate>ALREADY_TAKEN_ERROR_MSG</mat-error>
+                <mat-hint align="end">
+                    <span *ngIf="!createNew">Cannot edit,</span>
+                    {{f.controls.username.value?.length}} / 30
+                </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field flex='55'>
+                <input matInput type="text" placeholder="Full Name (*)" formControlName="fullname" maxlength="30">
+                <mat-error *ngIf="f.controls.fullname.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-hint align="end">{{f.controls.fullname.value?.length}} / 30</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field flex='40'>
+                <input matInput type="email" placeholder="Email (*)" formControlName="email">
+                <mat-error *ngIf="f.controls.email.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.email.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.email.errors?.existence" translate>ALREADY_TAKEN_ERROR_MSG</mat-error>
+            </mat-form-field>
+
+            <mat-form-field flex='25'>
+                <mat-select placeholder="User Role" formControlName="role">
+                    <mat-option *ngFor="let r of userRoleOptions" [value]="r.value"> {{r.label}} </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field flex='25'>
+                <vrp-search-select-form-field formControlName="usergroup" [selections]='allUserGroups | async' placeholder="UserGroup" [optionTemplate]='userGroupOptionTemplate'
+                    valueField='usergroup' [searchFields]='["usergroup"]' [showUndefinedOption]='true'></vrp-search-select-form-field>
+            </mat-form-field>
+
+            <mat-checkbox flex='30' formControlName='disabled'>Disabled</mat-checkbox>
+
+            <!-- driver info -->
+
+            <mat-form-field flex='20' *ngIf='isDriver'>
+                <input matInput type="text" placeholder="NRIC/FIN (*)" uppercase formControlName="nric" [readonly]='!createNew' maxlength="9"
+                    minlength="9">
+                <mat-error *ngIf="f.controls.nric.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.nric.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+                <mat-hint align="end">
+                    <span *ngIf="!createNew">Cannot edit,</span>
+                    {{f.controls.nric.value?.length}} / 9
+                </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field flex='25' *ngIf='isDriver'>
+                <input matInput type="text" placeholder="Phone Number (*)" formControlName="phone" maxlength="8">
+                <mat-error *ngIf="f.controls.phone.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+                <mat-error *ngIf="f.controls.phone.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+                <mat-hint align="end">{{f.controls.phone.value?.length}} / 8</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field flex='55' *ngIf='isDriver'>
+                <input matInput type="text" placeholder="Note" formControlName="note">
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+
+    <mat-divider></mat-divider>
+    <mat-dialog-actions layout="row">
+        <div flex></div>
+        <button mat-button color='primary' matDialogClose>CANCEL</button>
+        <!-- <button mat-button color='warn' type='reset' [disabled]='f.pristine'>UNDO</button> -->
+        <button mat-button color='accent' type='submit' [disabled]='!f.valid || f.pristine'>{{createNew?'CREATE':'SAVE'}}</button>
+    </mat-dialog-actions>
+</form>
+
+<ng-template #userGroupOptionTemplate let-d='item'>
+    <b> {{d.usergroup}}</b> ({{d.description}})
+</ng-template>

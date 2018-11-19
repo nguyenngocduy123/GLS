@@ -83,7 +83,8 @@ const DEFAULTS = Object.freeze({
             url: 'http://localhost:8989',
         },
         osrm: {
-            url: 'http://localhost:3002',
+            //url: 'http://13.76.242.188:3002',
+            url: 'http://192.168.50.211:3002',
             new: false, // (false) https://github.com/niemeier-PSI/osrm-backend, (true) https://github.com/Project-OSRM/osrm-backend
             compressUrl: true,
         },

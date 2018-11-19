@@ -65,8 +65,8 @@ module.exports = {
             url: 'http://localhost:8989',
         },
         osrm: {
-            // url: 'http://localhost:3002',          
-            url: 'http://13.76.242.188:3002',
+            url: 'http://192.168.50.211:3002',          
+            //url: 'http://13.76.242.188:3002',
             new: false, // (false) https://github.com/niemeier-PSI/osrm-backend, (true) https://github.com/Project-OSRM/osrm-backend
             compressUrl: true,
         },
@@ -93,10 +93,10 @@ module.exports = {
             host: 'VM-BESV2',
             port: 1433,
             dialect: 'mssql',
-            database: 'GLS_Test',
-            custom: { // application-specific
+            database: 'GLS_Test',           
+            custom: { // application-specific`
                 schema: 'Logistics',
-                maxDeleteCount: 10000,
+                maxDeleteCount: 10000,                
             },
         },
     },

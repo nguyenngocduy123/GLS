@@ -1,0 +1,129 @@
+{
+    "LOGIN": {
+        "PASSWORD_HINT": "隐藏密码"
+    },
+    "DASHBOARD": {
+        "DELETE_CONFIRM_MSG": "确定删除选中的模型？",
+        "OPEN_AFTER_CREATED_CONFIRM_MSG": "模型创建成功，确定打开？"
+    },
+    "USER_MANAGEMENT": {
+        "DISABLE_USER_CONFIRM_MSG": "您要禁用选中的用户吗？",
+        "DISABLE_USER_COMPLETED_ALERT": "您选中的用户已被禁用",
+        "ENABLE_USER_CONFIRM_MSG": "您要启用选中的用户吗？",
+        "ENABLE_USER_COMPLETED_ALERT": "您选中的用户已被启用",
+        "RESET_PASSWORD_CONFIRM_MSG": "确定重设密码？",
+        "RESET_PASSWORD_COMPLETED_ALERT": "重设密码成功",
+        "LOGOUT_USER_CONFIRM_MSG": "确定退出？",
+        "LOGOUT_USER_COMPLETED_ALERT": "用户已经成功退出",
+        "DELETE_USER_CONFIRM_MSG": "确定删除用户?",
+        "DELETE_USER_COMPLETED_ALERT": "用户删除成功",
+        "USER_SAVED_MSG": "用户的详细信息已经保存",
+        "USER_CREATED_MSG": "新用户已经创建"
+    },
+    "PLANNER_PLAN": {
+        "APPROVE_SOLUTION_CONFIRM_MSG": "是否批准当前解决方案？",
+        "SOLUTION_APPROVED_MSG": "解决方案已确认",
+        "OPTIMIZATION_FINISHED_MSG": "优化已完成",
+        "NEWPLAN_APPROVED_MSG": "新的路线已经发送给司机们了"
+    },
+    "PLANNER_DATA_MANAGEMENT": {
+        "POSTAL_INSERT_SUCCESS_MSG": "邮编录入成功"
+    },
+    "PLANNER_MONITOR": {
+        "UNSAVES_CHANGES_CONFIRM_MSG": "您的更改还未保存，您确定要取消更改吗？",
+        "PLAN_CHANGE_SAVE": "更改已保存",
+        "DISCARD_CHANGES_CONFIRM_MSG": "您确定要丢弃所有更改吗？"
+    },
+    "PLANNER_TRANSACTION_LOG": {
+        "EXPORT_TO_ZIP_CONFIRM_MSG": "您需要下载图片吗？（下载含有图片的交易记录需要更多的时间）"
+    },
+    "PLANNER_DATA_IMPORT": {
+        "DATA_SAVED_SUCCESS_MSG": "数据已经成功保存"
+    },
+    "PROBLEM_DETAIL": {
+        "MODEL_SAVED_MSG": "模型已保存",
+        "FILE_IMPORT_COMPLETED_MSG": "文件导入成功",
+        "FILE_FORMAT_UNSUPPORT_ALERT": "文件格式不支持",
+        "GEOCODING_CANCELLED_ALERT": "地理编码请求已被取消",
+        "GEOCODING_FINISHED_MSG": "地理编码完成",
+        "DISTANCE_QUERY_FAILED_ALERT": "距离矩阵请求失败",
+        "OPTIMIZATION_SOLUTION_VIEW_QUERY_MSG": "优化成功完成，是否要查看解决方案？"
+    },
+    "SOLUTION_DETAIL": {
+        "OPTIMIZATION_CANCELLED_ALERT": "优化已取消",
+        "IMPORT_SUCCESS_MSG": "导入成功",
+        "DELETE_PROCESS_CONFIRM_ALERT": "是否确认删除？"
+    },
+    "PLANNER_DISPATCH": {
+        "FINISHED_JOBS_MSG": "选择包含以下完成的工作。只允许移动未完成的工作。",
+        "MAX_LIMIT_ERROR": "达到极限。无法移动工作",
+        "SHIPMENT_ORDER_ERROR": "在装运单中的交货作业后无法放置取件作业"
+    },
+    "MAIN": {
+        "LOG_OFF_CONFIRMATION_ALERT": "是否确认注销账户？",
+        "FORCE_LOG_OFF_BY_ADMIN_ALERT": "您已被管理员强制登出"
+    },
+    "USER_FORM": {
+        "USER_SAVED_MSG": "用户已保存"
+    },
+    "USER_SETTING": {
+        "LANGUAGE_CHANGE_CONFIRM_ALERT": "是否确认变更语言设置？",
+        "PASSWORD_EMPTY_ALERT": "密码不能为空!",
+        "PASSWORD_MISMATCH_ALERT": "确认密码与新密码不匹配",
+        "PASSWORD_UPDATED_SUCCESS_MSG": "密码更新成功",
+        "USER_INFORMATION_UPDATED_SUCCESS_MSG": "用户信息已成功更新"
+    },
+  "OPTIMIZATION_COMPLETED_MSG": "优化已经成功完成，您需要查看优化方案吗？",
+  "OPTIMIZATION_ERROR_ALERT": "无法找到最佳优化路径，请重新检查车辆限制条件和约束选项。",
+  "OPTIMIZATION_FINISHED_MSG": "路径优化完成",
+  "INVALID_FILE_FORMAT_ERR": "无效的格式",
+  "CONNECTION_ERROR_MSG": "无法连接服务器",
+  "PASSWORD_PATTERN_ERROR_MSG": "最少8个字符，其中最少有一个大写英文字母，一个小写英文字母和一个数字。",
+  "PASSWORD_MISMATCH_ERROR_MSG": "密码不匹配",
+  "INCORRECT_FORMAT_ERROR_MSG": "格式不正确",
+  "AT_LEAST_1_ERROR_MSG": "值必须至少为1",
+  "AT_LEAST_0_ERROR_MSG": "值必须至少为0",
+  "GREATER_THAN_0_ERROR_MSG": "值必须大于0",
+  "REQUIRED_ERROR_MSG": "该区域不能为空",
+  "ALREADY_TAKEN_ERROR_MSG": "该值已经被占用",
+  "INCORRECT_POSTAL_FORMAT_ERROR_MSG": "邮编一定要6位数字符",
+  "NONEXISTENT_POSTAL_ERROR_MSG": "邮编不存在",
+  "REFRESH_CHANGES_CONFIRM_MSG": "未保存的更改将被删除，您确定要继续吗？",
+
+  "Dashboard": "仪表板",
+  "Username": "用户名",
+  "Full Name": "全名",
+  "Password": "密码",
+  "Role": "角色",
+
+  "Login": "登录",
+  "Logout": "登出",
+  "Delete": "删除",
+  "Reset password": "重设密码",
+  "Edit": "编辑",
+
+  "Create Model": "创建模型",
+  "Import Model": "导入模型",
+
+  "Refresh": "刷新",
+  "Name": "名称",
+  "Updated": "更新",
+
+  "Coordinates Mode": "坐标模式",
+  "Fleet Size": "车队规模",
+  "No.Orders": "订单的数量",
+  "No.Solutions": "解决方案的数量",
+
+  "Settings": "设置",
+  "Manage Users": "管理用户",
+  "All Users": "所有用户",
+
+  "Create new user": "创建新用户",
+  "YES": "是",
+  "NO": "不",
+  "CLOSE": "关闭",
+  "CANCEL": "取消",
+  "Alert": "警告",
+
+  "Map Service": "地图服务"
+}

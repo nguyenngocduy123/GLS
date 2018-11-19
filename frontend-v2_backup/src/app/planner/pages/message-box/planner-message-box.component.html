@@ -1,0 +1,133 @@
+<td-layout-nav-list #navList toolbarTitle=" Message" navigationRoute="/" mode="side" sidenavWidth="320px">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+        <button mat-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <vrp-planner-date-range-selection class='pad-left' [range]='jobQuery' (rangeChange)='onDateRangeChange($event)'></vrp-planner-date-range-selection>
+
+        <span flex></span>
+
+        <button mat-icon-button matTooltip="Reload" (click)="refresh()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <div td-sidenav-content>
+        <div layout='row' class='valign-center'>
+            <td-search-box #searchBox backIcon="arrow_back" [placeholder]="'Search here (' +filteredMessages.length+' total)'" (searchDebounce)="filter()"
+                alwaysVisible='true' [(ngModel)]="searchTerm" flex></td-search-box>
+
+            <button mat-icon-button [matMenuTriggerFor]="groupByMenu">
+                <mat-icon>reorder</mat-icon>
+            </button>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div layout='row'>
+            <h3 matLine class='sidebar-title'>{{sidebarTitle}}</h3>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <mat-nav-list class='vrp-planner-message-list'>
+            <ng-template let-m let-i="index" let-last="last" ngFor [ngForOf]="filteredMessages">
+                <h3 matSubheader *ngIf='groupHeaders[i]'>{{groupHeaders[i]}}</h3>
+
+                <mat-list-item (click)='selected=m' [style.background]='selected===m?"lightgray ":"white"'>
+                    <h3 matLine>Order {{m.job.DeliveryMasterId}}</h3>
+                    <h3 matLine>expected to be LATE by {{m.lateBy}}</h3>
+
+                    <p matLine>
+                        reported by {{m.fromUser?.fullname || m.fromUsername}} at {{m.modified_date | date :'shortTime'}}
+                    </p>
+
+                    <mat-icon class="tc-amber-800" *ngIf='!m.processedAt'>fiber_new</mat-icon>
+                    <mat-icon class="tc-green-800" *ngIf='m.processedAt'>done_all</mat-icon>
+                </mat-list-item>
+
+                <mat-divider *ngIf="!last"></mat-divider>
+            </ng-template>
+        </mat-nav-list>
+    </div>
+
+    <mat-card *ngIf='selected'>
+        <mat-card-title>
+            <div layout="row">
+                Order {{selected.job.DeliveryMasterId}}
+
+                <span flex></span>
+
+                <button mat-button [disabled]='selected.processedByUsername' (click)='processMessage(selected)'>
+                    <mat-icon>reply</mat-icon> Acknowledge
+                </button>
+            </div>
+        </mat-card-title>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+            <p>
+                <b>Reported At: </b>
+                {{selected.created_date | date:'medium' }}
+            </p>
+            <p>
+                <b>Last Updated At: </b>
+                {{selected.processedAt | date:'medium' || 'N.A.' }}
+            </p>
+            <p>
+                <b>Last Updated By: </b>
+                {{selected.processedBy?.fullname || selected.processedByUsername || 'N.A.' }}
+            </p>
+            <p>
+                <b>
+                    <u>The below order expected to be late by {{selected.lateBy}}</u>
+                </b>
+            </p>
+            <p>
+                <b>Order No: </b>
+                <a href='javascript:;' (click)='openOrderDialog(selected.job.DeliveryMasterId)'>
+                    {{selected.job.DeliveryMasterId}}
+                </a>
+            </p>
+            <p>
+                <b>Job Type: </b>
+                {{selected.job.JobType}}
+            </p>
+            <p>
+                <b>Time Slot: </b>
+                {{selected.job.StartTimeWindow | date : 'shortTime' }} - {{selected.job.EndTimeWindow | date : 'shortTime' }}
+            </p>
+            <p>
+                <b>Postal Code: </b>
+                {{selected.job.Postal }}
+            </p>
+            <p>
+                <b>Contact Phone: </b>
+                {{selected.job.ContactPhone }}
+            </p>
+            <p>
+                <b>Driver Name: </b>
+                {{selected.fromUser?.fullname || selected.fromUsername }}
+            </p>
+            <p>
+                <b>Driver Phone: </b>
+                {{selected.fromUser?.phone }}
+            </p>
+            <p>
+                <b>Driver Remark: </b>
+                {{selected.driverRemarks }}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</td-layout-nav-list>
+
+<mat-menu #groupByMenu="matMenu" [overlapTrigger]="false">
+    <a mat-menu-item (click)="groupBy='date'; filter();"> Group by Date </a>
+    <a mat-menu-item (click)="groupBy='sender'; filter()"> Group by Sender </a>
+</mat-menu>

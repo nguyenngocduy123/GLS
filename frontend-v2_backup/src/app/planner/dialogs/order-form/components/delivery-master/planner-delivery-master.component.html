@@ -1,0 +1,50 @@
+<form [formGroup]="f">
+    <div layout="row" layout-wrap layout-padding>
+        <mat-form-field flex="33">
+            <input matInput formControlName='Id' maxlength="30" placeholder="Id" [readonly]='readonly || !allowToChangeId'>
+            <mat-error *ngIf="f.controls.Id.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+            <mat-error *ngIf="f.controls.Id.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+            <mat-error *ngIf="f.controls.Id.errors?.existence" translate>ALREADY_TAKEN_ERROR_MSG</mat-error>
+            <mat-hint align="end">{{f.controls.Id.value?.length}} / 30</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field flex="17">
+            <mat-select formControlName="Priority" placeholder="Priority">
+                <mat-option *ngFor="let p of priorityLabels;let i= index" [value]="i+1">
+                    {{p}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field flex='20'>
+            <vrp-search-select-form-field formControlName="UserGroup" [selections]='allUserGroups | async' placeholder="UserGroup" optionTemplateName='userGroup'
+                unselectOptionLabel='No Usergroup' valueField='usergroup' [searchFields]='["usergroup"]' [showUndefinedOption]='true'>
+            </vrp-search-select-form-field>
+        </mat-form-field>
+
+        <mat-form-field flex="20">
+            <input matInput formControlName='VehicleId' readonly placeholder="Assigned To" />
+        </mat-form-field>
+
+        <!-- <button flex='10' mat-button color='warn' type="reset"  [disabled]='f.pristine'>RESET</button> -->
+
+        <mat-form-field flex="33">
+            <input matInput formControlName='CustomerName' placeholder="Customer Name" [readonly]='readonly' />
+        </mat-form-field>
+
+        <mat-form-field flex="33">
+            <input matInput formControlName="CustomerPhone" maxlength="8" placeholder="Customer Phone" />
+            <mat-error *ngIf="f.controls.CustomerPhone.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+            <mat-error *ngIf="f.controls.CustomerPhone.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+            <mat-hint align="end">{{f.controls.CustomerPhone.value?.length}} / 8</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field flex="33">
+            <input matInput formControlName="CustomerEmail" placeholder="Customer Email" />
+            <mat-error *ngIf="f.controls.CustomerEmail.errors?.required" translate>REQUIRED_ERROR_MSG</mat-error>
+            <mat-error *ngIf="f.controls.CustomerEmail.errors?.pattern" translate>INCORRECT_FORMAT_ERROR_MSG</mat-error>
+        </mat-form-field>
+
+        <vrp-planner-vehicle-restriction flex='100' formControlName="VehicleRestriction"></vrp-planner-vehicle-restriction>
+    </div>
+</form>

@@ -1,0 +1,35 @@
+.vrp-badge {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.vrp-progress-horizontal-bar {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.vrp-progress-horizontal-bar:first-of-type {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.vrp-progress-horizontal-bar:last-of-type {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.make-scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+mat-list {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.mat-list-item.mat-list-item-with-avatar {
+    height: auto;
+    min-height: 56px;
+}

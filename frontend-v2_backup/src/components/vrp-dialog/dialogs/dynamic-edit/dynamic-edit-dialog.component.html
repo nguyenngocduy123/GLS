@@ -1,0 +1,68 @@
+<h2 matDialogTitle *ngIf="title">{{title}}</h2>
+
+<mat-dialog-content layout="column" layout-wrap layout-margin layout-align="start center">
+    <div layout="row" layout-wrap layout-margin layout-align="start center" *ngFor='let elementRows of elements; let i=index'>
+        <ng-template let-p ngFor [ngForOf]="elementRows">
+            <mat-form-field flex *ngIf='p.type ==="text"'>
+                <input matInput [placeholder]='p.label' [disabled]='p.readonly' type="text" [(ngModel)]='form[p.name]'>
+            </mat-form-field>
+
+            <mat-form-field flex *ngIf='p.type ==="number"'>
+                <input matInput [placeholder]='p.label' [disabled]='p.readonly' type="number" [(ngModel)]='form[p.name]'>
+            </mat-form-field>
+
+            <mat-form-field flex *ngIf='p.type ==="email"'>
+                <input matInput [placeholder]='p.label' [disabled]='p.readonly' type="email" [(ngModel)]='form[p.name]'
+                    #emailControl="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                <mat-error [hidden]="!emailControl.hasError('pattern') || emailControl.pristine"> Incorrect Email
+                </mat-error>
+            </mat-form-field>
+
+            <span flex *ngIf='p.type === "checkbox"|| p.type === "boolean" '>
+                <mat-checkbox [(ngModel)]='form[p.name]' [disabled]='p.readonly'> {{p.label}}</mat-checkbox>
+            </span>
+
+            <mat-form-field flex *ngIf='p.type === "select"'>
+                <mat-select [placeholder]='p.label' [(ngModel)]='form[p.name]' [disabled]='p.readonly'>
+                    <mat-option *ngFor='let s of p.selections; let i=index;' [value]='s'>{{ p.selectionLabels[i]}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field flex *ngIf='p.type ==="time"'>
+                <input matInput [placeholder]='p.label' [disabled]='p.readonly' type="time" [(ngModel)]='form[p.name]'>
+            </mat-form-field>
+
+            <vrp-datetime-input flex *ngIf='p.type === "dateTime"' [label]='p.label' [disabled]='p.readonly' [(date)]='form[p.name]'>
+            </vrp-datetime-input>
+
+            <vrp-timewindows-input flex *ngIf='p.type === "timeWindow"' [label]='p.label' [disabled]='p.readonly'
+                [(timeWindows)]='form[p.name]'>
+            </vrp-timewindows-input>
+
+            <mat-form-field flex *ngIf='p.type === "date"'>
+                <input matInput [matDatepicker]="picker" [placeholder]="p.label" [(ngModel)]='form[p.name]'>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <span flex *ngIf='p.type === "address"'>
+                <vrp-address-input [label]='p.label' [(address)]='form[p.name]'></vrp-address-input>
+            </span>
+
+            <span flex=50 *ngIf='p.type === "capacity"'>
+                <vrp-vehicle-capacity [items]='p.selections' [(capacity)]='form[p.name]'></vrp-vehicle-capacity>
+            </span>
+            <span flex=50 *ngIf='p.type === "size"'>
+                <vrp-job-demand [items]='p.selections' [(size)]='form[p.name]'></vrp-job-demand>
+            </span>
+        </ng-template>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions layout="row">
+    <div flex></div>
+    <button mat-button color='primary' matDialogClose>{{cancelButton}}</button>
+    <button mat-button color='accent' (click)="save()">{{acceptButton}}</button>
+</mat-dialog-actions>
+
+<!-- </form> -->

@@ -37,6 +37,8 @@ const errors = {
     },
     SequelizeDatabaseError: (err) => {
         const message = _.get(err, 'message');
+        console.log(err);        
+        
         if (_.includes(message, 'Cannot insert duplicate key')) {
             return 'Id already exists in database';
         } else if (_.includes(message, 'statement conflicted with')) {
@@ -48,7 +50,7 @@ const errors = {
         } else if (_.includes(message, 'deadlocked on lock resources')) {
             return 'Database transaction issue. Please try again';
         } else {
-            return 'Database error has occurred';
+            return err;
         }
     },
 };

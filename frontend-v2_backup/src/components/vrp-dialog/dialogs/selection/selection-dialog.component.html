@@ -1,0 +1,27 @@
+<!-- <h2 matDialogTitle *ngIf='title'> {{title}}</h2> -->
+<mat-dialog-content layout="column" layout-margin>
+    <div layout="row" layout-align="start center">
+        <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+            <span class="md-title">{{title}}</span>
+        </span>
+        <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here"
+            (searchDebounce)="search($event)" [alwaysVisible]='!title' flex>
+        </td-search-box>
+    </div>
+
+    <!-- <mat-divider></mat-divider> -->
+    <td-data-table #dataTable [data]="filteredData" [columns]="columns" selectable="true" clickable="true" multiple="true"
+        sortable="true" [style.height.px]="350" [sortBy]="sortBy" [(ngModel)]="selectedRows" [sortOrder]="sortOrder"
+        (sortChange)="sort($event)" (rowClick)='rowClick($event.row)'>
+    </td-data-table>
+    <!-- <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+		<h3>No data to display.</h3>
+	</div> -->
+</mat-dialog-content>
+
+<mat-dialog-actions layout="row">
+    <div flex></div>
+    <button mat-button color='primary' matDialogClose>Cancel</button>
+    <button mat-button color='accent' [matDialogClose]='selectedRows' [disabled]="selectedRows.length==0">Select
+        ({{selectedRows.length}})</button>
+</mat-dialog-actions>

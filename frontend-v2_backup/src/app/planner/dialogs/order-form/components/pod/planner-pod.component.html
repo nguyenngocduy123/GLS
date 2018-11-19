@@ -1,0 +1,23 @@
+<div layout="row">
+    <div>
+        <figure>
+            <img [src]="'data:image/png;base64,'+job.pod.Signature" class="photo-container" *ngIf="job.pod && job.pod.Signature; else noSignatureTemplate">
+            <figcaption class='text-center'>Signature</figcaption>
+        </figure>
+    </div>
+
+    <div>
+        <figure>
+            <img [src]="'data:image/png;base64,'+job.pod.Photo" class="photo-container" *ngIf="job.pod && job.pod.Photo; else noPhotoTemplate">
+            <figcaption class="text-center">Photo</figcaption>
+        </figure>
+    </div>
+</div>
+
+<ng-template #noSignatureTemplate>
+    <div class="photo-container"> N.A. </div>
+</ng-template>
+
+<ng-template #noPhotoTemplate>
+    <div class="photo-container"> N.A. </div>
+</ng-template>

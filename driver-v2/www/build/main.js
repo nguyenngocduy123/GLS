@@ -3683,15 +3683,15 @@ var map = {
 		0
 	],
 	"../pages/current-job/pod/pod.module": [
-		1097,
+		1099,
 		16
 	],
 	"../pages/current-job/pod/verify-code/verify-code.module": [
-		1098,
+		1097,
 		15
 	],
 	"../pages/current-job/summary/summary.module": [
-		1099,
+		1098,
 		14
 	],
 	"../pages/customer-service/customer-service.module": [
@@ -4437,9 +4437,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/current-job/items-handled/items-handled.module#ItemsHandledPageModule', name: 'ItemsHandledPage', segment: 'items-handled', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/pod/pod-photo/pod-photo.module#PodPhotoPageModule', name: 'PodPhotoPage', segment: 'pod-photo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/pod/pod-signature/pod-signature.module#PodSignaturePageModule', name: 'PodSignaturePage', segment: 'pod-signature', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/current-job/pod/pod.module#PodPageModule', name: 'PodPage', segment: 'pod', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/pod/verify-code/verify-code.module#VerifyCodePageModule', name: 'VerifyCodePage', segment: 'verify-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/current-job/summary/summary.module#SummaryPageModule', name: 'SummaryPage', segment: 'summary', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/current-job/pod/pod.module#PodPageModule', name: 'PodPage', segment: 'pod', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/customer-service/customer-service.module#CustomerServicePageModule', name: 'CustomerServicePage', segment: 'customer-service', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-details/item-details.module#ItemDetailsPageModule', name: 'ItemDetailsPage', segment: 'item-details', priority: 'low', defaultHistory: [] },

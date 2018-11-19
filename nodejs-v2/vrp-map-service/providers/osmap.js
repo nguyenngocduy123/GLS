@@ -109,11 +109,11 @@ exports.distanceMatrix = async (points) => {
         options.uri += _.join(_.map(points, (point) => `${point[1]},${point[0]}`), ';');
     }
 
-    if (IS_NEW_OSRM) {
-        options.uri += '?annotations=duration,distance';
-    } else {
-        options.uri += '?output_components=durations;distances';
-    }
+    // if (IS_NEW_OSRM) {
+    //     options.uri += '?annotations=duration,distance';
+    // } else {
+    //     options.uri += '?output_components=durations;distances';
+    // }
 
     log.trace('distanceMatrix', options);
 

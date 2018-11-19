@@ -1,0 +1,170 @@
+.leaflet-map {
+    height: 100%;
+    width: 100%;
+}
+
+.vrp-control-a .mat-icon {
+    vertical-align: middle;
+}
+
+.blank-marker-icon {
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 7px;
+    color: black;
+    background-size: contain;
+}
+
+$assetMarkersPath: "../../../../assets/images/markers";
+.blank-marker-icon.blue {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-blue.png);
+}
+
+.blank-marker-icon.red {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-red.png);
+}
+
+.blank-marker-icon.dark {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-dark.png);
+}
+
+.blank-marker-icon.orange {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-orange.png);
+}
+
+.blank-marker-icon.green {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-green.png);
+}
+
+.blank-marker-icon.pink {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-pink.png);
+}
+
+.blank-marker-icon.grey {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-grey.png);
+}
+
+.blank-marker-icon.magenta {
+    background-image: url(#{$assetMarkersPath}/free-map-marker-icon-magenta.png);
+}
+
+.blank-marker-icon.truck-red {
+    // background-image:     url(#{$assetMarkersPath}/truck-red.png);
+    background-image: url(#{$assetMarkersPath}/gps.svg);
+}
+
+.blank-marker-icon.station {
+    background-image: url(#{$assetMarkersPath}/pin.svg);
+}
+
+.blank-marker-icon.truck {
+    background-image: url(#{$assetMarkersPath}/gps.svg);
+}
+
+.top-left-fixed {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.bottom-left-fixed {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.bottom-right-fixed {
+    position: absolute;
+    bottom: 170px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.vrp-geo-address-div {
+    position: absolute;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 1);
+    text-align: left;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    width: 300px;
+}
+
+.vrp-legend-div {
+    background: rgba(255, 255, 255, 1);
+    text-align: left;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.vrp-control-div a {
+    width: 30px !important;
+    height: 30px !important;
+    background: rgba(255, 255, 255, 1) !important;
+    text-align: center;
+    padding: 0px;
+    cursor: pointer !important;
+}
+
+.simple-transparent-div {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.simple-marker-div {
+    background: rgba(255, 255, 255, 1);
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid white;
+    /*z-index:1000;*/
+}
+
+.simple-marker-grey {
+    border-radius: 50%;
+    background: grey;
+    color: white;
+    line-height: 15px;
+    font-size: 1.0em;
+}
+
+.simple-marker-brown {
+    border-radius: 50%;
+    background: brown;
+    color: white;
+    line-height: 15px;
+    font-size: 1.0em;
+}
+
+.simple-marker-red {
+    border-radius: 50%;
+    background: red;
+    color: white;
+    line-height: 20px;
+    font-size: 1.0em;
+}
+
+.simple-marker-blue {
+    border-radius: 80%;
+    background: blue;
+    color: white;
+    line-height: 20px;
+    font-size: 1.0em;
+}
+
+.simple-marker-purple {
+    border-radius: 80%;
+    background: purple;
+    color: white;
+    line-height: 20px;
+    font-size: 1.0em;
+}
+
+.vrp-leaflet-legend-text {
+    font-size: 0.8em;
+}
+
+@import '~leaflet/dist/leaflet.css';
+@import '~leaflet.markercluster/dist/MarkerCluster.css';
+@import '~leaflet.markercluster/dist/MarkerCluster.Default.css';

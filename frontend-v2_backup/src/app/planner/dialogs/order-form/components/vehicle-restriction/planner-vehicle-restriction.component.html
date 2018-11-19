@@ -1,0 +1,15 @@
+<div layout="row" layout-wrap layout-padding>
+    <mat-form-field flex='100'>
+        <input matInput [value]='restrictionValue' readonly placeholder="Vehicle Restriction" />
+    </mat-form-field>
+
+    <mat-form-field flex='50' *ngFor="let item of restrictionGroup | slice : 0 : 2 ">
+        <vrp-search-select-form-field [value]="item.selected" [selections]='allVehicles| async' [placeholder]="item.label" optionTemplateName='vehicle'
+            multiple (selectionChange)='onSelectionChange(item,$event.value)' valueField='Id' [searchFields]='["Id"]'></vrp-search-select-form-field>
+    </mat-form-field>
+
+    <mat-form-field flex='50' *ngFor="let item of restrictionGroup | slice : 2   ; let i=index ">
+        <vrp-search-select-form-field [value]="item.selected" [selections]='allVehicleTypes| async' [placeholder]="item.label" optionTemplateName='vehicleType'
+            multiple (selectionChange)='onSelectionChange(item,$event.value)' valueField='Name' [searchFields]='["Name"]'></vrp-search-select-form-field>
+    </mat-form-field>
+</div>

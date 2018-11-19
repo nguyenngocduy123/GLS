@@ -1,0 +1,20 @@
+<a *ngFor='let tw of predefinedTimeRange' class="mat-menu-item" (click)='range.start=tw.start; range.end=tw.end;applyFilter.emit(range) '>
+    {{tw.label}}</a>
+
+<div class="mat-menu-item" layout='row' (click)="$event.stopPropagation();">
+    <mat-form-field flex='50'>
+        <!-- <input matInput type="text" placeholder="From (hh:mm)" [(ngModel)]='range.start' pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" #startTimeControl="ngModel" > -->
+        <input matInput type="time" placeholder="From" [(ngModel)]='range.start' #startTimeControl="ngModel">
+        <!-- <mat-error [hidden]="!startTimeControl.hasError('pattern')">Incorrect pattern. Must be in hh:mm format</mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field flex='50'>
+        <input matInput type="time" placeholder="To" [(ngModel)]='range.end' #endTimeControl="ngModel">
+        <!-- <mat-error [hidden]="!endTimeControl.hasError('pattern')">Incorrect pattern. Must be in hh:mm format</mat-error> -->
+    </mat-form-field>
+</div>
+
+<div layout='row' class='pad-left pad-right'>
+    <button mat-button flex='50' color='warn' (click)='applyFilter.emit(range)'>Apply</button>
+    <button mat-button flex color='accent'>Close</button>
+</div>

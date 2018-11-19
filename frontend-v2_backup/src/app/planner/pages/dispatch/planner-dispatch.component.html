@@ -1,0 +1,28 @@
+<div layout="row">
+    <div flex='50' class='left-panel'>
+        <ng-template [ngTemplateOutlet]="vehicleSelectionTemplate" [ngTemplateOutletContext]="{table:left}"></ng-template>
+    </div>
+
+    <div flex='50' class='right-panel'>
+        <ng-template [ngTemplateOutlet]="vehicleSelectionTemplate" [ngTemplateOutletContext]="{table:right}"></ng-template>
+    </div>
+</div>
+
+<ng-template #vehicleSelectionTemplate let-table='table'>
+    <div layout='column'>
+        <vrp-search-select [selections]='vehicles' [(selected)]='table.vehicle' (selectedChange)="updateTable(table)" [placeholder]="table.vehicle? 'Select Vehicle': ('Unassigned Jobs ('+unassignedJobMarkers.length+')')"
+            [optionTemplate]='vehicleSelectionOptionTemplate' [unselectOptionTemplate]='vehicleUnSelectionOptionTemplate' [searchFields]='["Id","DriverUsername"]'></vrp-search-select>
+
+        <vrp-table flex [columns]="table.column" [data]="table.data" [tableHeight]="tableHeight" sortable='false' [selectActions]='table.selectActions'
+            [(ngModel)]="table.selected" [itemActions]='itemActions'></vrp-table>
+    </div>
+</ng-template>
+
+<ng-template #vehicleSelectionOptionTemplate let-item='item'>
+    {{ item.UserGroup ? item.UserGroup : '&lt;None&gt;' }} - {{item.Id}} ({{ item.DriverUsername }}) - {{ item.route ? item.route.markers.length
+    : 0 }} jobs
+</ng-template>
+
+<ng-template #vehicleUnSelectionOptionTemplate>
+    Unassigned jobs ({{ unassignedJobMarkers.length }})
+</ng-template>
